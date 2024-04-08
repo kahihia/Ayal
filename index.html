@@ -1,31 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="utf-8"><script type="cb9d42d18609466995874e9a-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="cb9d42d18609466995874e9a-text/javascript">class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
-<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-<link rel="dns-prefetch" href="https://www.clarity.ms" />
-<link rel="preconnect" href="https://www.googletagmanager.com" />
-<link rel="preconnect" href="https://www.clarity.ms" />
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-<title>AYAL Limited - Builders in Bangalore | Real Estate Company in India</title><style id="rocket-critical-css">ul{box-sizing:border-box}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.search-section{width:60%;position:relative}.search-section input.auto-suggest-front{width:92%;height:35px;padding:5px 10px;font-size:18px}.search-section input.auto-suggest-front,.asr-container{border:1px solid #efefef;overflow-y:auto;margin-top:5px;box-sizing:border-box}.asr-container{border:1px solid #000;width:60%}.result-section{overflow-y:auto;max-height:400px}p.more-res{margin-bottom:0;text-align:center;text-transform:capitalize;font-size:15px;padding:5px 10px 0;background:#000}p.more-res a{color:#fff;box-shadow:none}.search-section .auto-suggest-submit{background:url(https://www.sobha.com/wp-content/plugins/auto-search-suggestion/images/search.png) #000 no-repeat scroll 50% 50%;border-radius:0 2px 2px 0;bottom:0;overflow:hidden;padding:0;position:absolute;right:0;top:5px;width:8%;height:35px;padding:4px}.search-section .auto-suggest-submit::before{font-size:24px;left:0;line-height:26px;position:relative;width:auto}@media only screen and (max-width:1024px){.search-section,.asr-container{width:100%}}@media only screen and (max-width:768px){.search-section,.asr-container{width:100%}}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--greenTheme:#48BA41;--orangeTheme:#F78200;--blueTheme:#023F88;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}*,*::before,*::after{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h3,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}a{color:#007bff;text-decoration:none;background-color:transparent}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}button{border-radius:0}input,button{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button{text-transform:none}button,[type=button],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=submit]::-moz-focus-inner{padding:0;border-style:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h3,h6{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h3{font-size:1.75rem}h6{font-size:1rem}.img-fluid{max-width:100%;height:auto}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-4,.col-md-4,.col-md-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-4{flex:0 0 33.33333%;max-width:33.33333%}@media (min-width:768px){.col-md-auto{flex:0 0 auto;width:auto;max-width:100%}.col-md-4{flex:0 0 33.33333%;max-width:33.33333%}}.form-control{display:block;width:100%;height:calc(2.25rem + 2px);padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem}.form-control::-ms-expand{background-color:transparent;border:0}.form-group{margin-bottom:1rem}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem}.close{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.5}.d-none{display:none!important}.d-block{display:block!important}.d-flex{display:flex!important}@media (min-width:768px){.d-md-none{display:none!important}.d-md-block{display:block!important}}.justify-content-center{justify-content:center!important}.justify-content-between{justify-content:space-between!important}.align-items-center{align-items:center!important}.w-100{width:100%!important}.mb-0{margin-bottom:0!important}.ml-2{margin-left:.5rem!important}.mb-3{margin-bottom:1rem!important}.mb-4{margin-bottom:1.5rem!important}.mb-5{margin-bottom:3rem!important}@media (min-width:768px){.mb-md-4{margin-bottom:1.5rem!important}}@media (min-width:992px){.pl-lg-5{padding-left:3rem!important}}.text-right{text-align:right!important}.text-center{text-align:center!important}.owl-carousel,.owl-carousel .owl-item{position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled{display:none}.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y}@-webkit-keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}.fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}button::-moz-focus-inner{padding:0;border:0}.pswp{display:none;position:absolute;width:100%;height:100%;left:0;top:0;overflow:hidden;-ms-touch-action:none;touch-action:none;z-index:1500;-webkit-text-size-adjust:100%;-webkit-backface-visibility:hidden;outline:none}.pswp *{-webkit-box-sizing:border-box;box-sizing:border-box}.pswp__bg{position:absolute;left:0;top:0;width:100%;height:100%;background:#000;opacity:0;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;will-change:opacity}.pswp__scroll-wrap{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden}.pswp__container{-ms-touch-action:none;touch-action:none;position:absolute;left:0;right:0;top:0;bottom:0}.pswp__container{-webkit-touch-callout:none}.pswp__bg{will-change:opacity}.pswp__container{-webkit-backface-visibility:hidden}.pswp__item{position:absolute;left:0;right:0;top:0;bottom:0;overflow:hidden}.pswp__button{width:44px;height:44px;position:relative;background:0 0;overflow:visible;-webkit-appearance:none;display:block;border:0;padding:0;margin:0;float:right;opacity:.75;-webkit-box-shadow:none;box-shadow:none}.pswp__button::-moz-focus-inner{padding:0;border:0}.pswp__button,.pswp__button--arrow--left:before,.pswp__button--arrow--right:before{background:url(https://www.sobha.com/wp-content/themes/sobha/images/default-skin.png) 0 0 no-repeat;background-size:264px 88px;width:44px;height:44px}.pswp__button--close{background-position:0 -44px}.pswp__button--share{background-position:-44px -44px}.pswp__button--fs{display:none}.pswp__button--zoom{display:none;background-position:-88px 0}.pswp__button--arrow--left,.pswp__button--arrow--right{background:0 0;top:50%;margin-top:-50px;width:70px;height:100px;position:absolute}.pswp__button--arrow--left{left:0}.pswp__button--arrow--right{right:0}.pswp__button--arrow--left:before,.pswp__button--arrow--right:before{content:'';top:35px;background-color:rgba(0,0,0,.3);height:30px;width:32px;position:absolute}.pswp__button--arrow--left:before{left:6px;background-position:-138px -44px}.pswp__button--arrow--right:before{right:6px;background-position:-94px -44px}.pswp__share-modal{display:block;background:rgba(0,0,0,.5);width:100%;height:100%;top:0;left:0;padding:10px;position:absolute;z-index:1600;opacity:0;-webkit-backface-visibility:hidden;will-change:opacity}.pswp__share-modal--hidden{display:none}.pswp__share-tooltip{z-index:1620;position:absolute;background:#fff;top:56px;border-radius:2px;display:block;width:auto;right:44px;-webkit-box-shadow:0 2px 5px rgba(0,0,0,.25);box-shadow:0 2px 5px rgba(0,0,0,.25);-webkit-transform:translateY(6px);-ms-transform:translateY(6px);transform:translateY(6px);-webkit-backface-visibility:hidden;will-change:transform}.pswp__counter{position:absolute;left:0;top:0;height:44px;font-size:13px;line-height:44px;color:#fff;opacity:.75;padding:0 10px}.pswp__caption{position:absolute;left:0;bottom:0;width:100%;min-height:44px}.pswp__caption__center{text-align:left;max-width:420px;margin:0 auto;font-size:13px;padding:10px;line-height:20px;color:#ccc}.pswp__preloader{width:44px;height:44px;position:absolute;top:0;left:50%;margin-left:-22px;opacity:0;will-change:opacity;direction:ltr}.pswp__preloader__icn{width:20px;height:20px;margin:12px}@media screen and (max-width:1024px){.pswp__preloader{position:relative;left:auto;top:auto;margin:0;float:right}}.pswp__ui{-webkit-font-smoothing:auto;visibility:visible;opacity:1;z-index:1550}.pswp__top-bar{position:absolute;left:0;top:0;height:44px;width:100%}.pswp__caption,.pswp__top-bar{-webkit-backface-visibility:hidden;will-change:opacity}.pswp__top-bar,.pswp__caption{background-color:rgba(0,0,0,.5)}.pswp__ui--hidden .pswp__top-bar,.pswp__ui--hidden .pswp__caption,.pswp__ui--hidden .pswp__button--arrow--left,.pswp__ui--hidden .pswp__button--arrow--right{opacity:.001}@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;531;600;700;800;900&display=swap';.wp-video .mejs-container .mejs-controls{opacity:0!important;display:none!important}.wp-video .mejs-container .mejs-layers{opacity:0!important}.owl-carousel .owl-dot,.owl-carousel .owl-nav button{outline:none;box-shadow:0 0!important}.owl-carousel .owl-dot span{width:9px;height:9px;border-radius:50%;display:block;margin:0 4px;border:1px solid#707070}.owl-carousel .owl-dot.active span{background:#bcbcbc;border:1px solid #bcbcbc}.owl-carousel .owl-dots{margin-top:25px;text-align:center}a.active .plusminus{display:inline-block;height:10px;position:relative;width:10px;right:-9px;-moz-transform:rotate(315deg);-ms-transform:rotate(315deg);-webkit-transform:rotate(315deg);transform:rotate(-45deg);background:0 0}a.active .plusminus:before,a.active .plusminus:after{background:0 0}a .plusminus:before,a .plusminus:after{content:"";position:absolute;background:#535456}.second-navigation a .plusminus:before,.second-navigation a .plusminus:after{background:#fff}.second-navigation a.active .plusminus::after{border-color:#fff;background:0 0}.second-navigation a.active .plusminus::before{background-color:#fff}.second-navigation a.back-btn{position:absolute;top:40px;left:40px}.second-navigation a.back-btn span{right:0;-moz-transform:rotate(315deg);-ms-transform:rotate(315deg);-webkit-transform:rotate(315deg);transform:rotate(135deg)}a .plusminus:before{top:-11px;left:50%;width:1.5px;height:20px;margin-left:-2px}a .plusminus:after{top:50%;left:-11px;width:20px;height:2px;margin-top:-2px}a.active .plusminus::after{border-bottom-style:solid;border-bottom-width:1.3px;border-right-style:solid;border-right-width:1.3px;content:'';display:inline-block;height:12px;left:0;position:absolute;top:0;width:12px}a.active .plusminus::before{bottom:1px;content:'';height:24px;position:absolute;right:0;transform-origin:bottom;width:1.3px;-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:-15px;margin-left:4px}a.active .plusminus::after{border-color:#535456}a.active .plusminus::before{background-color:#535456}body{font-family:inter,sans-serif;color:#343434}.white-btn{font-size:13px;line-height:13px;border:2px solid #fff;color:#fff;text-transform:uppercase;border-radius:4px;padding:12px 30px}ul{list-style:none;margin:0;padding:0}header{position:fixed;top:0;width:100%;left:0;right:0;z-index:999;height:124px;padding-bottom:8px}header img.sticky-logo{display:none}header .menu-wrapper a{color:#faf5fa;text-decoration:none;font-size:15px;max-width:85px}header .menu-bar{text-align:left;width:30px}header .menu-bar span{height:2px;background:#faf5fa;display:block;margin-bottom:6px}header .menu-bar span:nth-child(1){width:17px}header .menu-bar span:nth-child(2){width:30px}header .menu-bar span:nth-child(3){width:15px;margin-left:auto;margin-bottom:0}.menu-container ul li.submenu-list a{font-size:17px;font-weight:300;text-transform:uppercase;padding-bottom:35px}.menu-container{position:fixed;top:0;min-width:380px;height:100%;max-width:380px;left:-100%;z-index:10;min-height:100vh}.menu-container .navigation{padding:0;width:100%;height:100%;background:#fff;overflow:hidden}.menu-container .navigation .first-part{padding:10px 0 0 40px;min-height:40vh}.menu-container .navigation .second-part{padding:30px 0 30px 40px;background:#eee;min-height:60vh}.menu-container ul.padding-wrapper{padding-right:40px}.second-navigation{position:fixed;top:0;min-width:380px;height:100%;max-width:380px;left:-100%;z-index:-10}.second-navigation .second-nav-wrapper{background:#000;height:100%;padding:10px 40px 30px;z-index:-10;overflow:auto}.second-navigation .second-nav-wrapper ul li a{color:#cccbcb;display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:300;text-transform:capitalize;margin-bottom:0;text-decoration:none;padding-bottom:20px}.background-wrap{position:fixed;top:0;left:0;right:0;bottom:0;background:rgb(0 0 0/58%);height:100%;width:100%;display:none;z-index:9;min-height:100vh}.close-nav,.close-nav-second{position:absolute;top:15px;right:15px;z-index:999}.close-nav img,.close-nav-second img{width:18px;height:18px}.second-navigation .second-nav-wrapper ul li a.third{color:#f3c033;font-size:17px;margin-bottom:0;font-weight:300}.second-nav-wrapper ul li a{color:#676767;display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:300;text-transform:uppercase;margin-bottom:20px;text-decoration:none}.menu-container ul li a{color:#535456;display:flex;align-items:center;justify-content:space-between;font-size:17px;font-weight:300;text-transform:uppercase;padding-bottom:35px;text-decoration:none}span.plusminus{position:relative;margin:0}#home-page #banner{overflow:hidden;position:relative;display:flex;align-items:flex-end;justify-content:center;color:#faf5fa}#home-page #location select#project option{display:none}#home-page #location select#project option[value=""]{display:block!important}.owl-carousel .owl-nav{position:absolute;top:0;width:100%;z-index:0;height:100%;display:flex;align-items:center;visibility:hidden}#carousel .owl-nav{height:calc(100% - 49px)}.owl-carousel .owl-prev{position:absolute;left:15px;z-index:99;box-shadow:0 0!important;outline:none;visibility:visible}.owl-carousel .owl-next{position:absolute;right:15px;z-index:99;box-shadow:0 0!important;outline:none;visibility:visible}.owl-carousel .owl-nav svg{stroke:#fff;width:45px;height:45px;background:rgba(19,36,36,.25);border-radius:50%;padding:10px}.owl-carousel .owl-prev svg{transform:rotate(180deg)}h6{font-weight:300}p{font-size:15px;font-weight:300;line-height:2;color:#3c4042}h3{font-weight:400;font-size:22px;letter-spacing:.1em;color:#2b2e31;text-transform:uppercase}.search-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(89,93,95,.95);overflow:hidden;z-index:999;display:none}.search-modal .row{margin-bottom:50px}.search-modal .close-btn{margin:0;position:fixed;top:0;right:0;opacity:1;transform:scale(.6);padding:20px}.search-modal input{background:0 0;font-size:36px;height:60px;padding-left:15px;border:0;color:#fff;border-bottom:1px solid #9a9a9a;border-radius:0;box-shadow:0 0!important}#login-popup{min-height:100vh;display:none;align-items:center;justify-content:center;position:fixed;top:0;z-index:999;left:0;right:0;bottom:0;background:rgba(0,0,0,.7)}#login-popup .popup-wrap{background:url(/wp-content/uploads/2020/08/Web-1920-–-5-min-1.jpg) no-repeat;background-size:100% 100%;background-position:center center;animation:shrinkeven1 2s infinite alternate;padding:45px 60px;max-width:500px;margin:auto;position:relative;min-height:600px}@keyframes shrinkeven1{0%{background-size:100% 100%}100%{background-size:104% 104%}}#login-popup .popup-wrap::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:99;background:rgb(0 0 0/41%)}#login-popup a{color:#eab91d!important;text-decoration:none}#login-popup .close-btn{margin:0;position:fixed;top:0;right:0;opacity:1;transform:scale(.6);padding:20px;z-index:999}footer .mobile-nav a{text-transform:uppercase}footer h6{font-size:14px;font-weight:400;color:#d3d3d3;letter-spacing:1.5px}footer ul{list-style:none;padding:0;margin:0}footer .navigation ul li a{margin:0 0 15px;display:block}footer a{color:#d3d3d3;text-decoration:none;font-size:13px}@media (max-width:767px){.second-navigation a.back-btn{position:static;top:0;left:0;padding:0;min-width:25px;display:inline-block}.second-navigation .subheading h3{font-size:14px;color:#cccbcb}.second-nav-wrapper .padding-wrapper li{padding:0}.menu-container ul.padding-wrapper{padding-right:25px}a.active .plusminus::before{bottom:1px;content:'';height:15px;position:absolute;right:0;transform-origin:bottom;width:1.3px;-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-webkit-transform:rotate(-45deg);transform:rotate(-45deg);top:-10px;margin-left:2px}a.active .plusminus::after{border-bottom-style:solid;border-bottom-width:1.3px;border-right-style:solid;border-right-width:1.3px;content:'';display:inline-block;height:8px;left:0;position:absolute;top:0;width:8px}.menu-container a.third{padding-bottom:15px!important}.menu-container ul{margin:0!important}.menu-container .navigation .first-part,.second-navigation .second-nav-wrapper{border-left:none;width:100%;padding:70px 0 50px 20px}.menu-container .navigation .first-part{min-height:45vh}.menu-container .navigation .second-part{border-left:none;min-height:55vh;width:100%;padding:30px 0 50px 20px}.menu-container ul li.submenu-list a{margin:0;padding-bottom:30px;font-size:14px}.menu-container ul li a{font-size:14px}.second-navigation .second-nav-wrapper ul li a.third{margin:0;font-size:14px}.second-navigation .second-nav-wrapper ul li a{margin:0;font-size:14px}.second-navigation .subheading{position:absolute;padding:20px 0;left:20px;background:#000}.close-nav,.menu-container ul li a.close-nav-second{position:fixed;top:23px;right:30px;z-index:999;display:none}.menu-container ul li.submenu-list a{margin:0%}#login-popup .popup-wrap{padding:45px 25px}header img.logo{max-width:43px!important;min-width:43px!important}#home-page #banner .white-btn{border:2px solid #fff;margin:auto;font-size:12px;padding:8px 22px;font-weight:300;box-shadow:0 0!important}footer .navigation ul li a{margin:0;padding:20px 0;display:block;font-size:14px;font-weight:400;border-bottom:1px solid #4a4a4a}footer a{font-size:12px}.search-modal .row{margin-bottom:100px}.search-modal input{font-size:26px;width:88%}.menu-container,.second-navigation{min-width:260px;max-width:260px}}@media (min-width:1024px){.menu-container .bg-wrapper{background:#fff;width:100%;height:50px}.second-navigation .bg-wrapper{background:#000;width:100%;height:50px}}@media (min-width:768px){#banner{min-height:100vh}}@media (min-width:1024px){.custom-container{max-width:90%}}@media (max-width:767px){#home-page #carousel .owl-stage-outer,#home-page #carousel .owl-nav{min-height:100vw}}.header .search-wrapper{position:fixed;top:0;width:100%;left:0;right:0;background:#fff;display:none;box-shadow:0 0 2px 4px rgba(0,0,0,.2)}#search .search-wrap{display:flex;align-items:center;padding:10px 20px;opacity:1}#search{position:fixed;width:100%;background:rgba(89,93,95,.95);z-index:999999999;display:none;overflow:hidden}#search .search-wrap{align-items:center!important;height:100vh;margin:auto;width:90%;display:flex;justify-items:center!important;align-items:center;padding:10px 20px;opacity:1}.search-wrapper .form-control{color:#fff!important;height:68px!important;background:0 0;border:none;border-bottom:1px solid #fff!important}#search .search-wrap .close{margin:0;position:fixed;top:20px;right:20px;opacity:1;fill:#fff;padding:10px}.search-section input.auto-suggest-front,.asr-container{border:none;width:100%;overflow-y:auto;margin-top:5px;font-size:24px;padding-bottom:12px!important;padding:10px 0}.asr-container{width:100%}.mejs-offscreen{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal}.mejs-container{background:#000;font-family:Helvetica,Arial,serif;position:relative;text-align:left;text-indent:0;vertical-align:top}.mejs-container,.mejs-container *{box-sizing:border-box}.mejs-container video::-webkit-media-controls,.mejs-container video::-webkit-media-controls-panel,.mejs-container video::-webkit-media-controls-panel-container,.mejs-container video::-webkit-media-controls-start-playback-button{-webkit-appearance:none;display:none!important}.mejs-mediaelement{left:0;position:absolute;top:0}.mejs-mediaelement{height:100%;width:100%;z-index:0}.mejs-poster{background-position:50% 50%;background-repeat:no-repeat;background-size:cover;left:0;position:absolute;top:0;z-index:1}.mejs-overlay{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;left:0;position:absolute;top:0}.mejs-layer{z-index:1}.mejs-overlay-button{background:url(https://www.sobha.com/wp-includes/js/mediaelement/mejs-controls.svg) no-repeat;background-position:0 -39px;height:80px;width:80px}.mejs-overlay-loading{height:80px;width:80px}.mejs-overlay-loading-bg-img{-webkit-animation:a 1s linear infinite;animation:a 1s linear infinite;background:transparent url(https://www.sobha.com/wp-includes/js/mediaelement/mejs-controls.svg) -160px -40px no-repeat;display:block;height:80px;width:80px;z-index:1}@-webkit-keyframes a{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes a{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}.mejs-controls{bottom:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:40px;left:0;list-style-type:none;margin:0;padding:0 10px;position:absolute;width:100%;z-index:3}.mejs-controls:not([style*="display:none"]){background:rgba(255,0,0,.7);background:-webkit-linear-gradient(transparent,rgba(0,0,0,.35));background:linear-gradient(transparent,rgba(0,0,0,.35))}.mejs-button,.mejs-time,.mejs-time-rail{font-size:10px;height:40px;line-height:10px;margin:0;width:32px}.mejs-button>button{background:transparent url(https://www.sobha.com/wp-includes/js/mediaelement/mejs-controls.svg);border:0;display:block;font-size:0;height:20px;line-height:0;margin:10px 6px;overflow:hidden;padding:0;position:absolute;text-decoration:none;width:20px}.mejs-container-keyboard-inactive [role=slider],.mejs-container-keyboard-inactive a,.mejs-container-keyboard-inactive button{outline:0}.mejs-time{box-sizing:content-box;color:#fff;font-size:11px;font-weight:700;height:24px;overflow:hidden;padding:16px 6px 0;text-align:center;width:auto}.mejs-play>button{background-position:0 0}.mejs-time-rail{direction:ltr;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;height:40px;margin:0 10px;padding-top:10px;position:relative}.mejs-time-buffering,.mejs-time-current,.mejs-time-float,.mejs-time-float-corner,.mejs-time-float-current,.mejs-time-hovered,.mejs-time-loaded,.mejs-time-total{border-radius:2px;display:block;height:10px;position:absolute}.mejs-time-total{background:hsla(0,0%,100%,.3);margin:5px 0 0;width:100%}.mejs-time-buffering{-webkit-animation:b 2s linear infinite;animation:b 2s linear infinite;background:-webkit-linear-gradient(135deg,hsla(0,0%,100%,.4) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.4) 0,hsla(0,0%,100%,.4) 75%,transparent 0,transparent);background:linear-gradient(-45deg,hsla(0,0%,100%,.4) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.4) 0,hsla(0,0%,100%,.4) 75%,transparent 0,transparent);background-size:15px 15px;width:100%}@-webkit-keyframes b{0%{background-position:0 0}to{background-position:30px 0}}@keyframes b{0%{background-position:0 0}to{background-position:30px 0}}.mejs-time-loaded{background:hsla(0,0%,100%,.3)}.mejs-time-current,.mejs-time-handle-content{background:hsla(0,0%,100%,.9)}.mejs-time-hovered{background:hsla(0,0%,100%,.5);z-index:10}.mejs-time-buffering,.mejs-time-current,.mejs-time-hovered,.mejs-time-loaded{left:0;-webkit-transform:scaleX(0);-ms-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;width:100%}.mejs-time-buffering{-webkit-transform:scaleX(1);-ms-transform:scaleX(1);transform:scaleX(1)}.mejs-time-hovered.no-hover{-webkit-transform:scaleX(0)!important;-ms-transform:scaleX(0)!important;transform:scaleX(0)!important}.mejs-time-handle,.mejs-time-handle-content{border:4px solid transparent;left:0;position:absolute;-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0);z-index:11}.mejs-time-handle-content{border:4px solid hsla(0,0%,100%,.9);border-radius:50%;height:10px;left:-7px;top:-4px;-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);width:10px}.mejs-time-float{background:#eee;border:1px solid #333;bottom:100%;color:#111;display:none;height:17px;margin-bottom:9px;position:absolute;text-align:center;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:36px}.mejs-time-float-current{display:block;left:0;margin:2px;text-align:center;width:30px}.mejs-time-float-corner{border:5px solid #eee;border-color:#eee transparent transparent;border-radius:0;display:block;height:0;left:50%;line-height:0;position:absolute;top:100%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:0}.mejs-fullscreen-button>button{background-position:-80px 0}.mejs-unmute>button{background-position:-40px 0}.mejs-volume-button{position:relative}.mejs-volume-button>.mejs-volume-slider{-webkit-backface-visibility:hidden;background:rgba(50,50,50,.7);border-radius:0;bottom:100%;display:none;height:115px;left:50%;margin:0;position:absolute;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:25px;z-index:1}.mejs-volume-total{background:hsla(0,0%,100%,.5);height:100px;left:50%;margin:0;position:absolute;top:8px;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:2px}.mejs-volume-current{left:0;margin:0;width:100%}.mejs-volume-current,.mejs-volume-handle{background:hsla(0,0%,100%,.9);position:absolute}.mejs-volume-handle{border-radius:1px;height:6px;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);width:16px}.mejs-overlay-error{position:relative}.mejs-container{clear:both;max-width:100%}.mejs-container *{font-family:Helvetica,Arial}.mejs-container,.mejs-container .mejs-controls{background:#222}.mejs-time{font-weight:400;word-wrap:normal}.mejs-controls .mejs-time-rail .mejs-time-loaded{background:#fff}.mejs-controls .mejs-time-rail .mejs-time-current{background:#0073aa}.mejs-controls .mejs-time-rail .mejs-time-total{background:rgba(255,255,255,.33)}.mejs-controls .mejs-time-rail span{border-radius:0}.mejs-overlay-loading{background:0 0}.wp-video{max-width:100%;height:auto}.wp-video-shortcode video,video.wp-video-shortcode{max-width:100%;display:inline-block}</style><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cb9d42d18609466995874e9a-|49"></script><link rel="preload" href="/wp-content/cache/min/1/684b214c7083766d92234c53d43b2c90.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media="all" data-minify="1" />
+<head>
+<title>AYAL Limited - Builders in Bangalore | Real Estate Company in India</title>
 <meta name="description" content="AYAL Limited is an Indian multinational real estate company headquartered in Bangalore, India. A trusted builder since 1995." />
-<link rel="canonical" href="/" />
+<link rel="canonical" href="https://kahihia.github.io/Ayal/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="AYAL Limited - Builders in Bangalore | Real Estate Company in India" />
 <meta property="og:description" content="AYAL Limited is an Indian multinational real estate company headquartered in Bangalore, India. A trusted builder since 1995." />
-<meta property="og:url" content="https://www.sobha.com/" />
+<meta property="og:url" content="https://kahihia.github.io/Ayal/" />
 <meta property="og:site_name" content="AYAL Limited" />
-<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:publisher" content="https://www.facebook.com/ayalltd" />
 <meta property="article:modified_time" content="2024-01-25T08:03:48+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@Ayalltd" />
-<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.sobha.com/","url":"https://www.sobha.com","name":"AYAL Limited - Builders in Bangalore | Real Estate Company in India","isPartOf":{"@id":"https://www.sobha.com/#website"},"about":{"@id":"https://www.sobha.com/#organization"},"datePublished":"2020-08-13T10:33:38+00:00","dateModified":"2024-01-25T08:03:48+00:00","description":"AYAL Limited is an Indian multinational real estate company headquartered in Bangalore, India. A trusted builder since 1995.","breadcrumb":{"@id":"https://www.sobha.com#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.sobha.com/#website","url":"https://www.sobha.com/","name":"AYAL Limited","description":"Passion at Work","publisher":{"@id":"https://www.sobha.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.sobha.com/#organization","name":"AYAL Limited","url":"https://www.sobha.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.sobha.com/#/schema/logo/image/","url":"https://www.sobha.com/wp-content/uploads/2021/01/logo-normal.svg","contentUrl":"https://www.sobha.com/wp-content/uploads/2021/01/logo-normal.svg","width":75,"height":140,"caption":"AYAL Limited"},"image":{"@id":"https://www.sobha.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/sobhaltd","https://twitter.com/Ayalltd","https://www.instagram.com/sobhaltd/","https://www.youtube.com/c/Ayal","https://www.linkedin.com/company/sobhaltd/mycompany/"]}]}</script>
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://kahihia.github.io/Ayal/","url":"https://www.ayal.com","name":"AYAL Limited - Builders in Bangalore | Real Estate Company in India","isPartOf":{"@id":"https://kahihia.github.io/Ayal/#website"},"about":{"@id":"https://kahihia.github.io/Ayal/#organization"},"datePublished":"2020-08-13T10:33:38+00:00","dateModified":"2024-01-25T08:03:48+00:00","description":"AYAL Limited is an Indian multinational real estate company headquartered in Bangalore, India. A trusted builder since 1995.","breadcrumb":{"@id":"https://www.ayal.com#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.ayal.com"]}]},{"@type":"BreadcrumbList","@id":"https://www.ayal.com#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://kahihia.github.io/Ayal/#website","url":"https://kahihia.github.io/Ayal/","name":"AYAL Limited","description":"Passion at Work","publisher":{"@id":"https://kahihia.github.io/Ayal/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://kahihia.github.io/Ayal/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://kahihia.github.io/Ayal/#organization","name":"AYAL Limited","url":"https://kahihia.github.io/Ayal/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://kahihia.github.io/Ayal/#/schema/logo/image/","url":"https://kahihia.github.io/Ayal/wp-content/uploads/2021/01/logo-normal.svg","contentUrl":"https://kahihia.github.io/Ayal/wp-content/uploads/2021/01/logo-normal.svg","width":75,"height":140,"caption":"AYAL Limited"},"image":{"@id":"https://kahihia.github.io/Ayal/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/ayalltd","https://twitter.com/Ayalltd","https://www.instagram.com/ayalltd/","https://www.youtube.com/c/Ayal","https://www.linkedin.com/company/ayalltd/mycompany/"]}]}</script>
 <meta name="google-site-verification" content="UXFnJ3gSJ-NJ0FJOC8Ang-c_CDfg_PJB8xQdgNZIKxg" />
 
 <link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com" />
-<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
 <style>
 img.wp-smiley,
 img.emoji {
@@ -40,47 +34,54 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
+<link rel="stylesheet" id="auto-search-suggestion-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/auto-search-suggestion/css/jquery-ui.css?ver=1.0.0" media="all" />
+<link rel="stylesheet" id="wp-block-library-css" href="https://kahihia.github.io/Ayal/wp-includes/css/dist/block-library/style.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
 <style id="global-styles-inline-css">
 body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
 </style>
+<link rel="stylesheet" id="search-style-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/auto-search-suggestion/css/front.css?ver=1712561605" media="all" />
+<link rel="stylesheet" id="contact-form-7-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.6.3" media="all" />
+<link rel="stylesheet" id="nbcpf-intlTelInput-style-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/country-phone-field-contact-form-7/assets/css/intlTelInput.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="nbcpf-countryFlag-style-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/country-phone-field-contact-form-7/assets/css/countrySelect.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
 <style id="dominant-color-styles-inline-css">
 img[data-dominant-color]:not(.has-transparency) { background-color: var(--dominant-color); background-clip: content-box, padding-box; }
 </style>
-<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cb9d42d18609466995874e9a-|49"></script><link rel="preload" href="/wp-content/themes/sobha/css/magnific-popup.min.css?ver=900971d5413984607bdbeb64019541bd" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')" media="all" />
-<style id="rocket-lazyload-inline-css">
-.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://www.sobha.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
-</style>
-<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer></script>
-<script id="mo_customer_validation_inttelinput_script-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
+<link rel="stylesheet" id="bootsrab-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/bootstrap-scss/bootstrap.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="owl-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/owl.theme.default.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="owl-main-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/owl.carousel.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="fontawesome-css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="animate-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/animate.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="custom-css-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/customscrollbar.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="mag-popup-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/magnific-popup.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="lightgal-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/lightgallery.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="photoswipe-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/photoswipe.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="default-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/default-skin.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="main-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/style.css??php_echo_time();_?&#038;ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="custom-main-style-css" href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/css/custom.css??php_echo_time();_?&#038;ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="dtpicker-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/date-time-picker-field/assets/js/vendor/datetimepicker/jquery.datetimepicker.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<link rel="stylesheet" id="mo_customer_validation_inttelinput_style-css" href="https://kahihia.github.io/Ayal/wp-content/plugins/miniorange-otp-verification/includes/css/intlTelInput.min.css?version=3.9.0&#038;ver=900971d5413984607bdbeb64019541bd" media="all" />
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="mo_customer_validation_inttelinput_script-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
 var moselecteddropdown = {"selecteddropdown":[{"name":"All Countries","alphacode":"","countryCode":""},{"name":"Afghanistan (\u202b\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646\u202c\u200e)","alphacode":"af","countryCode":"+93"},{"name":"Albania (Shqip\u00ebri)","alphacode":"al","countryCode":"+355"},{"name":"Algeria (\u202b\u0627\u0644\u062c\u0632\u0627\u0626\u0631\u202c\u200e)","alphacode":"dz","countryCode":"+213"},{"name":"American Samoa","alphacode":"as","countryCode":"+1684"},{"name":"Andorra","alphacode":"ad","countryCode":"+376"},{"name":"Angola","alphacode":"ao","countryCode":"+244"},{"name":"Anguilla","alphacode":"ai","countryCode":"+1264"},{"name":"Antigua and Barbuda","alphacode":"ag","countryCode":"+1268"},{"name":"Argentina","alphacode":"ar","countryCode":"+54"},{"name":"Armenia (\u0540\u0561\u0575\u0561\u057d\u057f\u0561\u0576)","alphacode":"am","countryCode":"+374"},{"name":"Aruba","alphacode":"aw","countryCode":"+297"},{"name":"Australia","alphacode":"au","countryCode":"+61"},{"name":"Austria (\u00d6sterreich)","alphacode":"at","countryCode":"+43"},{"name":"Azerbaijan (Az\u0259rbaycan)","alphacode":"az","countryCode":"+994"},{"name":"Bahamas","alphacode":"bs","countryCode":"+1242"},{"name":"Bahrain (\u202b\u0627\u0644\u0628\u062d\u0631\u064a\u0646\u202c\u200e)","alphacode":"bh","countryCode":"+973"},{"name":"Bangladesh (\u09ac\u09be\u0982\u09b2\u09be\u09a6\u09c7\u09b6)","alphacode":"bd","countryCode":"+880"},{"name":"Barbados","alphacode":"bb","countryCode":"+1246"},{"name":"Belarus (\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c)","alphacode":"by","countryCode":"+375"},{"name":"Belgium (Belgi\u00eb)","alphacode":"be","countryCode":"+32"},{"name":"Belize","alphacode":"bz","countryCode":"+501"},{"name":"Benin (B\u00e9nin)","alphacode":"bj","countryCode":"+229"},{"name":"Bermuda","alphacode":"bm","countryCode":"+1441"},{"name":"Bhutan (\u0f60\u0f56\u0fb2\u0f74\u0f42)","alphacode":"bt","countryCode":"+975"},{"name":"Bolivia","alphacode":"bo","countryCode":"+591"},{"name":"Bosnia and Herzegovina (\u0411\u043e\u0441\u043d\u0430 \u0438 \u0425\u0435\u0440\u0446\u0435\u0433\u043e\u0432\u0438\u043d\u0430)","alphacode":"ba","countryCode":"+387"},{"name":"Botswana","alphacode":"bw","countryCode":"+267"},{"name":"Brazil (Brasil)","alphacode":"br","countryCode":"+55"},{"name":"British Indian Ocean Territory","alphacode":"io","countryCode":"+246"},{"name":"British Virgin Islands","alphacode":"vg","countryCode":"+1284"},{"name":"Brunei","alphacode":"bn","countryCode":"+673"},{"name":"Bulgaria (\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f)","alphacode":"bg","countryCode":"+359"},{"name":"Burkina Faso","alphacode":"bf","countryCode":"+226"},{"name":"Burundi (Uburundi)","alphacode":"bi","countryCode":"+257"},{"name":"Cambodia (\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6)","alphacode":"kh","countryCode":"+855"},{"name":"Cameroon (Cameroun)","alphacode":"cm","countryCode":"+237"},{"name":"Canada","alphacode":"ca","countryCode":"+1"},{"name":"Cape Verde (Kabu Verdi)","alphacode":"cv","countryCode":"+238"},{"name":"Caribbean Netherlands","alphacode":"bq","countryCode":"+599"},{"name":"Cayman Islands","alphacode":"ky","countryCode":"+1345"},{"name":"Central African Republic (R\u00e9publique centrafricaine)","alphacode":"cf","countryCode":"+236"},{"name":"Chad (Tchad)","alphacode":"td","countryCode":"+235"},{"name":"Chile","alphacode":"cl","countryCode":"+56"},{"name":"China (\u4e2d\u56fd)","alphacode":"cn","countryCode":"+86"},{"name":"Christmas Island","alphacode":"cx","countryCode":"+61"},{"name":"Cocos (Keeling) Islands","alphacode":"cc","countryCode":"+61"},{"name":"Colombia","alphacode":"co","countryCode":"+57"},{"name":"Comoros (\u202b\u062c\u0632\u0631 \u0627\u0644\u0642\u0645\u0631\u202c\u200e)","alphacode":"km","countryCode":"+269"},{"name":"Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)","alphacode":"cd","countryCode":"+243"},{"name":"Congo (Republic) (Congo-Brazzaville)","alphacode":"cg","countryCode":"+242"},{"name":"Cook Islands","alphacode":"ck","countryCode":"+682"},{"name":"Costa Rica","alphacode":"cr","countryCode":"+506"},{"name":"C\u00f4te d\u2019Ivoire","alphacode":"ci","countryCode":"+225"},{"name":"Croatia (Hrvatska)","alphacode":"hr","countryCode":"+385"},{"name":"Cuba","alphacode":"cu","countryCode":"+53"},{"name":"Cura\u00e7ao","alphacode":"cw","countryCode":"+599"},{"name":"Cyprus (\u039a\u03cd\u03c0\u03c1\u03bf\u03c2)","alphacode":"cy","countryCode":"+357"},{"name":"Czech Republic (\u010cesk\u00e1 republika)","alphacode":"cz","countryCode":"+420"},{"name":"Denmark (Danmark)","alphacode":"dk","countryCode":"+45"},{"name":"Djibouti","alphacode":"dj","countryCode":"+253"},{"name":"Dominica","alphacode":"dm","countryCode":"+1767"},{"name":"Dominican Republic (Rep\u00fablica Dominicana)","alphacode":"do","countryCode":"+1"},{"name":"Ecuador","alphacode":"ec","countryCode":"+593"},{"name":"Egypt (\u202b\u0645\u0635\u0631\u202c\u200e)","alphacode":"eg","countryCode":"+20"},{"name":"El Salvador","alphacode":"sv","countryCode":"+503"},{"name":"Equatorial Guinea (Guinea Ecuatorial)","alphacode":"gq","countryCode":"+240"},{"name":"Eritrea","alphacode":"er","countryCode":"+291"},{"name":"Estonia (Eesti)","alphacode":"ee","countryCode":"+372"},{"name":"Ethiopia","alphacode":"et","countryCode":"+251"},{"name":"Falkland Islands (Islas Malvinas)","alphacode":"fk","countryCode":"+500"},{"name":"Faroe Islands (F\u00f8royar)","alphacode":"fo","countryCode":"+298"},{"name":"Fiji","alphacode":"fj","countryCode":"+679"},{"name":"Finland (Suomi)","alphacode":"fi","countryCode":"+358"},{"name":"France","alphacode":"fr","countryCode":"+33"},{"name":"French Guiana (Guyane fran\u00e7aise)","alphacode":"gf","countryCode":"+594"},{"name":"French Polynesia (Polyn\u00e9sie fran\u00e7aise)","alphacode":"pf","countryCode":"+689"},{"name":"Gabon","alphacode":"ga","countryCode":"+241"},{"name":"Gambia","alphacode":"gm","countryCode":"+220"},{"name":"Georgia (\u10e1\u10d0\u10e5\u10d0\u10e0\u10d7\u10d5\u10d4\u10da\u10dd)","alphacode":"ge","countryCode":"+995"},{"name":"Germany (Deutschland)","alphacode":"de","countryCode":"+49"},{"name":"Ghana (Gaana)","alphacode":"gh","countryCode":"+233"},{"name":"Gibraltar","alphacode":"gi","countryCode":"+350"},{"name":"Greece (\u0395\u03bb\u03bb\u03ac\u03b4\u03b1)","alphacode":"gr","countryCode":"+30"},{"name":"Greenland (Kalaallit Nunaat)","alphacode":"gl","countryCode":"+299"},{"name":"Grenada","alphacode":"gd","countryCode":"+1473"},{"name":"Guadeloupe","alphacode":"gp","countryCode":"+590"},{"name":"Guam","alphacode":"gu","countryCode":"+1671"},{"name":"Guatemala","alphacode":"gt","countryCode":"+502"},{"name":"Guernsey","alphacode":"gg","countryCode":"+44"},{"name":"Guinea (Guin\u00e9e)","alphacode":"gn","countryCode":"+224"},{"name":"Guinea-Bissau (Guin\u00e9 Bissau)","alphacode":"gw","countryCode":"+245"},{"name":"Guyana","alphacode":"gy","countryCode":"+592"},{"name":"Haiti","alphacode":"ht","countryCode":"+509"},{"name":"Honduras","alphacode":"hn","countryCode":"+504"},{"name":"Hong Kong (\u9999\u6e2f)","alphacode":"hk","countryCode":"+852"},{"name":"Hungary (Magyarorsz\u00e1g)","alphacode":"hu","countryCode":"+36"},{"name":"Iceland (\u00cdsland)","alphacode":"is","countryCode":"+354"},{"name":"India (\u092d\u093e\u0930\u0924)","alphacode":"in","countryCode":"+91"},{"name":"Indonesia","alphacode":"id","countryCode":"+62"},{"name":"Iran (\u202b\u0627\u06cc\u0631\u0627\u0646\u202c\u200e)","alphacode":"ir","countryCode":"+98"},{"name":"Iraq (\u202b\u0627\u0644\u0639\u0631\u0627\u0642\u202c\u200e)","alphacode":"iq","countryCode":"+964"},{"name":"Ireland","alphacode":"ie","countryCode":"+353"},{"name":"Isle of Man","alphacode":"im","countryCode":"+44"},{"name":"Israel (\u202b\u05d9\u05e9\u05e8\u05d0\u05dc\u202c\u200e)","alphacode":"il","countryCode":"+972"},{"name":"Italy (Italia)","alphacode":"it","countryCode":"+39"},{"name":"Jamaica","alphacode":"jm","countryCode":"+1876"},{"name":"Japan (\u65e5\u672c)","alphacode":"jp","countryCode":"+81"},{"name":"Jersey","alphacode":"je","countryCode":"+44"},{"name":"Jordan (\u202b\u0627\u0644\u0623\u0631\u062f\u0646\u202c\u200e)","alphacode":"jo","countryCode":"+962"},{"name":"Kazakhstan (\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d)","alphacode":"kz","countryCode":"+7"},{"name":"Kenya","alphacode":"ke","countryCode":"+254"},{"name":"Kiribati","alphacode":"ki","countryCode":"+686"},{"name":"Kosovo","alphacode":"xk","countryCode":"+383"},{"name":"Kuwait (\u202b\u0627\u0644\u0643\u0648\u064a\u062a\u202c\u200e)","alphacode":"kw","countryCode":"+965"},{"name":"Kyrgyzstan (\u041a\u044b\u0440\u0433\u044b\u0437\u0441\u0442\u0430\u043d)","alphacode":"kg","countryCode":"+996"},{"name":"Laos (\u0ea5\u0eb2\u0ea7)","alphacode":"la","countryCode":"+856"},{"name":"Latvia (Latvija)","alphacode":"lv","countryCode":"+371"},{"name":"Lebanon (\u202b\u0644\u0628\u0646\u0627\u0646\u202c\u200e)","alphacode":"lb","countryCode":"+961"},{"name":"Lesotho","alphacode":"ls","countryCode":"+266"},{"name":"Liberia","alphacode":"lr","countryCode":"+231"},{"name":"Libya (\u202b\u0644\u064a\u0628\u064a\u0627\u202c\u200e)","alphacode":"ly","countryCode":"+218"},{"name":"Liechtenstein","alphacode":"li","countryCode":"+423"},{"name":"Lithuania (Lietuva)","alphacode":"lt","countryCode":"+370"},{"name":"Luxembourg","alphacode":"lu","countryCode":"+352"},{"name":"Macau (\u6fb3\u9580)","alphacode":"mo","countryCode":"+853"},{"name":"Macedonia (FYROM) (\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430)","alphacode":"mk","countryCode":"+389"},{"name":"Madagascar (Madagasikara)","alphacode":"mg","countryCode":"+261"},{"name":"Malawi","alphacode":"mw","countryCode":"+265"},{"name":"Malaysia","alphacode":"my","countryCode":"+60"},{"name":"Maldives","alphacode":"mv","countryCode":"+960"},{"name":"Mali","alphacode":"ml","countryCode":"+223"},{"name":"Malta","alphacode":"mt","countryCode":"+356"},{"name":"Marshall Islands","alphacode":"mh","countryCode":"+692"},{"name":"Martinique","alphacode":"mq","countryCode":"+596"},{"name":"Mauritania (\u202b\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627\u202c\u200e)","alphacode":"mr","countryCode":"+222"},{"name":"Mauritius (Moris)","alphacode":"mu","countryCode":"+230"},{"name":"Mayotte","alphacode":"yt","countryCode":"+262"},{"name":"Mexico (M\u00e9xico)","alphacode":"mx","countryCode":"+52"},{"name":"Micronesia","alphacode":"fm","countryCode":"+691"},{"name":"Moldova (Republica Moldova)","alphacode":"md","countryCode":"+373"},{"name":"Monaco","alphacode":"mc","countryCode":"+377"},{"name":"Mongolia (\u041c\u043e\u043d\u0433\u043e\u043b)","alphacode":"mn","countryCode":"+976"},{"name":"Montenegro (Crna Gora)","alphacode":"me","countryCode":"+382"},{"name":"Montserrat","alphacode":"ms","countryCode":"+1664"},{"name":"Morocco (\u202b\u0627\u0644\u0645\u063a\u0631\u0628\u202c\u200e)","alphacode":"ma","countryCode":"+212"},{"name":"Mozambique (Mo\u00e7ambique)","alphacode":"mz","countryCode":"+258"},{"name":"Myanmar (Burma) (\u1019\u103c\u1014\u103a\u1019\u102c)","alphacode":"mm","countryCode":"+95"},{"name":"Namibia (Namibi\u00eb)","alphacode":"na","countryCode":"+264"},{"name":"Nauru","alphacode":"nr","countryCode":"+674"},{"name":"Nepal (\u0928\u0947\u092a\u093e\u0932)","alphacode":"np","countryCode":"+977"},{"name":"Netherlands (Nederland)","alphacode":"nl","countryCode":"+31"},{"name":"New Caledonia (Nouvelle-Cal\u00e9donie)","alphacode":"nc","countryCode":"+687"},{"name":"New Zealand","alphacode":"nz","countryCode":"+64"},{"name":"Nicaragua","alphacode":"ni","countryCode":"+505"},{"name":"Niger (Nijar)","alphacode":"ne","countryCode":"+227"},{"name":"Nigeria","alphacode":"ng","countryCode":"+234"},{"name":"Niue","alphacode":"nu","countryCode":"+683"},{"name":"Norfolk Island","alphacode":"nf","countryCode":"+672"},{"name":"North Korea (\uc870\uc120 \ubbfc\uc8fc\uc8fc\uc758 \uc778\ubbfc \uacf5\ud654\uad6d)","alphacode":"kp","countryCode":"+850"},{"name":"Northern Mariana Islands","alphacode":"mp","countryCode":"+1670"},{"name":"Norway (Norge)","alphacode":"no","countryCode":"+47"},{"name":"Oman (\u202b\u0639\u064f\u0645\u0627\u0646\u202c\u200e)","alphacode":"om","countryCode":"+968"},{"name":"Pakistan (\u202b\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u202c\u200e)","alphacode":"pk","countryCode":"+92"},{"name":"Palau","alphacode":"pw","countryCode":"+680"},{"name":"Palestine (\u202b\u0641\u0644\u0633\u0637\u064a\u0646\u202c\u200e)","alphacode":"ps","countryCode":"+970"},{"name":"Panama (Panam\u00e1)","alphacode":"pa","countryCode":"+507"},{"name":"Papua New Guinea","alphacode":"pg","countryCode":"+675"},{"name":"Paraguay","alphacode":"py","countryCode":"+595"},{"name":"Peru (Per\u00fa)","alphacode":"pe","countryCode":"+51"},{"name":"Philippines","alphacode":"ph","countryCode":"+63"},{"name":"Poland (Polska)","alphacode":"pl","countryCode":"+48"},{"name":"Portugal","alphacode":"pt","countryCode":"+351"},{"name":"Puerto Rico","alphacode":"pr","countryCode":"+1"},{"name":"Qatar (\u202b\u0642\u0637\u0631\u202c\u200e)","alphacode":"qa","countryCode":"+974"},{"name":"R\u00e9union (La R\u00e9union)","alphacode":"re","countryCode":"+262"},{"name":"Romania (Rom\u00e2nia)","alphacode":"ro","countryCode":"+40"},{"name":"Russia (\u0420\u043e\u0441\u0441\u0438\u044f)","alphacode":"ru","countryCode":"+7"},{"name":"Rwanda","alphacode":"rw","countryCode":"+250"},{"name":"Saint Barth\u00e9lemy","alphacode":"bl","countryCode":"+590"},{"name":"Saint Helena","alphacode":"sh","countryCode":"+290"},{"name":"Saint Kitts and Nevis","alphacode":"kn","countryCode":"+1869"},{"name":"Saint Lucia","alphacode":"lc","countryCode":"+1758"},{"name":"Saint Martin (Saint-Martin (partie fran\u00e7aise))","alphacode":"mf","countryCode":"+590"},{"name":"Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)","alphacode":"pm","countryCode":"+508"},{"name":"Saint Vincent and the Grenadines","alphacode":"vc","countryCode":"+1784"},{"name":"Samoa","alphacode":"ws","countryCode":"+685"},{"name":"San Marino","alphacode":"sm","countryCode":"+378"},{"name":"S\u00e3o Tom\u00e9 and Pr\u00edncipe (S\u00e3o Tom\u00e9 e Pr\u00edncipe)","alphacode":"st","countryCode":"+239"},{"name":"Saudi Arabia (\u202b\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\u202c\u200e)","alphacode":"sa","countryCode":"+966"},{"name":"Senegal (S\u00e9n\u00e9gal)","alphacode":"sn","countryCode":"+221"},{"name":"Serbia (\u0421\u0440\u0431\u0438\u0458\u0430)","alphacode":"rs","countryCode":"+381"},{"name":"Seychelles","alphacode":"sc","countryCode":"+248"},{"name":"Sierra Leone","alphacode":"sl","countryCode":"+232"},{"name":"Singapore","alphacode":"sg","countryCode":"+65"},{"name":"Sint Maarten","alphacode":"sx","countryCode":"+1721"},{"name":"Slovakia (Slovensko)","alphacode":"sk","countryCode":"+421"},{"name":"Slovenia (Slovenija)","alphacode":"si","countryCode":"+386"},{"name":"Solomon Islands","alphacode":"sb","countryCode":"+677"},{"name":"Somalia (Soomaaliya)","alphacode":"so","countryCode":"+252"},{"name":"South Africa","alphacode":"za","countryCode":"+27"},{"name":"South Korea (\ub300\ud55c\ubbfc\uad6d)","alphacode":"kr","countryCode":"+82"},{"name":"South Sudan (\u202b\u062c\u0646\u0648\u0628 \u0627\u0644\u0633\u0648\u062f\u0627\u0646\u202c\u200e)","alphacode":"ss","countryCode":"+211"},{"name":"Spain (Espa\u00f1a)","alphacode":"es","countryCode":"+34"},{"name":"Sri Lanka (\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0)","alphacode":"lk","countryCode":"+94"},{"name":"Sudan (\u202b\u0627\u0644\u0633\u0648\u062f\u0627\u0646\u202c\u200e)","alphacode":"sd","countryCode":"+249"},{"name":"Suriname","alphacode":"sr","countryCode":"+597"},{"name":"Svalbard and Jan Mayen","alphacode":"sj","countryCode":"+47"},{"name":"Swaziland","alphacode":"sz","countryCode":"+268"},{"name":"Sweden (Sverige)","alphacode":"se","countryCode":"+46"},{"name":"Switzerland (Schweiz)","alphacode":"ch","countryCode":"+41"},{"name":"Syria (\u202b\u0633\u0648\u0631\u064a\u0627\u202c\u200e)","alphacode":"sy","countryCode":"+963"},{"name":"Taiwan (\u53f0\u7063)","alphacode":"tw","countryCode":"+886"},{"name":"Tajikistan","alphacode":"tj","countryCode":"+992"},{"name":"Tanzania","alphacode":"tz","countryCode":"+255"},{"name":"Thailand (\u0e44\u0e17\u0e22)","alphacode":"th","countryCode":"+66"},{"name":"Timor-Leste","alphacode":"tl","countryCode":"+670"},{"name":"Togo","alphacode":"tg","countryCode":"+228"},{"name":"Tokelau","alphacode":"tk","countryCode":"+690"},{"name":"Tonga","alphacode":"to","countryCode":"+676"},{"name":"Trinidad and Tobago","alphacode":"tt","countryCode":"+1868"},{"name":"Tunisia (\u202b\u062a\u0648\u0646\u0633\u202c\u200e)","alphacode":"tn","countryCode":"+216"},{"name":"Turkey (T\u00fcrkiye)","alphacode":"tr","countryCode":"+90"},{"name":"Turkmenistan","alphacode":"tm","countryCode":"+993"},{"name":"Turks and Caicos Islands","alphacode":"tc","countryCode":"+1649"},{"name":"Tuvalu","alphacode":"tv","countryCode":"+688"},{"name":"U.S. Virgin Islands","alphacode":"vi","countryCode":"+1340"},{"name":"Uganda","alphacode":"ug","countryCode":"+256"},{"name":"Ukraine (\u0423\u043a\u0440\u0430\u0457\u043d\u0430)","alphacode":"ua","countryCode":"+380"},{"name":"United Arab Emirates (\u202b\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629\u202c\u200e)","alphacode":"ae","countryCode":"+971"},{"name":"United Kingdom","alphacode":"gb","countryCode":"+44"},{"name":"United States","alphacode":"us","countryCode":"+1"},{"name":"Uruguay","alphacode":"uy","countryCode":"+598"},{"name":"Uzbekistan (O\u02bbzbekiston)","alphacode":"uz","countryCode":"+998"},{"name":"Vanuatu","alphacode":"vu","countryCode":"+678"},{"name":"Vatican City (Citt\u00e0 del Vaticano)","alphacode":"va","countryCode":"+39"},{"name":"Venezuela","alphacode":"ve","countryCode":"+58"},{"name":"Vietnam (Vi\u1ec7t Nam)","alphacode":"vn","countryCode":"+84"},{"name":"Wallis and Futuna (Wallis-et-Futuna)","alphacode":"wf","countryCode":"+681"},{"name":"Western Sahara (\u202b\u0627\u0644\u0635\u062d\u0631\u0627\u0621 \u0627\u0644\u063a\u0631\u0628\u064a\u0629\u202c\u200e)","alphacode":"eh","countryCode":"+212"},{"name":"Yemen (\u202b\u0627\u0644\u064a\u0645\u0646\u202c\u200e)","alphacode":"ye","countryCode":"+967"},{"name":"Zambia","alphacode":"zm","countryCode":"+260"},{"name":"Zimbabwe","alphacode":"zw","countryCode":"+263"},{"name":"\u00c5land Islands","alphacode":"ax","countryCode":"+358"}]};
 </script>
-<script src="/wp-content/plugins/miniorange-otp-verification/includes/js/intlTelInput.min.js?version=3.9.0&#038;ver=900971d5413984607bdbeb64019541bd" id="mo_customer_validation_inttelinput_script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" />
-<link rel="shortlink" href="/" />
-<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2F" />
-<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2F&#038;format=xml" />
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/miniorange-otp-verification/includes/js/intlTelInput.min.js?version=3.9.0&#038;ver=900971d5413984607bdbeb64019541bd" id="mo_customer_validation_inttelinput_script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<link rel="https://api.w.org/" href="https://kahihia.github.io/Ayal/wp-json/" /><link rel="alternate" type="application/json" href="https://kahihia.github.io/Ayal/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://kahihia.github.io/Ayal/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://kahihia.github.io/Ayal/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://kahihia.github.io/Ayal/" />
+<link rel="alternate" type="application/json+oembed" href="https://kahihia.github.io/Ayal/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ayal.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://kahihia.github.io/Ayal/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ayal.com%2F&#038;format=xml" />
 <meta name="generator" content="Performance Lab 1.5.0; modules: images/dominant-color, images/webp-uploads, site-health/audit-autoloaded-options, site-health/audit-enqueued-assets, site-health/audit-full-page-cache, site-health/webp-support, object-cache/persistent-object-cache-health-check">
-<link rel="icon" href="/wp-content/uploads/2020/10/favicon.png" sizes="32x32" />
-<link rel="icon" href="/wp-content/uploads/2020/10/favicon.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="/wp-content/uploads/2020/10/favicon.png" />
-<meta name="msapplication-TileImage" content="https://www.sobha.com/wp-content/uploads/2020/10/favicon.png" />
-<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
-/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
-(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
-var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
-return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
-if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
-setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
-var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
-if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
-else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
-</script> <title>AYAL Limited</title>
+<link rel="icon" href="https://kahihia.github.io/Ayal/wp-content/uploads/2020/10/favicon.png" sizes="32x32" />
+<link rel="icon" href="https://kahihia.github.io/Ayal/wp-content/uploads/2020/10/favicon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://kahihia.github.io/Ayal/wp-content/uploads/2020/10/favicon.png" />
+<meta name="msapplication-TileImage" content="https://kahihia.github.io/Ayal/wp-content/uploads/2020/10/favicon.png" />
+<title>AYAL Limited</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="facebook-domain-verification" content="3ge4xe9curfd96xmi0cio2p7kr32du" />
 
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
       jQuery(document).ready(function( $ ) {
         var urls = window.location.href;
         $('select option[value="'+ urls +'"]').prop('selected', true);
@@ -107,13 +108,13 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 </a>
 </div>
 <div class="col-md-4 col-4 text-center">
-<a href="">
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2065%20132'%3E%3C/svg%3E" width="65" height="132" class="img-fluid logo normal-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited" data-lazy-src="/wp-content/themes/sobha/images/Ayallogo.svg"><noscript><img src="/wp-content/themes/sobha/images/Ayallogo.svg" width="65" height="132" class="img-fluid logo normal-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited"></noscript>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2048%2056'%3E%3C/svg%3E" width="48" height="56" class="img-fluid logo sticky-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited" data-lazy-src="/wp-content/themes/sobha/images/AyalLogowhite.svg"><noscript><img loading="lazy" src="/wp-content/themes/sobha/images/AyalLogowhite.svg" width="48" height="56" class="img-fluid logo sticky-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited"></noscript>
+<a href="https://www.ayal.com">
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/Ayallogo.svg" width="65" height="132" class="img-fluid logo normal-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/AyalLogowhite.svg" width="48" height="56" class="img-fluid logo sticky-logo" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited">
 </a>
 </div>
 <div class="col-md-4 col-4 text-right">
-<img class="search-btn" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" width="20" height="20" class="img-fluid" style="max-width:20px;" data-lazy-src="/wp-content/themes/sobha/images/search.svg"><noscript><img class="search-btn" src="/wp-content/themes/sobha/images/search.svg" width="20" height="20" class="img-fluid" style="max-width:20px;"></noscript>
+<img class="search-btn" src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/search.svg" width="20" height="20" class="img-fluid" style="max-width:20px;">
 </div>
 </div>
 <section id="search" class="search-wrapper">
@@ -122,15 +123,15 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <input type="text" id class="form-control" name="ss" placeholder="Search in AYAL">
 </form>
 
-<svg class="close" width="40px" height="40px"><use xlink:href="/wp-content/themes/sobha/images/icons.svg#close" /></svg>
+<svg class="close" width="40px" height="40px"><use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#close" /></svg>
 </div>
 </section>
 </div>
 <div class="menu-container">
 <div class="bg-wrapper">
 <a href="javascript:" class="close-nav" aria-label="Close Menu" title="Close Menu">
-<img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="img-fluid d-none d-md-block" alt data-lazy-src="/wp-content/themes/sobha/images/close.svg"><noscript><img width="512" height="512" src="/wp-content/themes/sobha/images/close.svg" class="img-fluid d-none d-md-block" alt=""></noscript>
-<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" class="img-fluid d-block d-md-none" data-lazy-src="/wp-content/themes/sobha/images/close.png"><noscript><img width="30" height="30" src="/wp-content/themes/sobha/images/close.png" class="img-fluid d-block d-md-none"></noscript>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.svg" class="img-fluid d-none d-md-block" alt>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.png" class="img-fluid d-block d-md-none">
 </a>
 </div>
 <div class="navigation">
@@ -142,7 +143,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="second-navigation">
 <div class="bg-wrapper">
 <a href="javascript:" class="close-nav-second" aria-label="Close Who we are sub menu" Title="Close Who we are sub menu">
-<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" class="img-fluid d-block" data-lazy-src="/wp-content/themes/sobha/images/close.png"><noscript><img width="30" height="30" src="/wp-content/themes/sobha/images/close.png" class="img-fluid d-block"></noscript>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.png" class="img-fluid d-block">
 </a>
 </div>
 <div class="subheading d-md-none d-flex align-items-center">
@@ -187,7 +188,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="second-navigation">
 <div class="bg-wrapper">
 <a href="javascript:" class="close-nav-second" aria-label="Close What we do Sub Menu" title="Close What we do Sub Menu">
-<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" class="img-fluid d-block" data-lazy-src="/wp-content/themes/sobha/images/close.png"><noscript><img width="30" height="30" src="/wp-content/themes/sobha/images/close.png" class="img-fluid d-block"></noscript>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.png" class="img-fluid d-block">
 </a>
 </div>
 <div class="subheading d-md-none d-flex align-items-center">
@@ -216,8 +217,8 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <li>
 <a class="third" href="/commercial/">Commercial</a>
 <ul>
-<li><a href="/commercial/sobha-city-mall/">AYAL City Mall</a></li>
-<li><a href="/commercial/one-sobha/">1 AYAL</a></li>
+<li><a href="/commercial/ayal-city-mall/">AYAL City Mall</a></li>
+<li><a href="/commercial/one-ayal/">1 AYAL</a></li>
 
 </ul>
 <a class="third" href="/contracting/">Contracting</a>
@@ -254,7 +255,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 
 </li>
 <li class="submenu-list"><a href="/investor-relations/">INVESTOR RELATIONS</a>
-<li class="submenu-list"><a href="https://sobhaprivilege.com/" target="_blank">AYAL PRIVILEGE</a>
+<li class="submenu-list"><a href="https://ayalprivilege.com/" target="_blank">AYAL PRIVILEGE</a>
 
 </ul>
 </div>
@@ -267,13 +268,13 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="row">
 <div class="col-4"></div>
 <div class="col-4 text-center d-none d-md-block">
-<a href="">
-<img width="56" height="115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2056%20115'%3E%3C/svg%3E" class="img-fluid" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited" data-lazy-src="/wp-content/themes/sobha/images/Ayallogo.svg"><noscript><img width="56" height="115" src="/wp-content/themes/sobha/images/Ayallogo.svg" class="img-fluid" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited"></noscript>
+<a href="https://www.ayal.com">
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/Ayallogo.svg" class="img-fluid" style="max-width:65px;min-width: 48px;" alt="Ayal Limited" title="Ayal Limited">
 </a>
 </div>
 <div class="col-4 text-center">
 <a href="javascript:" class="close-btn">
-<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" class="img-fluid" data-lazy-src="/wp-content/themes/sobha/images/close.png"><noscript><img width="30" height="30" src="/wp-content/themes/sobha/images/close.png" class="img-fluid"></noscript>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.png" class="img-fluid">
 </a>
 </div>
 </div>
@@ -282,7 +283,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="form-group">
 
 <div class="search-section">
-<form class="auto-suggest-form" action="https://www.sobha.com" method="get" role="search">
+<form class="auto-suggest-form" action="https://www.ayal.com" method="get" role="search">
 <input class="auto-suggest-front" id="auto-suggest-front" placeholder="Search..." name="ss">
 <button class="auto-suggest-submit" type="submit"><span class="screen-reader-text">Search</span></button>
 </form>
@@ -291,13 +292,13 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="result-section" id="result-section"></div>
 <p class="more-res"><a href>More Results</a></p>
 </div>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
 		jQuery(document).ready(function($) {
 			jQuery('#auto-suggest-front').attr('autocomplete','off');
 
 			var post_type_front = 'city,projects,city';
 			var post_limit_front = '8';
-			var ajaxurl = 'https://www.sobha.com/wp-admin/admin-ajax.php';
+			var ajaxurl = 'https://kahihia.github.io/Ayal/wp-admin/admin-ajax.php';
 			var xhr = null;
 
 			jQuery( "#auto-suggest-front" ).keyup(function() {
@@ -333,7 +334,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 						}else{
 							jQuery('.more-res').show();
 							jQuery('#asr-container').removeClass('no-result');
-							jQuery('.more-res a').attr('href','https://www.sobha.com/?s='+search_key_var2);
+							jQuery('.more-res a').attr('href','https://kahihia.github.io/Ayal/?s='+search_key_var2);
 
 						}
 
@@ -349,7 +350,7 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 	</script>
 <style>
 		.ui-autocomplete-loading {
-			background: url('https://www.sobha.com/wp-content/plugins/auto-search-suggestion/ajax-loader.gif') right center no-repeat !important;
+			background: url('https://kahihia.github.io/Ayal/wp-content/plugins/auto-search-suggestion/ajax-loader.gif') right center no-repeat !important;
 		}
 	</style>
 </div>
@@ -489,8 +490,8 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 
 <div id="home-video" class=" text-center">
 <div style="width: 640px;" class="wp-video"><!--[if lt IE 9]><script>document.createElement('video');</script><![endif]-->
-<video muted playsinline autoplay muted="1" playsinline="1" autoplay="1" class="wp-video-shortcode" id="video-7-1" width="640" height="360" loop="1" autoplay="1" preload="auto"><source type="video/mp4" src="/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4?_=1" /><a href="/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4">https://www.sobha.com/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4</a></video></div> <div class="video-explore">
-<a href="/thiruvananthapuram/sobha-ridge-whispering-hill/?utm_source=homepage&utm_campaign=OrganicRidge&utm_medium=AYAL_HPTop_banner" class="btn white-btn mb-0 mb-md-4">EXPLORE NOW</a>
+<video muted playsinline autoplay muted="1" playsinline="1" autoplay="1" class="wp-video-shortcode" id="video-7-1" width="640" height="360" loop="1" autoplay="1" preload="auto"><source type="video/mp4" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4?_=1" /><a href="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4">https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/Ridge-Ayal-HP_1.mp4</a></video></div> <div class="video-explore">
+<a href="https://kahihia.github.io/Ayal/thiruvananthapuram/ayal-ridge-whispering-hill/?utm_source=homepage&utm_campaign=OrganicRidge&utm_medium=AYAL_HPTop_banner" class="btn white-btn mb-0 mb-md-4">EXPLORE NOW</a>
 </div>
 </div>
 
@@ -500,13 +501,13 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="row">
 <div class="col-md-6 mb-md-0 mb-4">
 <div class="img-wrapper about-hide">
-<img width="651" height="488" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20651%20488'%3E%3C/svg%3E" alt="PASSION AT WORK - Top Real Estate Company & Builders in Bangalore" title="PASSION AT WORK" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/PASSION-AT-WORK-2-1-1.webp"><noscript><img width="651" height="488" loading="lazy" src="/wp-content/uploads/2020/12/PASSION-AT-WORK-2-1-1.webp" alt="PASSION AT WORK - Top Real Estate Company & Builders in Bangalore" title="PASSION AT WORK" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/PASSION-AT-WORK-2-1-1.webp" alt="PASSION AT WORK - Top Real Estate Company & Builders in Bangalore" title="PASSION AT WORK" class="img-fluid w-100">
 </div>
 </div>
 <div class="col-md-6 mb-md-0 mb-4 px-md-5 text-md-left text-center position-relative">
 <h3 class="mb-md-4 mb-9px">PASSION AT WORK</h3>
 <div style="padding-bottom: 50px;"><p>AYAL epitomizes &#8220;passion at work&#8221; in totality. For us it is not only a catch phrase which sounds just right, rather we all strive to live it daily. It serves as our compass which guides us towards creating world class quality products and workmanship. It guides us to be transparent in all our dealings and adhere to delivery on time, each time.</p>
-<p>Our track record of being the most reliable and trustworthy builder with a repertoire of award winning properties across India speaks for itself. We changed the skyline in <a href="/city/bengaluru/">Bangalore</a>, created landmark developments in <a href="/city/apartments-in-kochi/">Kerala</a> and have stepped into <a href="/city/flats-in-delhi-ncr/">Delhi – NCR</a>, <a href="https://staging.sobha.com/city/apartments-in-chennai/">Chennai</a>, <a href="/city/coimbatore/">Coimbatore</a>, <a href="/city/mysuru/">Mysore</a>, <a href="/city/flats-in-pune/">Pune</a> and many more to follow.</p>
+<p>Our track record of being the most reliable and trustworthy builder with a repertoire of award winning properties across India speaks for itself. We changed the skyline in <a href="https://kahihia.github.io/Ayal/city/bengaluru/">Bangalore</a>, created landmark developments in <a href="https://kahihia.github.io/Ayal/city/apartments-in-kochi/">Kerala</a> and have stepped into <a href="https://kahihia.github.io/Ayal/city/flats-in-delhi-ncr/">Delhi – NCR</a>, <a href="https://staging.ayal.com/city/apartments-in-chennai/">Chennai</a>, <a href="https://kahihia.github.io/Ayal/city/coimbatore/">Coimbatore</a>, <a href="https://kahihia.github.io/Ayal/city/mysuru/">Mysore</a>, <a href="https://kahihia.github.io/Ayal/city/flats-in-pune/">Pune</a> and many more to follow.</p>
 <p>AYAL Ltd. is one of the finest real estate development companies in India – A trusted builder based out of Bangalore, since 1995.</p>
 </div>
 <a href="/philosophy/" class="btn transparent-btn bottom-position">READ MORE</a>
@@ -518,69 +519,69 @@ else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
 <div class="container custom-container">
 <div class="desktop-carousel d-none d-md-block">
 <div id="hotel-carousel" class="owl-carousel wow fadeIn" data-wow-duration="0.7s" data-wow-delay="0.1s">
-<a href="/bengaluru/sobha-neopolis-apartments-in-panathur/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL-Neopolis-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Neopolis-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Neopolis-carousel.webp" alt="AYAL-Neopolis-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-neopolis-apartments-in-panathur/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Neopolis-carousel.webp" alt="AYAL-Neopolis-carousel" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-oakshire-devanahalli-bengaluru/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL-Oakshire-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Oakshire-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Oakshire-carousel.webp" alt="AYAL-Oakshire-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-oakshire-devanahalli-bengaluru/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Oakshire-carousel.webp" alt="AYAL-Oakshire-carousel" title class="img-fluid w-100">
 </a>
-<a href="/chennai/sobha-arbor/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="Ayal-arbor-chennai-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/Ayal-arbor-chennai-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/Ayal-arbor-chennai-carousel.webp" alt="Ayal-arbor-chennai-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/chennai/ayal-arbor/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/Ayal-arbor-chennai-carousel.webp" alt="Ayal-arbor-chennai-carousel" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-galera-near-kannamangala/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL-Galera-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Galera-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Galera-carousel.webp" alt="AYAL-Galera-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-galera-near-kannamangala/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Galera-carousel.webp" alt="AYAL-Galera-carousel" title class="img-fluid w-100">
 </a>
-<a href="/hyderabad/sobha-waterfront-flats-in-somajiguda-hyd/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL-Waterfront-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Waterfront-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Waterfront-carousel.webp" alt="AYAL-Waterfront-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/hyderabad/ayal-waterfront-flats-in-somajiguda-hyd/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Waterfront-carousel.webp" alt="AYAL-Waterfront-carousel" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-townpark/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL-Townpark-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Townpark-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Townpark-carousel.webp" alt="AYAL-Townpark-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-townpark/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Townpark-carousel.webp" alt="AYAL-Townpark-carousel" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-royal-crest/" class="item text-center">
-<img width="2382" height="1115" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202382%201115'%3E%3C/svg%3E" alt="AYAL_Royal-Crest-carousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL_Royal-Crest-carousel.webp"><noscript><img width="2382" height="1115" loading="lazy" src="/wp-content/uploads/2024/01/AYAL_Royal-Crest-carousel.webp" alt="AYAL_Royal-Crest-carousel" title="" class="img-fluid w-100" ></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-royal-crest/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL_Royal-Crest-carousel.webp" alt="AYAL_Royal-Crest-carousel" title class="img-fluid w-100">
 </a>
 <a href="/contracting/" class="item text-center">
-<img width="1184" height="554" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201184%20554'%3E%3C/svg%3E" alt="AYAL limited corporate contract projects spread across India" title="AYAL limited corporate contract projects" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER3-1-1-1.webp"><noscript><img width="1184" height="554" loading="lazy" src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER3-1-1-1.webp" alt="AYAL limited corporate contract projects spread across India" title="AYAL limited corporate contract projects" class="img-fluid w-100" ></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/AYAL-WEB-BANNER3-1-1-1.webp" alt="AYAL limited corporate contract projects spread across India" title="AYAL limited corporate contract projects" class="img-fluid w-100">
 </a>
 <a href="#" class="item text-center">
-<img width="1184" height="554" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201184%20554'%3E%3C/svg%3E" alt="AYAL's backward integration for quality model case study taught at Harvard Business School" title="AYAL's Backward Integration For Quality Model Case Study" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER1-min-1.webp"><noscript><img width="1184" height="554" loading="lazy" src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER1-min-1.webp" alt="AYAL's backward integration for quality model case study taught at Harvard Business School" title="AYAL's Backward Integration For Quality Model Case Study" class="img-fluid w-100" ></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/AYAL-WEB-BANNER1-min-1.webp" alt="AYAL's backward integration for quality model case study taught at Harvard Business School" title="AYAL's Backward Integration For Quality Model Case Study" class="img-fluid w-100">
 </a>
 <a href="/sustainability/" class="item text-center">
-<img width="1184" height="554" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201184%20554'%3E%3C/svg%3E" alt="AYAL Academy a God given opportunity to Give back to Society" title="AYAL Academy- A God Given Opportunity To Give Back to Society" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER2-1.webp"><noscript><img width="1184" height="554" loading="lazy" src="/wp-content/uploads/2021/10/AYAL-WEB-BANNER2-1.webp" alt="AYAL Academy a God given opportunity to Give back to Society" title="AYAL Academy- A God Given Opportunity To Give Back to Society" class="img-fluid w-100" ></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/AYAL-WEB-BANNER2-1.webp" alt="AYAL Academy a God given opportunity to Give back to Society" title="AYAL Academy- A God Given Opportunity To Give Back to Society" class="img-fluid w-100">
 </a>
 </div>
 </div>
 <div class="mobile-carousel d-md-none d-block">
 <div id="hotel-carousel1" class="owl-carousel wow fadeIn" data-wow-duration="0.7s" data-wow-delay="0.1s">
-<a href="/bengaluru/sobha-neopolis-apartments-in-panathur/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Neopolis-carousel-m2" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Neopolis-carousel-m2.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Neopolis-carousel-m2.webp" alt="AYAL-Neopolis-carousel-m2" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-neopolis-apartments-in-panathur/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Neopolis-carousel-m2.webp" alt="AYAL-Neopolis-carousel-m2" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-oakshire-devanahalli-bengaluru/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Oakshire-carousel-m" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Oakshire-carousel-m.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Oakshire-carousel-m.webp" alt="AYAL-Oakshire-carousel-m" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-oakshire-devanahalli-bengaluru/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Oakshire-carousel-m.webp" alt="AYAL-Oakshire-carousel-m" title class="img-fluid w-100">
 </a>
-<a href="/chennai/sobha-arbor/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="Ayal-arbor-chennai-mcarousel" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/Ayal-arbor-chennai-mcarousel.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/Ayal-arbor-chennai-mcarousel.webp" alt="Ayal-arbor-chennai-mcarousel" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/chennai/ayal-arbor/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/Ayal-arbor-chennai-mcarousel.webp" alt="Ayal-arbor-chennai-mcarousel" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-galera-near-kannamangala/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Galera-carousel-m" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Galera-carousel-m.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Galera-carousel-m.webp" alt="AYAL-Galera-carousel-m" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-galera-near-kannamangala/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Galera-carousel-m.webp" alt="AYAL-Galera-carousel-m" title class="img-fluid w-100">
 </a>
-<a href="/hyderabad/sobha-waterfront-flats-in-somajiguda-hyd/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Waterfront-carousel-m" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Waterfront-carousel-m.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Waterfront-carousel-m.webp" alt="AYAL-Waterfront-carousel-m" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/hyderabad/ayal-waterfront-flats-in-somajiguda-hyd/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Waterfront-carousel-m.webp" alt="AYAL-Waterfront-carousel-m" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-townpark/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Townpark-carousel-m" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Townpark-carousel-m.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Townpark-carousel-m.webp" alt="AYAL-Townpark-carousel-m" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-townpark/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Townpark-carousel-m.webp" alt="AYAL-Townpark-carousel-m" title class="img-fluid w-100">
 </a>
-<a href="/bengaluru/sobha-royal-crest/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="AYAL-Royal-Crest-carousel-m" title class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2024/01/AYAL-Royal-Crest-carousel-m.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2024/01/AYAL-Royal-Crest-carousel-m.webp" alt="AYAL-Royal-Crest-carousel-m" title="" class="img-fluid w-100"></noscript>
+<a href="https://kahihia.github.io/Ayal/bengaluru/ayal-royal-crest/" class="item text-center">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2024/01/AYAL-Royal-Crest-carousel-m.webp" alt="AYAL-Royal-Crest-carousel-m" title class="img-fluid w-100">
 </a>
 <a href="/contracting/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="Ayal Limited Corporate Contracts Projects Spread Across India" title="AYAL Limited Corporate Contracts Projects Spread Across India" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER3.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER3.webp" alt="Ayal Limited Corporate Contracts Projects Spread Across India" title="AYAL Limited Corporate Contracts Projects Spread Across India" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER3.webp" alt="Ayal Limited Corporate Contracts Projects Spread Across India" title="AYAL Limited Corporate Contracts Projects Spread Across India" class="img-fluid w-100">
 </a>
 <a href="#" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="Ayals Backward Integration for Quality Model Case Study Taught at Havard Business School" title="AYAL's Backward Integration for Quality Model Case Study Taught at Havard Business School" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER1-1-1.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER1-1-1.webp" alt="Ayals Backward Integration for Quality Model Case Study Taught at Havard Business School" title="AYAL's Backward Integration for Quality Model Case Study Taught at Havard Business School" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER1-1-1.webp" alt="Ayals Backward Integration for Quality Model Case Study Taught at Havard Business School" title="AYAL's Backward Integration for Quality Model Case Study Taught at Havard Business School" class="img-fluid w-100">
 </a>
 <a href="/sustainability/" class="item text-center">
-<img width="782" height="782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20782%20782'%3E%3C/svg%3E" alt="Ayal Academy A God Given Opportunity To Give Back To Society" title="AYAL Academy A God Given Opportunity To Give Back To Society" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER2-1.webp"><noscript><img width="782" height="782" loading="lazy" src="/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER2-1.webp" alt="Ayal Academy A God Given Opportunity To Give Back To Society" title="AYAL Academy A God Given Opportunity To Give Back To Society" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/AYAL-MOBILE-BANNER2-1.webp" alt="Ayal Academy A God Given Opportunity To Give Back To Society" title="AYAL Academy A God Given Opportunity To Give Back To Society" class="img-fluid w-100">
 </a>
 </div>
 </div>
@@ -616,63 +617,63 @@ in a neighborhood that is truly one-of-a-kind.</p>
 <div class="col-md-2 select-wrapper">
 <select id="project" class="form-control">
 <option value>Select Project</option>
-<option name="/bengaluru/sobha-crystal-meadows-luxury-row-houses-mullur-bangalore/" value="Bangalore">AYAL Crystal Meadows</option>
-<option name="/bengaluru/sobha-neopolis-apartments-in-panathur/" value="Bangalore">AYAL Neopolis</option>
-<option name="/bengaluru/sobha-valley-view/" value="Bangalore">AYAL Valley View</option>
-<option name="/bengaluru/sobha-oakshire/" value="Bangalore">AYAL Oakshire</option>
-<option name="/bengaluru/sobha-galera-near-kannamangala/" value="Bangalore">AYAL Galera</option>
-<option name="/bengaluru/sobha-insignia/" value="Bangalore">AYAL Insignia</option>
-<option name="/bengaluru/sobha-royal-crest/" value="Bangalore">AYAL Royal Crest</option>
-<option name="/bengaluru/sobha-victoria-park/" value="Bangalore">AYAL Victoria Park - Apartments</option>
-<option name="/bengaluru/sobha-victoria-park-row-houses/" value="Bangalore">AYAL Victoria Park - Row Houses</option>
-<option name="/bengaluru/sobha-sentosa/" value="Bangalore">AYAL Sentosa</option>
-<option name="/bengaluru/sobha-brooklyn-towers-town-park/" value="Bangalore">AYAL Brooklyn Towers</option>
-<option name="/projects/sobha-manhattan-towers-town-park/" value="Bangalore">AYAL Manhattan Towers</option>
-<option name="/bengaluru/sobha-windsor-apartments-in-whitefield/" value="Bangalore">AYAL Windsor</option>
-<option name="/bengaluru/sobha-royal-pavilion/" value="Bangalore">AYAL Royal Pavillion</option>
-<option name="/bengaluru/sobha-dream-acres/" value="Bangalore">AYAL Dream Acres</option>
-<option name="/bengaluru/sobha-dream-gardens/" value="Bangalore">AYAL Dream Gardens</option>
-<option name="/bengaluru/sobha-lake-gardens/" value="Bangalore">AYAL Lake Gardens</option>
-<option name="/bengaluru/sobha-hrc-pristine/" value="Bangalore">AYAL HRC Pristine </option>
-<option name="/bengaluru/sobha-palm-court/" value="Bangalore">AYAL Palm Court</option>
-<option name="/bengaluru/sobha-rajvilas/" value="Bangalore">AYAL Raj Villas</option>
-<option name="/bengaluru/sobha-athena/" value="Bangalore">AYAL Athena</option>
-<option name="/bengaluru/sobha-lifestyle-legacy/" value="Bangalore">AYAL Lifestyle</option>
-<option name="/bengaluru/sobha-forest-edge/" value="Bangalore">AYAL Forest Edge</option>
-<option name="/bengaluru/sobha-clovelly/" value="Bangalore">AYAL Clovelly</option>
-<option name="/bengaluru/sobha-arena/" value="Bangalore">AYAL Arena</option>
-<option name="/bengaluru/sobha-25-richmond/" value="Bangalore">AYAL 25 Richmond</option>
+<option name="/bengaluru/ayal-crystal-meadows-luxury-row-houses-mullur-bangalore/" value="Bangalore">AYAL Crystal Meadows</option>
+<option name="/bengaluru/ayal-neopolis-apartments-in-panathur/" value="Bangalore">AYAL Neopolis</option>
+<option name="/bengaluru/ayal-valley-view/" value="Bangalore">AYAL Valley View</option>
+<option name="/bengaluru/ayal-oakshire/" value="Bangalore">AYAL Oakshire</option>
+<option name="/bengaluru/ayal-galera-near-kannamangala/" value="Bangalore">AYAL Galera</option>
+<option name="/bengaluru/ayal-insignia/" value="Bangalore">AYAL Insignia</option>
+<option name="/bengaluru/ayal-royal-crest/" value="Bangalore">AYAL Royal Crest</option>
+<option name="/bengaluru/ayal-victoria-park/" value="Bangalore">AYAL Victoria Park - Apartments</option>
+<option name="/bengaluru/ayal-victoria-park-row-houses/" value="Bangalore">AYAL Victoria Park - Row Houses</option>
+<option name="/bengaluru/ayal-sentosa/" value="Bangalore">AYAL Sentosa</option>
+<option name="/bengaluru/ayal-brooklyn-towers-town-park/" value="Bangalore">AYAL Brooklyn Towers</option>
+<option name="/projects/ayal-manhattan-towers-town-park/" value="Bangalore">AYAL Manhattan Towers</option>
+<option name="/bengaluru/ayal-windsor-apartments-in-whitefield/" value="Bangalore">AYAL Windsor</option>
+<option name="/bengaluru/ayal-royal-pavilion/" value="Bangalore">AYAL Royal Pavillion</option>
+<option name="/bengaluru/ayal-dream-acres/" value="Bangalore">AYAL Dream Acres</option>
+<option name="/bengaluru/ayal-dream-gardens/" value="Bangalore">AYAL Dream Gardens</option>
+<option name="/bengaluru/ayal-lake-gardens/" value="Bangalore">AYAL Lake Gardens</option>
+<option name="/bengaluru/ayal-hrc-pristine/" value="Bangalore">AYAL HRC Pristine </option>
+<option name="/bengaluru/ayal-palm-court/" value="Bangalore">AYAL Palm Court</option>
+<option name="/bengaluru/ayal-rajvilas/" value="Bangalore">AYAL Raj Villas</option>
+<option name="/bengaluru/ayal-athena/" value="Bangalore">AYAL Athena</option>
+<option name="/bengaluru/ayal-lifestyle-legacy/" value="Bangalore">AYAL Lifestyle</option>
+<option name="/bengaluru/ayal-forest-edge/" value="Bangalore">AYAL Forest Edge</option>
+<option name="/bengaluru/ayal-clovelly/" value="Bangalore">AYAL Clovelly</option>
+<option name="/bengaluru/ayal-arena/" value="Bangalore">AYAL Arena</option>
+<option name="/bengaluru/ayal-25-richmond/" value="Bangalore">AYAL 25 Richmond</option>
 
-<option name="/chennai/sobha-arbor/" value="Chennai">AYAL ARBOR</option>
-<option name="/chennai/sobha-gardenia/" value="Chennai">AYAL GARDENIA</option>
-<option name="/chennai/sobha-winchester/" value="Chennai">AYAL WINCHESTER</option>
-<option name="/chennai/sobha-blossom/" value="Chennai">AYAL BLOSSOM</option>
-<option name="/chennai/sobha-serene/" value="Chennai">AYAL SERENE</option>
-<option name="/chennai/sobha-evergreens/" value="Chennai">AYAL EVERGREENS</option>
-<option name="/coimbatore/sobha-elan/" value="Coimbatore">AYAL ELAN</option>
-<option name="/coimbatore/sobha-verdure/" value="Coimbatore">AYAL VERDURE</option>
-<option name="/coimbatore/sobha-westhill/" value="Coimbatore">AYAL WESTHILL</option>
-<option name="/delhi-ncr/sobha-city/" value="Delhi">AYAL CITY</option>
+<option name="/chennai/ayal-arbor/" value="Chennai">AYAL ARBOR</option>
+<option name="/chennai/ayal-gardenia/" value="Chennai">AYAL GARDENIA</option>
+<option name="/chennai/ayal-winchester/" value="Chennai">AYAL WINCHESTER</option>
+<option name="/chennai/ayal-blossom/" value="Chennai">AYAL BLOSSOM</option>
+<option name="/chennai/ayal-serene/" value="Chennai">AYAL SERENE</option>
+<option name="/chennai/ayal-evergreens/" value="Chennai">AYAL EVERGREENS</option>
+<option name="/coimbatore/ayal-elan/" value="Coimbatore">AYAL ELAN</option>
+<option name="/coimbatore/ayal-verdure/" value="Coimbatore">AYAL VERDURE</option>
+<option name="/coimbatore/ayal-westhill/" value="Coimbatore">AYAL WESTHILL</option>
+<option name="/delhi-ncr/ayal-city/" value="Delhi">AYAL CITY</option>
 <option name="/delhi-ncr/international-city/" value="Delhi">INTERNATIONAL CITY</option>
-<option name="/gift-city-gujarat/sobha-avalon/" value="Gujarat">AYAL AVALON</option>
-<option name="/gift-city-gujarat/sobha-dream-heights/" value="Gujarat">AYAL DREAM HEIGHTS</option>
-<option name="/hyderabad/sobha-waterfront-flats-in-somajiguda-hyd/" value="Hyderabad">AYAL WATERFRONT</option>
-<option name="/kochi/sobha-atlantis/" value="Kochi">AYAL ATLANTIS</option>
-<option name="/kochi/sobha-marina-one/" value="Kochi">MARINA ONE</option>
-<option name="/kozhikode/sobha-bela-encosta/" value="Kozhikode">AYAL BELA ENCOSTA</option>
-<option name="/kozhikode/sobha-rio-vista/" value="Kozhikode">AYAL RIO VISTA</option>
-<option name="/mysuru/sobha-retreat/" value="Mysore">AYAL RETREAT</option>
-<option name="/mysuru/sobha-meadows/" value="Mysore">AYAL MEADOWS</option>
-<option name="/pune/sobha-nesara/" value="Pune">AYAL NESARA</option>
-<option name="/thiruvananthapuram/sobha-ridge-whispering-hill/" value="Thiruvananthapuram">AYAL RIDGE - WHISPERING HILL</option>
-<option name="/thiruvananthapuram/sobha-meadows-whispering-hill/" value="Thiruvananthapuram">AYAL MEADOWS - WHISPERING HILL</option>
-<option name="/thrissur/sobha-metropolis/" value="Thrissur">AYAL METROPOLIS</option>
-<option name="/thrissur/sobha-silver-estate/" value="Thrissur">AYAL SILVER ESTATE</option>
-<option name="/thrissur/sobha-lake-edge/" value="Thrissur">AYAL LAKE EDGE</option>
+<option name="/gift-city-gujarat/ayal-avalon/" value="Gujarat">AYAL AVALON</option>
+<option name="/gift-city-gujarat/ayal-dream-heights/" value="Gujarat">AYAL DREAM HEIGHTS</option>
+<option name="/hyderabad/ayal-waterfront-flats-in-somajiguda-hyd/" value="Hyderabad">AYAL WATERFRONT</option>
+<option name="/kochi/ayal-atlantis/" value="Kochi">AYAL ATLANTIS</option>
+<option name="/kochi/ayal-marina-one/" value="Kochi">MARINA ONE</option>
+<option name="/kozhikode/ayal-bela-encosta/" value="Kozhikode">AYAL BELA ENCOSTA</option>
+<option name="/kozhikode/ayal-rio-vista/" value="Kozhikode">AYAL RIO VISTA</option>
+<option name="/mysuru/ayal-retreat/" value="Mysore">AYAL RETREAT</option>
+<option name="/mysuru/ayal-meadows/" value="Mysore">AYAL MEADOWS</option>
+<option name="/pune/ayal-nesara/" value="Pune">AYAL NESARA</option>
+<option name="/thiruvananthapuram/ayal-ridge-whispering-hill/" value="Thiruvananthapuram">AYAL RIDGE - WHISPERING HILL</option>
+<option name="/thiruvananthapuram/ayal-meadows-whispering-hill/" value="Thiruvananthapuram">AYAL MEADOWS - WHISPERING HILL</option>
+<option name="/thrissur/ayal-metropolis/" value="Thrissur">AYAL METROPOLIS</option>
+<option name="/thrissur/ayal-silver-estate/" value="Thrissur">AYAL SILVER ESTATE</option>
+<option name="/thrissur/ayal-lake-edge/" value="Thrissur">AYAL LAKE EDGE</option>
 </select>
 </div>
 <div class="col-auto mt-3 mt-md-0">
-<a href="javascript:" id="link-button" class="search-btn"> <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2015%2015'%3E%3C/svg%3E" width="15" height="15" class="img-fluid" data-lazy-src="/wp-content/themes/sobha/images/search.svg"><noscript><img src="/wp-content/themes/sobha/images/search.svg" width="15" height="15" class="img-fluid"></noscript><span class="ml-2 d-md-none d-block">Search</span></a>
+<a href="javascript:" id="link-button" class="search-btn"> <img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/search.svg" width="15" height="15" class="img-fluid"><span class="ml-2 d-md-none d-block">Search</span></a>
 </div>
 </div>
 </form>
@@ -680,73 +681,73 @@ in a neighborhood that is truly one-of-a-kind.</p>
 <div id="location-carousel" class="owl-carousel mb-4">
 <a href="/city/flats-in-hyderabad-for-sale/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" alt title="AYAL-WATERFRONT featured" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2022/12/AYAL-WATERFRONT-featured.webp"><noscript><img width="500" height="500" loading="lazy" src="/wp-content/uploads/2022/12/AYAL-WATERFRONT-featured.webp" alt="" title="AYAL-WATERFRONT featured" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2022/12/AYAL-WATERFRONT-featured.webp" alt title="AYAL-WATERFRONT featured" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Hyderabad</h6>
 </a>
 <a href="/city/thiruvananthapuram/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" alt title="whispering-hill-featured-image" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2022/09/whispering-hill-featured-image.jpg"><noscript><img width="500" height="500" loading="lazy" src="/wp-content/uploads/2022/09/whispering-hill-featured-image.jpg" alt="" title="whispering-hill-featured-image" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2022/09/whispering-hill-featured-image.jpg" alt title="whispering-hill-featured-image" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Thiruvananthapuram</h6>
 </a>
 <a href="/city/bengaluru/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="AYAL Manhattan Town park Near Electronics City, Bangalore" title="AYAL Manhattan Town park  Near Electronics City" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/AYAL-TOWNPARK-MOBILE-BANNER-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/AYAL-TOWNPARK-MOBILE-BANNER-1.webp" alt="AYAL Manhattan Town park Near Electronics City, Bangalore" title="AYAL Manhattan Town park  Near Electronics City" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/AYAL-TOWNPARK-MOBILE-BANNER-1.webp" alt="AYAL Manhattan Town park Near Electronics City, Bangalore" title="AYAL Manhattan Town park  Near Electronics City" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Bengaluru</h6>
 </a>
 <a href="/city/apartments-in-chennai/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="360" height="360" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%20360'%3E%3C/svg%3E" alt="AYAL Arbor in Senneerkuppam, Chennai" title="AYAL Arbor- 3, 4 BHK Luxury Apartments for Sale in Senneerkuppam, Chennai" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/Main-Banners-06-o.webp"><noscript><img width="360" height="360" loading="lazy" src="/wp-content/uploads/2021/10/Main-Banners-06-o.webp" alt="AYAL Arbor in Senneerkuppam, Chennai" title="AYAL Arbor- 3, 4 BHK Luxury Apartments for Sale in Senneerkuppam, Chennai" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/Main-Banners-06-o.webp" alt="AYAL Arbor in Senneerkuppam, Chennai" title="AYAL Arbor- 3, 4 BHK Luxury Apartments for Sale in Senneerkuppam, Chennai" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Chennai</h6>
 </a>
 <a href="/city/delhi-ncr/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="AYAL CITY in Sector 108, Gurgaon, Haryana, just off Dwarka Expressway" title="AYAL CITY is located in Sector 108,  Gurgaon, delhi" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/delhi-1-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/delhi-1-1.webp" alt="AYAL CITY in Sector 108, Gurgaon, Haryana, just off Dwarka Expressway" title="AYAL CITY is located in Sector 108,  Gurgaon, delhi" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/delhi-1-1.webp" alt="AYAL CITY in Sector 108, Gurgaon, Haryana, just off Dwarka Expressway" title="AYAL CITY is located in Sector 108,  Gurgaon, delhi" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Delhi NCR</h6>
 </a>
 <a href="/city/gift-city-gujarat/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="AYAL Dream Heights in Shram Marg, Gujarat International Finance Tec-City, Gandhinagar, Gujarat" title="AYAL Dream Heights GIFT City" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/gujarat-1-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/gujarat-1-1.webp" alt="AYAL Dream Heights in Shram Marg, Gujarat International Finance Tec-City, Gandhinagar, Gujarat" title="AYAL Dream Heights GIFT City" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/gujarat-1-1.webp" alt="AYAL Dream Heights in Shram Marg, Gujarat International Finance Tec-City, Gandhinagar, Gujarat" title="AYAL Dream Heights GIFT City" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">GIFT City Gujarat</h6>
 </a>
 <a href="/city/apartments-in-kochi/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="AYAL Atlantis Apartments in Kochi" title="AYAL Atlantis Cochin" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/cochin-1-1-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/cochin-1-1-1.webp" alt="AYAL Atlantis Apartments in Kochi" title="AYAL Atlantis Cochin" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/cochin-1-1-1.webp" alt="AYAL Atlantis Apartments in Kochi" title="AYAL Atlantis Cochin" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Kochi</h6>
 </a>
 <a href="/city/apartments-in-kozhikode/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="Ayal apartment work for Rio Vista in Kozhikode" title="AYAL Apartment Work for Rio Vista in Kozhikode" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/kozhikode-1-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/kozhikode-1-1.webp" alt="Ayal apartment work for Rio Vista in Kozhikode" title="AYAL Apartment Work for Rio Vista in Kozhikode" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/kozhikode-1-1.webp" alt="Ayal apartment work for Rio Vista in Kozhikode" title="AYAL Apartment Work for Rio Vista in Kozhikode" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Kozhikode</h6>
 </a>
 <a href="/city/flats-in-pune/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="360" height="360" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%20360'%3E%3C/svg%3E" alt="AYAL Nesara Apartments in Pune" title="AYAL Nesara Pune" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/06/AYAL-Nesara-Mobile.webp"><noscript><img width="360" height="360" loading="lazy" src="/wp-content/uploads/2021/06/AYAL-Nesara-Mobile.webp" alt="AYAL Nesara Apartments in Pune" title="AYAL Nesara Pune" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/06/AYAL-Nesara-Mobile.webp" alt="AYAL Nesara Apartments in Pune" title="AYAL Nesara Pune" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Pune</h6>
 </a>
 <a href="/city/coimbatore/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" alt="AYAL Verdure at Hari Shree Garden, Coimbatore" title="AYAL Verdure Coimbatore" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/155610011420190424.webp"><noscript><img width="500" height="500" loading="lazy" src="/wp-content/uploads/2020/12/155610011420190424.webp" alt="AYAL Verdure at Hari Shree Garden, Coimbatore" title="AYAL Verdure Coimbatore" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/155610011420190424.webp" alt="AYAL Verdure at Hari Shree Garden, Coimbatore" title="AYAL Verdure Coimbatore" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Coimbatore</h6>
 </a>
 <a href="/city/flats-in-thrissur/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="360" height="360" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20360%20360'%3E%3C/svg%3E" alt="AYAL Metropolis Apartments In Thrissur" title="AYAL Metropolis Apartment Thrissur" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/03/AYAL-Metropolis-Apartment.webp"><noscript><img width="360" height="360" loading="lazy" src="/wp-content/uploads/2021/03/AYAL-Metropolis-Apartment.webp" alt="AYAL Metropolis Apartments In Thrissur" title="AYAL Metropolis Apartment Thrissur" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/03/AYAL-Metropolis-Apartment.webp" alt="AYAL Metropolis Apartments In Thrissur" title="AYAL Metropolis Apartment Thrissur" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Thrissur</h6>
 </a>
 <a href="/city/mysuru/" class="item d-block">
 <div class="img-wrapper mb-3">
-<img width="381" height="381" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20381%20381'%3E%3C/svg%3E" alt="AYAL RETREAT Mysore" title="AYAL RETREAT Mysore" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2021/10/mysore-1.webp"><noscript><img width="381" height="381" loading="lazy" src="/wp-content/uploads/2021/10/mysore-1.webp" alt="AYAL RETREAT Mysore" title="AYAL RETREAT Mysore" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/10/mysore-1.webp" alt="AYAL RETREAT Mysore" title="AYAL RETREAT Mysore" class="img-fluid w-100">
 </div>
 <h6 class="mb-0 text-center">Mysuru</h6>
 </a>
@@ -765,19 +766,19 @@ for quality and the philosophy of self-reliance.</p>
 <div class="row">
 <a href="/commercial/" class="col-md-4 mb-0 mb-md-4 d-block text-center px-md-4">
 <div class="img-wrapper mb-3">
-<img width="375" height="496" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20496'%3E%3C/svg%3E" alt="One AYAL Commercial Property - A Trusted Builders in Bangalore" title="Commercial Property in Bangalore" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/Commercial-1.webp"><noscript><img width="375" height="496" loading="lazy" src="/wp-content/uploads/2020/12/Commercial-1.webp" alt="One AYAL Commercial Property - A Trusted Builders in Bangalore" title="Commercial Property in Bangalore" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/Commercial-1.webp" alt="One AYAL Commercial Property - A Trusted Builders in Bangalore" title="Commercial Property in Bangalore" class="img-fluid w-100">
 </div>
 <h6 class="mb-0">COMMERCIAL</h6>
 </a>
 <a href="/contracting/" class="col-md-4 mb-0 mb-md-4 d-block text-center px-md-4">
 <div class="img-wrapper mb-3">
-<img width="375" height="496" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20496'%3E%3C/svg%3E" alt="AYAL Contracting - Real Estate Builders in Bangalore" title="Contracting" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/Contracting-1.webp"><noscript><img width="375" height="496" loading="lazy" src="/wp-content/uploads/2020/12/Contracting-1.webp" alt="AYAL Contracting - Real Estate Builders in Bangalore" title="Contracting" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/Contracting-1.webp" alt="AYAL Contracting - Real Estate Builders in Bangalore" title="Contracting" class="img-fluid w-100">
 </div>
 <h6 class="mb-0">CONTRACTING</h6>
 </a>
 <a href="/manufacturing/" class="col-md-4 mb-0 mb-md-4 d-block text-center px-md-4">
 <div class="img-wrapper mb-3">
-<img width="375" height="496" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20375%20496'%3E%3C/svg%3E" alt="AYAL Manufacturing- Real Estate Company/Builders in Bangalore, India" title="Manufacturing" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/Manufacturing-1.webp"><noscript><img width="375" height="496" loading="lazy" src="/wp-content/uploads/2020/12/Manufacturing-1.webp" alt="AYAL Manufacturing- Real Estate Company/Builders in Bangalore, India" title="Manufacturing" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/Manufacturing-1.webp" alt="AYAL Manufacturing- Real Estate Company/Builders in Bangalore, India" title="Manufacturing" class="img-fluid w-100">
 </div>
 <h6 class="mb-0">MANUFACTURING</h6>
 </a>
@@ -793,7 +794,7 @@ for quality and the philosophy of self-reliance.</p>
 <div class="card-block">
 <a href="/media-centre/">
 <div class="img-wrapper">
-<img width="424" height="263" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20263'%3E%3C/svg%3E" alt="MEDIA CENTRE- AYAL Limited- Top Builders in Bangalore" title="MEDIA CENTRE- AYAL Limited" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/more-1-1.webp"><noscript><img width="424" height="263" loading="lazy" src="/wp-content/uploads/2020/12/more-1-1.webp" alt="MEDIA CENTRE- AYAL Limited- Top Builders in Bangalore" title="MEDIA CENTRE- AYAL Limited" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/more-1-1.webp" alt="MEDIA CENTRE- AYAL Limited- Top Builders in Bangalore" title="MEDIA CENTRE- AYAL Limited" class="img-fluid w-100">
 </div>
 </a>
 <div class="card-content">
@@ -802,7 +803,7 @@ for quality and the philosophy of self-reliance.</p>
 </div>
 <a href="/media-centre/">
 <svg>
-<use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use>
+<use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use>
 </svg>
 FIND OUT MORE </a>
 </div>
@@ -810,18 +811,18 @@ FIND OUT MORE </a>
 </div>
 <div class="col-md-4">
 <div class="card-block">
-<a href="https://sobhaprivilege.com/">
+<a href="https://ayalprivilege.com/">
 <div class="img-wrapper">
-<img width="424" height="262" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20424%20262'%3E%3C/svg%3E" alt="AYAL PRIVILEGE" title="AYAL PRIVILEGE" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/more-2-1.webp"><noscript><img width="424" height="262" loading="lazy" src="/wp-content/uploads/2020/12/more-2-1.webp" alt="AYAL PRIVILEGE" title="AYAL PRIVILEGE" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/more-2-1.webp" alt="AYAL PRIVILEGE" title="AYAL PRIVILEGE" class="img-fluid w-100">
 </div>
 </a>
 <div class="card-content">
 <h6 class="mb-4">AYAL PRIVILEGE</h6>
 <div class="mb-4"><p>A one-of-a-kind rewards programme, AYAL Privilege is feature loaded. Welcome your friends and relatives to the AYAL family and get rewarded too.</p>
 </div>
-<a href="https://sobhaprivilege.com/">
+<a href="https://ayalprivilege.com/">
 <svg>
-<use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use>
+<use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use>
 </svg>
 FIND OUT MORE </a>
 </div>
@@ -829,18 +830,18 @@ FIND OUT MORE </a>
 </div>
 <div class="col-md-4">
 <div class="card-block">
-<a href="/blog/">
+<a href="https://kahihia.github.io/Ayal/blog/">
 <div class="img-wrapper">
-<img width="425" height="263" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20425%20263'%3E%3C/svg%3E" alt="AYAL BLOGs- A Trusted Real Estate Builder in Bangalore, India" title="AYAL BLOGs" class="img-fluid w-100" data-lazy-src="/wp-content/uploads/2020/12/more-3-1.webp"><noscript><img width="425" height="263" loading="lazy" src="/wp-content/uploads/2020/12/more-3-1.webp" alt="AYAL BLOGs- A Trusted Real Estate Builder in Bangalore, India" title="AYAL BLOGs" class="img-fluid w-100"></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/12/more-3-1.webp" alt="AYAL BLOGs- A Trusted Real Estate Builder in Bangalore, India" title="AYAL BLOGs" class="img-fluid w-100">
 </div>
 </a>
 <div class="card-content">
 <h6 class="mb-4">AYAL BLOG</h6>
 <div class="mb-4"><p>Get latest insights from the construction sector and in-depth views on real estate investment avenues, and more from our thought leaders.</p>
 </div>
-<a href="/blog/">
+<a href="https://kahihia.github.io/Ayal/blog/">
 <svg>
-<use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use>
+<use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use>
 </svg>
 FIND OUT MORE </a>
 </div>
@@ -853,10 +854,10 @@ FIND OUT MORE </a>
 <div class="container">
 <div class="popup-wrap d-flex align-items-center justify-content-center" style="background:none !important;background-size: 100% 100% !important;background-position: center center !important;">
 <a href="javascript:" class="close-btn">
-<img width="30" height="30" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" class="img-fluid" data-lazy-src="/wp-content/themes/sobha/images/close.png"><noscript><img width="30" height="30" src="/wp-content/themes/sobha/images/close.png" class="img-fluid"></noscript>
+<img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/close.png" class="img-fluid">
 </a>
 <a href="javascript:">
-<img width="1080" height="1080" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%201080'%3E%3C/svg%3E" class="img-fluid" data-lazy-src="/wp-content/uploads/2021/04/sobha_covind.webp" /><noscript><img width="1080" height="1080" loading="lazy" src="/wp-content/uploads/2021/04/sobha_covind.webp" class="img-fluid" /></noscript>
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2021/04/ayal_covind.webp" class="img-fluid" />
 </a>
 </div>
 </div>
@@ -866,8 +867,8 @@ FIND OUT MORE </a>
 <div class="container custom-container footer-wrapper">
 <div class="row">
 <div class="col-md-auto mb-5 mb-md-0 text-center text-md-left">
-<a href="">
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2075%2088'%3E%3C/svg%3E" width="75" height="88" class="img-fluid" alt="Ayal Limited" title="Ayal Limited" style="min-width:75px;max-width: 75px;" data-lazy-src="/wp-content/uploads/2020/11/AyalLogowhite1.svg"><noscript><img loading="lazy" src="/wp-content/uploads/2020/11/AyalLogowhite1.svg" width="75" height="88" class="img-fluid" alt="Ayal Limited" title="Ayal Limited" style="min-width:75px;max-width: 75px;"></noscript>
+<a href="https://www.ayal.com">
+<img loading="lazy" src="https://kahihia.github.io/Ayal/wp-content/uploads/2020/11/AyalLogowhite1.svg" width="75" height="88" class="img-fluid" alt="Ayal Limited" title="Ayal Limited" style="min-width:75px;max-width: 75px;">
 </a>
 </div>
 <div class="col-md">
@@ -896,10 +897,10 @@ FIND OUT MORE </a>
 <div class="col-md-auto pl-lg-5  col-6 mb-4">
 <ul>
 <li><a href="/careers/">CAREERS</a></li>
-<li><a href="/media-centre/press-release/">MEDIA CENTRE</a></li>
+<li><a href="https://kahihia.github.io/Ayal/media-centre/press-release/">MEDIA CENTRE</a></li>
 <li><a href="/sustainability/">SUSTAINABILITY</a></li>
 <li><a href="/investor-relations/">INVESTOR RELATIONS</a></li>
-<li><a href="/sobha-share-price/">AYAL SHARE PRICE</a></li>
+<li><a href="/ayal-share-price/">AYAL SHARE PRICE</a></li>
 
 </ul>
 </div>
@@ -908,7 +909,7 @@ FIND OUT MORE </a>
 <h6 class="mb-3">GET IN TOUCH</h6>
 <ul class="mb-5">
 <li><a href="tel:+918046464500" class="mb-1">+91 80 46464500</a></li>
-<li><a href="/cdn-cgi/l/email-protection#6f180a0d090a0a0b0d0e0c042f1c000d070e410c0002"><span class="__cf_email__" data-cfemail="7f081a1d191a1a1b1d1e1c143f0c101d171e511c1012">[email&#160;protected]</span></a></li>
+<li><a href="/cdn-cgi/l/email-protection#a3d4c6c1c5c6c6c7c1c2c0c8e3d0ccc1cbc28dc0ccce"><span class="__cf_email__" data-cfemail="34435156525151505655575f74475b565c551a575b59">[email&#160;protected]</span></a></li>
 </ul>
 <h6 class="mb-3">CIN Details</h6>
 <ul class="mb-5">
@@ -937,7 +938,7 @@ FIND OUT MORE </a>
 <li><a href="/media-centre/">MEDIA CENTRE</a></li>
 <li><a href="/sustainability/">SUSTAINABILITY</a></li>
 <li><a href="/investor-relations/">INVESTOR RELATIONS</a></li>
-<li><a href="/sobha-share-price/">AYAL SHARE PRICES</a></li>
+<li><a href="/ayal-share-price/">AYAL SHARE PRICES</a></li>
 </ul>
 </div>
 </div>
@@ -953,11 +954,11 @@ FIND OUT MORE </a>
 </div>
 </div>
 <div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
-<a href="https://www.facebook.com/sobhaltd" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt="AYAL Facebook Page" data-lazy-src="/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt="AYAL Facebook Page"></noscript></a>
-<a href="https://www.youtube.com/c/Ayal" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt="AYAL Limited Youtube Channel" data-lazy-src="/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt="AYAL Limited Youtube Channel"></noscript></a>
-<a href="https://twitter.com/Ayalltd" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt="AYAL Twitter Profile" data-lazy-src="/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt="AYAL Twitter Profile"></noscript></a>
-<a href="https://www.instagram.com/sobhaltd/" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt="AYAL Instagram" data-lazy-src="/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt="AYAL Instagram"></noscript></a>
-<a href="https://www.linkedin.com/company/sobhaltd" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt="AYAL LinkedIn Company Page" data-lazy-src="/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt="AYAL LinkedIn Company Page"></noscript></a>
+<a href="https://www.facebook.com/ayalltd" target="_blank"><img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/facebook.svg" width="23" height="23" class="img-fluid" alt="AYAL Facebook Page"></a>
+<a href="https://www.youtube.com/c/Ayal" target="_blank"><img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/youtube.svg" width="23" height="23" class="img-fluid" alt="AYAL Limited Youtube Channel"></a>
+<a href="https://twitter.com/Ayalltd" target="_blank"><img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/twitter.svg" width="23" height="23" class="img-fluid" alt="AYAL Twitter Profile"></a>
+<a href="https://www.instagram.com/ayalltd/" target="_blank"><img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/instagram.svg" width="23" height="23" class="img-fluid" alt="AYAL Instagram"></a>
+<a href="https://www.linkedin.com/company/ayalltd" target="_blank"><img src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/linkedin.svg" width="23" height="23" class="img-fluid" alt="AYAL LinkedIn Company Page"></a>
 </div>
 <div class="row">
 <div class="col-md-6 text-md-left text-center mb-md-0 mb-4 pb-md-0 pb-2">
@@ -1009,14 +1010,16 @@ FIND OUT MORE </a>
 </div>
 </div>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-minify="1" src="/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1709184319" id="swv-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script id="contact-form-7-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
-var wpcf7 = {"api":{"root":"https:\/\/www.sobha.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+<link rel="stylesheet" id="mediaelement-css" href="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16" media="all" />
+<link rel="stylesheet" id="wp-mediaelement-css" href="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=900971d5413984607bdbeb64019541bd" media="all" />
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://kahihia.github.io/Ayal/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.6.3" id="swv-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="contact-form-7-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
+var wpcf7 = {"api":{"root":"https:\/\/www.ayal.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
 </script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1709184319" id="contact-form-7-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=900971d5413984607bdbeb64019541bd" id="nbcpf-intlTelInput-script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/plugins/country-phone-field-contact-form-7/assets/js/countrySelect.min.js?ver=900971d5413984607bdbeb64019541bd" id="nbcpf-countryFlag-script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script type="rocketlazyloadscript" id="nbcpf-countryFlag-script-js-after">
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.6.3" id="contact-form-7-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/country-phone-field-contact-form-7/assets/js/intlTelInput.min.js?ver=900971d5413984607bdbeb64019541bd" id="nbcpf-intlTelInput-script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/country-phone-field-contact-form-7/assets/js/countrySelect.min.js?ver=900971d5413984607bdbeb64019541bd" id="nbcpf-countryFlag-script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="nbcpf-countryFlag-script-js-after" type="b5af694f87ebc278366571b9-text/javascript">
 		(function($) {
 			$(function() {
 				jQuery.ajax( { 
@@ -1054,68 +1057,68 @@ var wpcf7 = {"api":{"root":"https:\/\/www.sobha.com\/wp-json\/","namespace":"con
 			});
 		})(jQuery);
 </script>
-<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+<script id="rocket-browser-checker-js-after" type="b5af694f87ebc278366571b9-text/javascript">
 "use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
 </script>
-<script id="rocket-preload-links-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
-var RocketPreloadLinksConfig = {"excludeUris":"\/investor-relations\/|\/careers\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com","onHoverDelay":"100","rateThrottle":"3"};
+<script id="rocket-preload-links-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
+var RocketPreloadLinksConfig = {"excludeUris":"\/investor-relations\/|\/careers\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.ayal.com","onHoverDelay":"100","rateThrottle":"3"};
 </script>
-<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+<script id="rocket-preload-links-js-after" type="b5af694f87ebc278366571b9-text/javascript">
 (function() {
 "use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
 }());
 </script>
-<script src="/wp-content/themes/sobha/js/jquery.min.js?ver=900971d5413984607bdbeb64019541bd" id="jquery-main-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/themes/sobha/js/forpassive.js?ver=1709184319" id="for-passive-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/wow.min.js?ver=900971d5413984607bdbeb64019541bd" id="wowmin-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/owl.carousel.min.js?ver=900971d5413984607bdbeb64019541bd" id="owlcaro-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/bootstrap.min.js?ver=900971d5413984607bdbeb64019541bd" id="bootstrap-scripts-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/themes/sobha/js/selectric.js?ver=1709184319" id="select-script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/validate.min.js?ver=900971d5413984607bdbeb64019541bd" id="validation-script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/customscrollbar.min.js?ver=900971d5413984607bdbeb64019541bd" id="custom-js-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/magnific-popup.min.js?ver=900971d5413984607bdbeb64019541bd" id="mag-pop-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/touchSwipe.min.js?ver=900971d5413984607bdbeb64019541bd" id="touch-js-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/photoswipe.min.js?ver=900971d5413984607bdbeb64019541bd" id="photo-scripts-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/photoswipe-ui-default.min.js?ver=900971d5413984607bdbeb64019541bd" id="photo-ui-js-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/lightgallery-all.min.js?ver=900971d5413984607bdbeb64019541bd" id="lightgallery-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/themes/sobha/js/jquery.mousewheel.min.js?ver=900971d5413984607bdbeb64019541bd" id="mouse-wheel-js-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/themes/sobha/js/script.js?ver=1709184319" id="custom-script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/plugins/date-time-picker-field/assets/js/vendor/moment/moment.js?ver=1709184319" id="dtp-moment-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-content/plugins/date-time-picker-field/assets/js/vendor/datetimepicker/jquery.datetimepicker.full.min.js?ver=900971d5413984607bdbeb64019541bd" id="dtpicker-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script id="dtpicker-build-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
-var datepickeropts = {"selector":".date-field1,c-date","locale":"en","theme":"default","datepicker":"on","timepicker":"off","inline":"off","placeholder":"on","preventkeyboard":"off","minDate":"off","step":"60","minTime":"00:00","maxTime":"23:59","offset":"0","min_date":"","max_date":"","dateformat":"DD-MM-YYYY","hourformat":"hh:mm A","load":"full","dayOfWeekStart":"1","disabled_days":"","disabled_calendar_days":"","allowed_times":"","sunday_times":"","monday_times":"","tuesday_times":"","wednesday_times":"","thursday_times":"","friday_times":"","saturday_times":"","days_offset":"0","i18n":{"en":{"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"dayOfWeekShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"format":"DD-MM-YYYY","clean_format":"d-m-Y","value":"","timezone":"Asia\/Kolkata","utc_offset":"+5.5","now":"07-04-2024"};
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/jquery.min.js?ver=900971d5413984607bdbeb64019541bd" id="jquery-main-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/forpassive.js?ver=900971d5413984607bdbeb64019541bd" id="for-passive-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/wow.min.js?ver=900971d5413984607bdbeb64019541bd" id="wowmin-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/owl.carousel.min.js?ver=900971d5413984607bdbeb64019541bd" id="owlcaro-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/bootstrap.min.js?ver=900971d5413984607bdbeb64019541bd" id="bootstrap-scripts-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/selectric.js?ver=900971d5413984607bdbeb64019541bd" id="select-script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/validate.min.js?ver=900971d5413984607bdbeb64019541bd" id="validation-script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/customscrollbar.min.js?ver=900971d5413984607bdbeb64019541bd" id="custom-js-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/magnific-popup.min.js?ver=900971d5413984607bdbeb64019541bd" id="mag-pop-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/touchSwipe.min.js?ver=900971d5413984607bdbeb64019541bd" id="touch-js-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/photoswipe.min.js?ver=900971d5413984607bdbeb64019541bd" id="photo-scripts-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/photoswipe-ui-default.min.js?ver=900971d5413984607bdbeb64019541bd" id="photo-ui-js-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/lightgallery-all.min.js?ver=900971d5413984607bdbeb64019541bd" id="lightgallery-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/jquery.mousewheel.min.js?ver=900971d5413984607bdbeb64019541bd" id="mouse-wheel-js-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/themes/ayal/js/script.js??php_echo_time();_?&#038;ver=900971d5413984607bdbeb64019541bd" id="custom-script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/date-time-picker-field/assets/js/vendor/moment/moment.js?ver=900971d5413984607bdbeb64019541bd" id="dtp-moment-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/date-time-picker-field/assets/js/vendor/datetimepicker/jquery.datetimepicker.full.min.js?ver=900971d5413984607bdbeb64019541bd" id="dtpicker-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="dtpicker-build-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
+var datepickeropts = {"selector":".date-field1,c-date","locale":"en","theme":"default","datepicker":"on","timepicker":"off","inline":"off","placeholder":"on","preventkeyboard":"off","minDate":"off","step":"60","minTime":"00:00","maxTime":"23:59","offset":"0","min_date":"","max_date":"","dateformat":"DD-MM-YYYY","hourformat":"hh:mm A","load":"full","dayOfWeekStart":"1","disabled_days":"","disabled_calendar_days":"","allowed_times":"","sunday_times":"","monday_times":"","tuesday_times":"","wednesday_times":"","thursday_times":"","friday_times":"","saturday_times":"","days_offset":"0","i18n":{"en":{"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"dayOfWeekShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"format":"DD-MM-YYYY","clean_format":"d-m-Y","value":"","timezone":"Asia\/Kolkata","utc_offset":"+5.5","now":"08-04-2024"};
 </script>
-<script data-minify="1" src="/wp-content/cache/min/1/wp-content/plugins/date-time-picker-field/assets/js/dtpicker.js?ver=1709184319" id="dtpicker-build-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script id="mo_customer_validation_dropdown_script-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/date-time-picker-field/assets/js/dtpicker.js?ver=900971d5413984607bdbeb64019541bd" id="dtpicker-build-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="mo_customer_validation_dropdown_script-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
 var modropdownvars = {"selector":"[\".class_mo_phone\",\"input[name=mo_phone]\"]","defaultCountry":"in","onlyCountries":null};
 </script>
-<script src="/wp-content/plugins/miniorange-otp-verification/includes/js/dropdown.min.js?version=3.9.0&#038;ver=3.9.0" id="mo_customer_validation_dropdown_script-js" defer type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1" id="jquery-ui-core-js" defer></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.1" id="jquery-ui-menu-js" defer></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" id="regenerator-runtime-js" defer></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/dom-ready.min.js?ver=d996b53411d1533a84951212ab6ac4ff" id="wp-dom-ready-js" defer></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/hooks.min.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3" id="wp-hooks-js"></script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/i18n.min.js?ver=ebee46757c6a411e38fd079a7ac71d94" id="wp-i18n-js"></script>
-<script type="rocketlazyloadscript" id="wp-i18n-js-after">
+<script src="https://kahihia.github.io/Ayal/wp-content/plugins/miniorange-otp-verification/includes/js/dropdown.min.js?version=3.9.0&#038;ver=3.9.0" id="mo_customer_validation_dropdown_script-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1" id="jquery-ui-core-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.1" id="jquery-ui-menu-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" id="regenerator-runtime-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/dom-ready.min.js?ver=d996b53411d1533a84951212ab6ac4ff" id="wp-dom-ready-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/hooks.min.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3" id="wp-hooks-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/i18n.min.js?ver=ebee46757c6a411e38fd079a7ac71d94" id="wp-i18n-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="wp-i18n-js-after" type="b5af694f87ebc278366571b9-text/javascript">
 wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 </script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/dist/a11y.min.js?ver=a38319d7ba46c6e60f7f9d4c371222c5" id="wp-a11y-js" defer></script>
-<script id="jquery-ui-autocomplete-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/dist/a11y.min.js?ver=a38319d7ba46c6e60f7f9d4c371222c5" id="wp-a11y-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="jquery-ui-autocomplete-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
 var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
 </script>
-<script type="rocketlazyloadscript" src="/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.13.1" id="jquery-ui-autocomplete-js" defer></script>
-<script type="rocketlazyloadscript" id="mediaelement-core-js-before">
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.13.1" id="jquery-ui-autocomplete-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="mediaelement-core-js-before" type="b5af694f87ebc278366571b9-text/javascript">
 var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
 </script>
-<script src="/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16" id="mediaelement-core-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=900971d5413984607bdbeb64019541bd" id="mediaelement-migrate-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script id="mediaelement-js-extra" type="cb9d42d18609466995874e9a-text/javascript">
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.16" id="mediaelement-core-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=900971d5413984607bdbeb64019541bd" id="mediaelement-migrate-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script id="mediaelement-js-extra" type="b5af694f87ebc278366571b9-text/javascript">
 var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive"};
 </script>
-<script src="/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=900971d5413984607bdbeb64019541bd" id="wp-mediaelement-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script src="/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.16" id="mediaelement-vimeo-js" type="cb9d42d18609466995874e9a-text/javascript"></script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=900971d5413984607bdbeb64019541bd" id="wp-mediaelement-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script src="https://kahihia.github.io/Ayal/wp-includes/js/mediaelement/renderers/vimeo.min.js?ver=4.2.16" id="mediaelement-vimeo-js" type="b5af694f87ebc278366571b9-text/javascript"></script>
+<script type="b5af694f87ebc278366571b9-text/javascript">
 window.addEventListener("load", function(event) {
 jQuery(".cfx_form_main,.wpcf7-form,.wpforms-form,.gform_wrapper form").each(function(){
 var form=jQuery(this); 
@@ -1139,25 +1142,21 @@ form.append('<input type="hidden" name="vx_url" value="'+window.location.href+'"
 
 });
 </script>
-<script type="cb9d42d18609466995874e9a-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
-if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
-images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
-if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js" type="cb9d42d18609466995874e9a-text/javascript"></script><script type="cb9d42d18609466995874e9a-text/javascript">function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
 
-<script type="rocketlazyloadscript" async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script async type="b5af694f87ebc278366571b9-text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PRJ733M');</script>
 
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
 	jQuery.event.special.touchstart = {
         setup: function( _, ns, handle ){
             this.addEventListener("touchstart", handle, { passive: true });
         }
     };
 </script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
 
 		$(function(){
 			var arrays = $(this).val().split('+');
@@ -1202,7 +1201,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			})
         });
 </script>
-<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
 $(document).ready(function () {
     //to disable the entire page
     $("body").on("contextmenu",function(e){
@@ -1210,9 +1209,9 @@ $(document).ready(function () {
     });
 });
 </script>
-<script type="cb9d42d18609466995874e9a-text/javascript">"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="/wp-content/cache/min/1/684b214c7083766d92234c53d43b2c90.css" media="all" data-minify="1" /><link rel='stylesheet' id='mag-popup-css'  href='https://www.sobha.com/wp-content/themes/sobha/css/magnific-popup.min.css?ver=900971d5413984607bdbeb64019541bd' media='all' /></noscript><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cb9d42d18609466995874e9a-|49" defer></script></body>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="b5af694f87ebc278366571b9-|49" defer></script></body>
 </html>
-<script type="cb9d42d18609466995874e9a-text/javascript">
+<script type="b5af694f87ebc278366571b9-text/javascript">
    $(document).ready(function($) {
      
       $('.go-down').click(function(event) {
@@ -1258,7 +1257,7 @@ $(document).ready(function () {
            autoplayTimeout:3000,
            dots : false,
            nav: true,
-           navText: ['<svg><use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>','<svg><use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>'],
+           navText: ['<svg><use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use></svg>','<svg><use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use></svg>'],
            margin: 20,
            responsive:{
                        0:{
@@ -1284,7 +1283,7 @@ $(document).ready(function () {
            autoplayTimeout:3000,
            dots : true,
            nav: true,
-           navText: ['<svg><use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>','<svg><use xlink:href="/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>'],
+           navText: ['<svg><use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use></svg>','<svg><use xlink:href="https://kahihia.github.io/Ayal/wp-content/themes/ayal/images/icons.svg#chevron"></use></svg>'],
            margin: 0,
       }).on("dragged.owl.carousel", function(event) {
          $('#hotel-carousel,#hotel-carousel1').owlCarousel({
@@ -1421,9 +1420,8 @@ $(document).ready(function () {
 
 webengage.track("Page Visit", {
     "Button Name" : "Explore Now",
-    "Page URL Visited" : "https://www.sobha.com/delhi-ncr/sobha-city/",
+    "Page URL Visited" : "https://kahihia.github.io/Ayal/delhi-ncr/ayal-city/",
     "Button Text"   : "Explore Now",
 });   
 </script>
-
 
