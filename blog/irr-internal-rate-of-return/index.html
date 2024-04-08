@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="5628825bf199f5f8838ee021-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="5628825bf199f5f8838ee021-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>IRR(Internal Rate of Interest): Meaning,Calculation, &amp; Formula!</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="5628825bf199f5f8838ee021-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta name="description" content="Learn about Internal Rate of Return (IRR): its meaning, calculation, and formula. Understand how IRR helps evaluate investment profitability." />
+<link rel="canonical" href="https://www.sobha.com/blog/irr-internal-rate-of-return/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="IRR(Internal Rate of Interest): Meaning,Calculation, &amp; Formula!" />
+<meta property="og:description" content="Learn about Internal Rate of Return (IRR): its meaning, calculation, and formula. Understand how IRR helps evaluate investment profitability." />
+<meta property="og:url" content="https://www.sobha.com/blog/irr-internal-rate-of-return/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:published_time" content="2023-06-27T09:47:44+00:00" />
+<meta property="article:modified_time" content="2023-06-27T09:51:31+00:00" />
+<meta property="og:image" content="https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@Sobhaltd" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Srikanta Padhy" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="10 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#primaryimage","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png","width":1200,"height":600,"caption":"Internal-Rate-of-Interest-IRR"},{"@type":"WebPage","@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#webpage","url":"https://www.sobha.com/blog/irr-internal-rate-of-return/","name":"IRR(Internal Rate of Interest): Meaning,Calculation, & Formula!","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#primaryimage"},"datePublished":"2023-06-27T09:47:44+00:00","dateModified":"2023-06-27T09:51:31+00:00","description":"Learn about Internal Rate of Return (IRR): its meaning, calculation, and formula. Understand how IRR helps evaluate investment profitability.","breadcrumb":{"@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/irr-internal-rate-of-return/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"IRR(Internal Rate of Interest): Meaning,Calculation, &#038; Formula!"}]},{"@type":"Article","@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#article","isPartOf":{"@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#webpage"},"author":{"@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420"},"headline":"IRR(Internal Rate of Interest): Meaning,Calculation, &#038; Formula!","datePublished":"2023-06-27T09:47:44+00:00","dateModified":"2023-06-27T09:51:31+00:00","mainEntityOfPage":{"@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#webpage"},"wordCount":2258,"publisher":{"@id":"https://www.sobha.com/blog/#organization"},"image":{"@id":"https://www.sobha.com/blog/irr-internal-rate-of-return/#primaryimage"},"thumbnailUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png","articleSection":["SOBHA"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/"}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; IRR(Internal Rate of Interest): Meaning,Calculation, &#038; Formula! Comments Feed" href="https://www.sobha.com/blog/irr-internal-rate-of-return/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/posts/5411" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://www.sobha.com/blog/?p=5411" />
+<link rel="alternate" type="application/json+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Firr-internal-rate-of-return%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Firr-internal-rate-of-return%2F&#038;format=xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar post-template-default single single-post postid-5411 single-format-standard">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header-single" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main id="main" class="page-main page-single page-single-box  ">
+<div class="container">
+<div class="row">
+<div class="col-md-8 main-content ">
+<div class="body-content clearfix">
+<div class="post-content mgt-special">
+<div id="post-5411" class="mdl-single-post mdl-single-post-v1 box clearfix post-5411 post type-post status-publish format-standard has-post-thumbnail hentry category-sobha mdl-post-standard">
+<div class="top center">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div>
+<h1>IRR(Internal Rate of Interest): Meaning,Calculation, &#038; Formula!</h1>
+<p class="date-time"><span>June</span> 27th, 2023</p>
+</div>
+<div class="photos">
+<img width="800" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20400'%3E%3C/svg%3E" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Internal-Rate-of-Interest-IRR" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png 1200w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-800x400.png" /><noscript><img width="800" height="400" src="https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-800x400.png" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Internal-Rate-of-Interest-IRR" srcset="https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/06/Internal-Rate-of-Interest-IRR.png 1200w" sizes="(max-width: 800px) 100vw, 800px" /></noscript> </div>
+<div class="content">
+<blockquote><p><em>IRR means Internal Rate of Return, and it refers to the calculation of the rate of return that an investor can expect to earn from a real estate investment, considering the timing and size of cash flows generated by the property.</em></p></blockquote>
+<p>When it comes to making investment decisions in the real estate industry, understanding the concept of IRR. The full form of IRR is Internal Rate of Return which a crucial financial metric used to evaluate the profitability and attractiveness of an investment opportunity over time. It considers both the timing and magnitude of cash flows associated with a real estate project, giving investors a full measure of its potential returns.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_63 ez-toc-wrap-left counter-hierarchy ez-toc-counter ez-toc-custom ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title ">Table of Contents</p>
+<span class="ez-toc-title-toggle"></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#What_is_IRR" title="What is IRR?">What is IRR?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#Key_Components_and_Factors_Influencing_IRR" title="Key Components and Factors Influencing IRR">Key Components and Factors Influencing IRR</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#Benefits_and_Limitations_of_IRR_in_Real_Estate_Analysis" title="Benefits and Limitations of IRR in Real Estate Analysis">Benefits and Limitations of IRR in Real Estate Analysis</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#How_to_Calculate_IRR" title="How to Calculate IRR?">How to Calculate IRR?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="#IRR_Calculation_Using_a_Financial_Calculator" title="IRR Calculation Using a Financial Calculator">IRR Calculation Using a Financial Calculator</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-6" href="#Manual_Calculation_of_IRR_using_NPV" title="Manual Calculation of IRR using NPV">Manual Calculation of IRR using NPV</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-7" href="#How_to_Calculate_IRR_for_Commercial_Real_Estate_Investments" title="How to Calculate IRR for Commercial Real Estate Investments?">How to Calculate IRR for Commercial Real Estate Investments?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-8" href="#IRR_vs_ROI" title="IRR vs ROI">IRR vs ROI</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-9" href="#Final_Thoughts" title="Final Thoughts">Final Thoughts</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-10" href="#FAQs" title="FAQ&#8217;s">FAQ&#8217;s</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="What_is_IRR"></span><strong>What is IRR?</strong><span class="ez-toc-section-end"></span></h2>
+<p>At its core, IRR or Internal Rate of Interest represents the discount rate at which the present value of a project&#8217;s cash inflows equals the present value of its cash outflows. It is especially valuable in comparing different investment opportunities within the real estate sector. By calculating and comparing the IRRs of various projects, investors can determine which option offers the highest potential returns relative to the associated risks. It allows them to prioritise investments with the most favorable IRRs and align their investment strategies accordingly.</p>
+<h2><span class="ez-toc-section" id="Key_Components_and_Factors_Influencing_IRR"></span><strong>Key Components and Factors Influencing IRR</strong><span class="ez-toc-section-end"></span></h2>
+<p>These include cash flows, time value of money, and initial investment. Let us explore each of these components in more detail:</p>
+<ol>
+<li>
+<h3><strong>Cash Flows:</strong></h3>
+<p>These represent the outflows &amp; inflows of money associated with an investment project over its life. Typically, these include initial investments (negative cash flows) and subsequent cash outflows generated by the project. Inflows can come from various sources, such as revenue from sales, cost savings, or salvage value. The magnitude and timing of these cash flows significantly impact the Internal Rate of Return calculations.</li>
+<li>
+<h3><strong>Time Value of Money:</strong></h3>
+<p>This a fundamental concept in finance that recognises the idea that a dollar received today is worth more than a dollar received in the future. This concept arises because money can be invested or can earn return over time. To account for the time value of money, cash flows are discounted using a rate of return, typically the cost of capital or the required rate of return. The discounting process adjusts future cash flows to their present values, which allows for meaningful comparison and analysis.</li>
+<li>
+<h3><strong>Initial Investment: </strong></h3>
+<p>This refers to the cash outflow required to start an investment project, which includes the cost of acquiring assets, capital expenditures, research and development expenses, and any other upfront costs. The initial investment is a critical factor in calculating the IRR because it directly affects the project&#8217;s cash outflows.</li>
+</ol>
+<h2><span class="ez-toc-section" id="Benefits_and_Limitations_of_IRR_in_Real_Estate_Analysis"></span><strong>Benefits and Limitations of IRR in Real Estate Analysis</strong><span class="ez-toc-section-end"></span></h2>
+<p>The Internal Rate of Return is a widely used financial metric in <a href="https://www.sobha.com/blog/what-is-real-estate-and-its-types/" target="_blank" rel="noopener" rel="nofollow">real estate</a> analysis. It is a measure of the profitability of an investment and is commonly used to assess the viability of real estate projects. However, like any financial tool, IRR has its benefits and limitations.</p>
+<h3><strong>Benefits of IRR in Real Estate Analysis</strong></h3>
+<ol>
+<li>
+<h3><strong>Evaluation of Profitability: </strong></h3>
+<p>Internal Rate of Return helps determine the potential return on investment (ROI) by considering the time value of money. It considers both the timing and magnitude of cash flows, allowing investors to assess the profitability of a real estate project.</li>
+<li>
+<h3><strong>Comparison of Different Investments:</strong></h3>
+<p>By calculating the rates of multiple projects, investors can evaluate and prioritise investments based on their expected returns.</li>
+<li>
+<h3><strong>Incorporation of Cash Flow Timing:</strong></h3>
+<p>Unlike other metrics such as net present value (NPV) – which solely focuses on the total value of cash flows – IRR considers the timing of these cash flows. This aspect is particularly important in real estate investments, where cash flows vary significantly over a long period of time.</li>
+</ol>
+<h3><strong>Limitations of IRR in Real Estate Analysis</strong></h3>
+<ol>
+<li>
+<h3><strong>Ambiguity in Reinvestment Assumptions: </strong></h3>
+<p>The formula assumes that cash flows generated by a project are reinvested at the calculated IRR itself. However, it can be challenging to identify realistic reinvestment opportunities with the exact same rate of return. This assumption may not accurately reflect the actual reinvestment potential, and hence can affect the reliability of calculations.</li>
+<li>
+<h3><strong>Ignoring Cash Flow Magnitude: </strong></h3>
+<p>The final result of IRR calculations does not reflect the absolute magnitude of cash flows, focusing solely on their timing. This limitation can lead to situations where projects with similar IRRs have vastly different cash flow amounts. Consequently, it may not provide a comprehensive picture of the profitability or feasibility of a real estate investment.</li>
+<li>
+<h3><strong>Sensitivity to Cash Flow Timing: </strong></h3>
+<p>It assumes that all cash flows occur at precise dates and can be reinvested accordingly. However, in real estate, cash flows are often subject to uncertainties and delays. Fluctuations in the timing of cash flows can significantly impact the calculated rate, potentially leading to misleading conclusions.</li>
+</ol>
+<h2><span class="ez-toc-section" id="How_to_Calculate_IRR"></span><strong>How to Calculate IRR?</strong><span class="ez-toc-section-end"></span></h2>
+<p>There are several methods to calculate Internal Rate of Return in real estate, including the following:</p>
+<ol>
+<li>
+<h3><strong>Manual Calculation: </strong></h3>
+<p>This method involves using a trial-and-error approach to find the discount rate that makes the net present value (NPV) of the investment equal to zero. The discount rate that achieves this equilibrium is the rate.</li>
+<li>
+<h3><strong>Excel Spreadsheet: </strong></h3>
+<p>If you want to figure out how to calculate IRR in excel for real estate, the software offers built-in functions to calculate it automatically. By inputting the positive and negative cash flows associated with the real estate investment over the holding period, the function in Excel can determine the rate of return.</li>
+<li>
+<h3><strong>Financial Calculators: </strong></h3>
+<p>These streamline the process by allowing you to input the cash flows and obtain the rate directly.</li>
+<li>
+<h3><strong>Real Estate Investment Software: </strong></h3>
+<p>Numerous real estate investment software programs are available that automate the calculation.</li>
+<li>
+<h3><strong>Online Calculators: </strong></h3>
+<p>Various websites provide online calculators that allow you to input the cash flows and holding period, and then they calculate the rate for you.</li>
+</ol>
+<p>The accuracy of calculations depends on the quality of the underlying data and assumptions made regarding the investment&#8217;s performance.</p>
+<h2><span class="ez-toc-section" id="IRR_Calculation_Using_a_Financial_Calculator"></span><strong>IRR Calculation Using a Financial Calculator</strong><span class="ez-toc-section-end"></span></h2>
+<p>To calculate the internal rate of return using a financial calculator, follow these steps:</p>
+<ol>
+<li>
+<h3><strong>Input the Cash Flows:</strong></h3>
+<p>Determine the cash flows associated with the investment or project.</li>
+<li>
+<h3><strong>Set the Calculator Settings:</strong></h3>
+<p>Set the calculator to ‘Begin’ or ‘End’ mode, depending on whether the cash flows occur at the beginning or end of each period.</li>
+<li>
+<h3><strong>Calculate the IRR:</strong></h3>
+<p>Once you have entered the cash flows and set the calculator settings, use the IRR function on your financial calculator.</li>
+<li>
+<h3><strong>Interpret the Result:</strong></h3>
+<p>The calculator will display the calculated IRR as a percentage. This represents the discount rate at which the net present value (NPV) of the cash flows is zero.</li>
+</ol>
+<h2><span class="ez-toc-section" id="Manual_Calculation_of_IRR_using_NPV"></span><strong>Manual Calculation of IRR using NPV</strong><span class="ez-toc-section-end"></span></h2>
+<p>Below is a step-by-step guide on how to calculate IRR in real estate manually:</p>
+<ol>
+<li>
+<h3><strong>Gather relevant data: </strong></h3>
+<p>Collect all the necessary information about the real estate investment, including the initial investment amount, cash flows generated by the property, and the holding period.</li>
+<li>
+<h3><strong>Determine Cash Flows: </strong></h3>
+<p>Calculate the net cash flows for each period. Net cash flow is the difference between the income generated by the property and the expenses incurred during that period.</li>
+<li>
+<h3><strong>Identify the Initial Investment: </strong></h3>
+<p>Consider the initial investment amount, which includes the purchase price, closing costs, and any other expenses incurred at the beginning.</li>
+<li>
+<h3><strong>Set up the IRR Formula: </strong></h3>
+<p>Assign a variable to the IRR and set up an equation that sums the present values of all the cash flows. Here is the equation or Formula &#8211;</p>
+<p><strong>NPV</strong> = <strong>CF₀/(1+IRR)⁰ + CF₁/(1+IRR)¹ + CF₂/(1+IRR)² + &#8230; + CFₙ/(1+IRR)ⁿ</strong></p>
+<p><strong>Where:</strong></p>
+<p><strong>NPV</strong> = Net Present Value (should equal zero for the IRR calculation)<br/>
+<strong>CF₀</strong> = Initial investment (negative value)<br/>
+<strong>CF₁, CF₂, &#8230;, CFₙ</strong> = Net cash flows for each period (positive or negative values)<br/>
+<strong>IRR</strong> = Internal Rate of Return (the variable to be solved)</li>
+<li>
+<h3><strong>Solve for IRR: </strong></h3>
+<p>Use numerical methods / trial &amp; error to solve the equation for the value that makes the NPV equal to zero.</li>
+<li>
+<h3><strong>Interpret the Rate:</strong></h3>
+<p>The resulting value represents the annualised rate of return on your real estate investment.</li>
+</ol>
+<h2><span class="ez-toc-section" id="How_to_Calculate_IRR_for_Commercial_Real_Estate_Investments"></span><strong>How to Calculate IRR for Commercial Real Estate Investments?</strong><span class="ez-toc-section-end"></span></h2>
+<p>Calculating the internal rate of return for commercial real estate investments follows the same principles as any other investment. Below is a step-by-step guide on how to calculate IRR for commercial real estate investments:</p>
+<ol>
+<li>
+<h3><strong>Determine The Cash Flows: </strong></h3>
+<p>Identify the expected cash flows associated with the commercial real estate investment.</li>
+<li>
+<h3><strong>Estimate the Initial Investment: </strong></h3>
+<p>Determine the investment required upfront, for the commercial real estate project.</li>
+<li>
+<h3><strong>Organise the Cash Flows:</strong></h3>
+<p>Arrange these in a chronological order, with the initial investment as a negative value occurring in the initial period, and subsequent cash flows as positive values occurring in the relevant periods.</li>
+<li>
+<h3><strong>Use a Financial Calculator or Software:</strong></h3>
+<p>Utilise a financial calculator or specialised real estate investment software to calculate the IRR.</li>
+<li>
+<h3><strong>Input the Cash Flows: </strong></h3>
+<p>Enter these into the calculator or software, ensuring the correct sign (positive or negative) is assigned to each cash flow. Consider the timing of the cash flows, as they may vary throughout the investment period.</li>
+<li>
+<h3><strong>Calculate the IRR: </strong></h3>
+<p>Use the function in your calculator or software to determine this. The result will be presented as a percentage, representing the discount rate at which the net present value (NPV) of all cash flows is zero.</li>
+<li>
+<h3><strong>Evaluate the IRR: </strong></h3>
+<p>Assess the calculated rate to determine the potential profitability of the commercial real estate investment. Compare it to your required rate of return or hurdle rate.</li>
+</ol>
+<h2><span class="ez-toc-section" id="IRR_vs_ROI"></span><strong>IRR vs ROI</strong><span class="ez-toc-section-end"></span></h2>
+<h3><strong>IRR (Internal Rate of Return)</strong></h3>
+<ul>
+<li>Measures the profitability &amp; potential return on an investment</li>
+<li>Represents the discount rate at which the net present value (NPV) of cash flows from an investment becomes zero</li>
+<li>Considers the time value of money by factoring in the timing &amp; magnitude of cash inflows &amp; outflows</li>
+<li>Helps in comparing different investment opportunities and selecting the most attractive one</li>
+<li>Provides a single percentage value to assess the overall return on an investment</li>
+<li>Reflects the compound annual growth rate of an investment over its holding period</li>
+</ul>
+<h3><strong>ROI (Return on Investment):</strong></h3>
+<ul>
+<li>Measures the efficiency and profitability of an investment</li>
+<li>Represents the ratio of net profit (or gain) to the cost of the investment</li>
+<li>Provides a straightforward percentage value that shows the return relative to the initial investment</li>
+<li>Does not consider the time value of money or the specific timing of cash flows</li>
+<li>Useful for evaluating the performance of investments and determining their effectiveness</li>
+<li>Can be calculated for various time periods (monthly, quarterly, annually) to assess the investment&#8217;s performance over different periods.</li>
+</ul>
+<h2><span class="ez-toc-section" id="Final_Thoughts"></span><strong>Final Thoughts</strong><span class="ez-toc-section-end"></span></h2>
+<p>In conclusion, understanding what is IRR in real estate investing is essential for investors looking to make informed decisions and maximise their returns. By utilising this metric, investors can assess the profitability, compare different investment opportunities, and gauge the feasibility of real estate projects. However, it is important to consider it in conjunction with other financial indicators &amp; factors that may impact the investment&#8217;s overall success.</p>
+<p><strong>Also Read,</strong></p>
+<p><strong><a href="https://www.sobha.com/blog/real-estate-market-in-india/" target="_blank" rel="noopener" rel="nofollow">Real Estate Market in India: 2023 and Beyond</a></strong></p>
+<p><strong><a href="https://www.sobha.com/blog/can-foreigners-buy-property-in-india/" target="_blank" rel="noopener" rel="nofollow">Can Foreigners Buy Property in India?</a></strong></p>
+<p><strong><a href="https://www.sobha.com/blog/eoi-in-real-estate/" target="_blank" rel="noopener" rel="nofollow">EOI (Expression of Interest) in Real Estate – A Comprehensive Guide</a></strong></p>
+<p><strong><a href="https://www.sobha.com/blog/best-cities-for-real-estate-investment-in-india/" rel="nofollow">10 Best Cities for Real Estate Investment in India</a></strong></p>
+<h2><span class="ez-toc-section" id="FAQs"></span><strong>FAQ&#8217;s</strong><span class="ez-toc-section-end"></span></h2>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>1. What is a good IRR rate for real estate?</h3> <div>
+<p>
+For a real estate investment, a return of around 18-20% is relatively good. Any rate above 10% is considered to be decent. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>2. How is IRR calculated in real estate? </h3> <div>
+<p>
+There are several methods for this, including Manual Calculation, Excel Spreadsheet, Financial Calculators, Real Estate Investment Software and Online Calculators. Determine the cash outflows' total present value (PV), and the cash inflows’ total PV. The rate at which these two values are equal, would be the IRR. If it is higher than the minimum acceptable rate of return or the hurdle rate of a company, the project is favourable. If the IRR is lower than these rates, the company needs to decide if the project has any other benefits that can justify the gap. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>3. What does a 20% IRR mean? </h3> <div>
+<p>
+A 20% IRR means that an investment of ₹50,00,000 will give an interest of ₹10,00,000 annually. However, the final amount is calculated on a compound basis which means in the second year, interest will be added to the initial investment amount. A higher IRR is typically a better IRR. The IRR calculation is much more precise than its typical counterpart, return on investment (ROI) since it adds NPV, which takes cash in and cash out into consideration. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>4. Is a 10% IRR good in real estate?</h3> <div>
+<p>
+Generally, 10% IRR is a good return on a real estate investment. However, any rate lower than that would means reconsidering the investment options under consideration. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>5. What does 30% IRR mean?</h3> <div>
+<p>
+With a 30% IRR, you can expect an annual return of Rs. 9,00,000 if an investment of Rs. 30,00,000 has been made. Based on that, compound interest will be accumulated for a specific duration. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>6. Is 19% a good IRR?</h3> <div>
+<p>
+Yes, 19% IRR is good. If the rate is anywhere above 10%, the return on the property is considered profitable in the future. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>7. What is the minimum IRR?</h3> <div>
+<p>
+According to the internal rate of return (IRR) criterion, a project or investment should be undertaken if its IRR is higher than the hurdle rate or required rate of return, which is the minimum required rate of return. The IRR Rule aids businesses in determining whether to go ahead with a project or not. Regardless, investment can be made in the property if there are other benefits. </p>
+</div>
+</div>
+</section>
+<script type="application/ld+json">
+    {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+				{
+				"@type": "Question",
+				"name": "1. What is a good IRR rate for real estate?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "For a real estate investment, a return of around 18-20% is relatively good. Any rate above 10% is considered to be decent."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "2. How is IRR calculated in real estate? ",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "There are several methods for this, including Manual Calculation, Excel Spreadsheet, Financial Calculators, Real Estate Investment Software and Online Calculators. Determine the cash outflows' total present value (PV), and the cash inflows’ total PV. The rate at which these two values are equal, would be the IRR. If it is higher than the minimum acceptable rate of return or the hurdle rate of a company, the project is favourable. If the IRR is lower than these rates, the company needs to decide if the project has any other benefits that can justify the gap."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "3. What does a 20% IRR mean? ",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "A 20% IRR means that an investment of ₹50,00,000 will give an interest of ₹10,00,000 annually. However, the final amount is calculated on a compound basis which means in the second year, interest will be added to the initial investment amount. A higher IRR is typically a better IRR. The IRR calculation is much more precise than its typical counterpart, return on investment (ROI) since it adds NPV, which takes cash in and cash out into consideration."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "4. Is a 10% IRR good in real estate?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Generally, 10% IRR is a good return on a real estate investment. However, any rate lower than that would means reconsidering the investment options under consideration."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "5. What does 30% IRR mean?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "With a 30% IRR, you can expect an annual return of Rs. 9,00,000 if an investment of Rs. 30,00,000 has been made. Based on that, compound interest will be accumulated for a specific duration."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "6. Is 19% a good IRR?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Yes, 19% IRR is good. If the rate is anywhere above 10%, the return on the property is considered profitable in the future."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "7. What is the minimum IRR?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "According to the internal rate of return (IRR) criterion, a project or investment should be undertaken if its IRR is higher than the hurdle rate or required rate of return, which is the minimum required rate of return. The IRR Rule aids businesses in determining whether to go ahead with a project or not. Regardless, investment can be made in the property if there are other benefits."
+									}
+			}
+				    ]
+}
+</script>
+</div> 
+<div class="row">
+<div class="meta-post clearfix">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="mdl-tags">
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="love-action sl-wrapper"><a href="#" class="sl-button sl-button-5411" data-nonce="40e16a88d5" data-post-id="5411" data-iscomment="0" title="Like">Love this? <i class="fa fa-heart-o"></i></a></div> </div>
+</div>
+</div>
+<div class="social-share-action">
+<h4>Sharing</h4>
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/irr-internal-rate-of-return/" data-title="IRR(Internal Rate of Interest): Meaning,Calculation, &#038; Formula!">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+</div> 
+</div>
+<div class="blk-paging-post box">
+<div class="row">
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/advantages-of-investing-in-real-estate/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/06/advantages-of-investing-in-real-estate-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>Previous</span>
+<h3>Advantages of Investing in Indian Real Estate</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/real-estate-market-in-india/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/06/real-estate-market-in-india-2023-and-beyond-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>NEXT</span>
+<h3>Real Estate Market in India: 2023 and Beyond</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-related-post box">
+<h4>You might also like</h4>
+<div class="inner clearfix">
+<div id="all-post-temp-display"></div>
+<div id="all-post-temp" style="display:none;" data-display="2">
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/is-it-worth-investing-in-a-flat-in-india/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/12/is-it-worth-investing-in-flats-in-india-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/12/is-it-worth-investing-in-flats-in-india-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/is-it-worth-investing-in-flats-in-india-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/is-it-worth-investing-in-flats-in-india.png" data-width="800" data-height="400" data-alt="Is it worth investing in a Flat in India?">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/12/is-it-worth-investing-in-flats-in-india-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/is-it-worth-investing-in-a-flat-in-india/">Is It Worth Investing in a Flat in India?</a></h5>
+<p class="date-time"><span>December</span> 1st, 2023</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/idc-infrastructure-development-charges/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges.png" data-width="800" data-height="400" data-alt="IDC (Infrastructure Development Charges) in real estate">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/idc-infrastructure-development-charges/">IDC (Infrastructure Development Charges) in Real estate</a></h5>
+<p class="date-time"><span>October</span> 28th, 2023</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/ways-make-home-eco-friendly/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/ways-make-home-eco-friendly-1-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/ways-make-home-eco-friendly-1-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/ways-make-home-eco-friendly-1-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/ways-make-home-eco-friendly-1.png" data-width="800" data-height="400" data-alt="40 Ways to Make Your Home More Eco-friendly">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/ways-make-home-eco-friendly-1-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/ways-make-home-eco-friendly/">40 Ways to Make Your Home More Eco-friendly</a></h5>
+<p class="date-time"><span>March</span> 28th, 2024</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/pros-and-cons-of-investing-in-real-estate/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/12/pros-cons-of-investing-in-real-estate-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/12/pros-cons-of-investing-in-real-estate-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/pros-cons-of-investing-in-real-estate-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/pros-cons-of-investing-in-real-estate.png" data-width="800" data-height="400" data-alt="The Pros and Cons of Investing in Real Estate">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/12/pros-cons-of-investing-in-real-estate-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/pros-and-cons-of-investing-in-real-estate/">The Pros and Cons of Investing in Real Estate: Is it Worth?</a></h5>
+<p class="date-time"><span>December</span> 2nd, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4  sidebar">
+<div class="widget-odd widget-first widget-1 mdl-widget widget rushmore_widget_menu-7 mdl-sidebar-menu"><div class="title-header dark"><h4>Residential Projects</h4></div><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_recent_posts-4 mdl-widget-list-post"><div class="title-header dark"><h4>Recent Posts</h4></div><div class="content"><ul> <li class="clearfix post-6401 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">Millionaires&#8217; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6399 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6403 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">Security Measures and Privacy Protocols on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6394 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/owning-property-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/owning-property-millionaires-row/">The Benefits of Owning Property on Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6391 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">A Peek Inside Millionaires’ Row: What Makes This Neighbourhood So Exclusive?</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6388 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">Inside Bangalore&#8217;s Affluent Community: A Peek into Millionaires&#8217; Row Lifestyle</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6385 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6382 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6378 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">Why Trivandrum is the Best Place to Live in?</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6372 post type-post status-publish format-standard has-post-thumbnail hentry category-gurgaon category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">Gurgaon Real Estate Market Forecast 2024-25</a></h4>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+</li>
+</ul></div></div> </div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#82f5e7e0e4e7e7e6e0e3e1e9c2f1ede0eae3ace1edef"><span class="__cf_email__" data-cfemail="fd8a989f9b9898999f9c9e96bd8e929f959cd39e9290">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="5628825bf199f5f8838ee021-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="5628825bf199f5f8838ee021-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="5628825bf199f5f8838ee021-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="5628825bf199f5f8838ee021-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="5628825bf199f5f8838ee021-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="5628825bf199f5f8838ee021-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="5628825bf199f5f8838ee021-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="5628825bf199f5f8838ee021-|49" defer></script></body>
+</html>

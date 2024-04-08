@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="1d5c1675d0a7f2fc2f5652aa-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="1d5c1675d0a7f2fc2f5652aa-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow" />
+
+<title>Srikanta Padhy, Author at SOBHA | Blog - Page 2 of 23</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1d5c1675d0a7f2fc2f5652aa-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Srikanta Padhy, Author at SOBHA | Blog - Page 2 of 23" />
+<meta property="og:url" content="https://www.sobha.com/blog/author/srikanta-padhysobha-com/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="og:image" content="https://secure.gravatar.com/avatar/0d334734bcd7e963ae14a571f2fc563d?s=500&#038;d=mm&#038;r=g" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ProfilePage","@id":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/#webpage","url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/","name":"Srikanta Padhy, Author at SOBHA | Blog - Page 2 of 23","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"breadcrumb":{"@id":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"Archives for Srikanta Padhy"}]},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"mainEntityOfPage":{"@id":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/2/#webpage"}}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Posts by Srikanta Padhy Feed" href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/users/6" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar archive paged author author-srikanta-padhysobha-com author-6 paged-2 author-paged-2">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header page-header-v1 clearfix" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="parallax-option is-parallax ">
+<div class="container">
+<div class="text-header">
+<h1 class="rushmore-header-title">Blog Layout 4</h1><h2 class="rushmore-header-title">CHOOSE FROM 8 DIFFERENT BLOG LAYOUTS</h2> </div>
+</div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main class="page-main page-blog page-blog-v6"> <div class="container">
+<div class="row">
+<div class="col-md-12 main-content  mgt-special ">
+<div class="body-content">
+<div class="all-post clearfix">
+<div id="post-6369" class="rushmore-post mdl-post-normal mdl-post-v1 post-6369 post type-post status-publish format-standard has-post-thumbnail hentry category-sobha mdl-post-standard">
+<div class="top">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div> <h3><a href="https://www.sobha.com/blog/sobha-high-quality-apartments/" rel="bookmark">How SOBHA Delivers High-Quality Apartments to Its Buyers</a></h3>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+<div class="thumb">
+<a href="https://www.sobha.com/blog/sobha-high-quality-apartments/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/sobha-delivers-high-quality-apartments-to-its-buyers-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/sobha-delivers-high-quality-apartments-to-its-buyers-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/sobha-delivers-high-quality-apartments-to-its-buyers-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/sobha-delivers-high-quality-apartments-to-its-buyers.png" data-width="800" data-height="400" data-alt="How SOBHA Delivers High-Quality Apartments to Its Buyers">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/sobha-delivers-high-quality-apartments-to-its-buyers-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+</div>
+<div class="content clearfix">
+<div class="excerpt">
+<p>When it comes to buying an apartment, quality is one of the most important parameters for With a legacy of 3 decades, SOBHA Limited is renowned for delivering high quality apartments to homebuyers across In apartment construction, quality&hellip;</p>
+</div>
+<div class="meta clearfix">
+<a href="https://www.sobha.com/blog/sobha-high-quality-apartments/" class="continue-reading">Continue Reading...</a>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/sobha-high-quality-apartments/" data-title="How SOBHA Delivers High-Quality Apartments to Its Buyers">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div><div id="all-post-temp-display"></div><div id="all-post-temp" style="display:none;" data-display="2">
+<div id="post-6305" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6305 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-bangalores-expensive-real-estate/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/millionaires-row-bangalores-expensive-real-estate-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/millionaires-row-bangalores-expensive-real-estate-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/millionaires-row-bangalores-expensive-real-estate-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/millionaires-row-bangalores-expensive-real-estate.png" data-width="800" data-height="400" data-alt="Millionaires&#039; Row: Bangalore&#039;s Most Expensive Real Estate!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/millionaires-row-bangalores-expensive-real-estate-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/sobha/investment/" rel="category tag">Investment</a>, <a href="https://www.sobha.com/blog/category/sobha/lifestyle/" rel="category tag">Lifestyle</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/millionaires-row-bangalores-expensive-real-estate/" rel="bookmark">Millionaires&#8217; Row: Bangalore&#8217;s Most Expensive Real Estate</a></h3>
+<div class="excerpt">
+<p>From breathtaking architectural masterpieces to unrivalled amenities and a coveted address, Millionaires&#39; Row is the epitome of opulence and This exclusive enclave is one of the most extravagant and sought-after real estate in Bangalore, representing the pinnacle of refined&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>April</span> 1st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/millionaires-row-bangalores-expensive-real-estate/" data-title="Millionaires&#8217; Row: Bangalore&#8217;s Most Expensive Real Estate">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6298" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6298 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-houses-sarjapur-road-benefits-considerations/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-houses-sarjapur-road-benefits-considerations-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-houses-sarjapur-road-benefits-considerations-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-houses-sarjapur-road-benefits-considerations-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-houses-sarjapur-road-benefits-considerations.png" data-width="800" data-height="400" data-alt="Allure of Millionaire’s Row: Benefits and Considerations in Sarjapur Road!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-houses-sarjapur-road-benefits-considerations-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/neighbourhood/" rel="category tag">Neighbourhood</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/millionaires-row-houses-sarjapur-road-benefits-considerations/" rel="bookmark">The Appeal of Millionaire’s Row Houses in Sarjapur Road Benefits and Considerations</a></h3>
+<div class="excerpt">
+<p>Welcome to the epitome of luxury living – Millionaires’ Row in the coveted locale of Sarjapur In the vibrant tapestry of Bangalore’s real estate, these exclusive residences are a testament to opulence and refined Bangalore&#39;s Sarjapur Road is&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>April</span> 1st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/millionaires-row-houses-sarjapur-road-benefits-considerations/" data-title="The Appeal of Millionaire’s Row Houses in Sarjapur Road Benefits and Considerations">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6296" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6296 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/investing-ultra-luxurious-row-houses-sarjapur-road/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/investing-in-sarjapur-roads-ultra-luxurious-row-houses-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/investing-in-sarjapur-roads-ultra-luxurious-row-houses-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/investing-in-sarjapur-roads-ultra-luxurious-row-houses-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/investing-in-sarjapur-roads-ultra-luxurious-row-houses.png" data-width="800" data-height="400" data-alt="Investing in Sarjapur Road&#039;s Ultra-Luxurious Row Houses!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/investing-in-sarjapur-roads-ultra-luxurious-row-houses-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/sobha/investment/" rel="category tag">Investment</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/investing-ultra-luxurious-row-houses-sarjapur-road/" rel="bookmark">Investing in Sarjapur Road&#8217;s Ultra-Luxurious Row Houses!</a></h3>
+<div class="excerpt">
+<p>Beyond the exquisite design and lavish interiors, investing in Sarjapur Road&#39;s ultra-luxurious row houses presents many From location advantages – including proximity to IT hubs, educational institutions, and entertainment destinations – to world-class amenities catering to every aspect of&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>April</span> 1st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/investing-ultra-luxurious-row-houses-sarjapur-road/" data-title="Investing in Sarjapur Road&#8217;s Ultra-Luxurious Row Houses!">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6300" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6300 post type-post status-publish format-standard has-post-thumbnail hentry category-investment category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/sarjapur-road-millionaires-row-bangalore-real-estate/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/sarjapur-road-millionaires-row-bangalore-real-estate-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/sarjapur-road-millionaires-row-bangalore-real-estate-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/sarjapur-road-millionaires-row-bangalore-real-estate-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/sarjapur-road-millionaires-row-bangalore-real-estate.png" data-width="800" data-height="400" data-alt="Sarjapur Road&#039;s Millionaires&#039; Row: Impact on Bangalore Real Estate!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/sarjapur-road-millionaires-row-bangalore-real-estate-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/sobha/investment/" rel="category tag">Investment</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/neighbourhood/" rel="category tag">Neighbourhood</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/sarjapur-road-millionaires-row-bangalore-real-estate/" rel="bookmark">Sarjapur Road Millionaires&#8217; Row Development and Its Impact on Bangalore&#8217;s Real Estate</a></h3>
+<div class="excerpt">
+<p>The Millionaires Row development has had a profound impact on Bangalore&#39;s real estate, especially Sarjapur introducing a new era of luxury living and upscale amenities, this modern and high-end residences has transformed the area into a coveted destination for&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 31st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/sarjapur-road-millionaires-row-bangalore-real-estate/" data-title="Sarjapur Road Millionaires&#8217; Row Development and Its Impact on Bangalore&#8217;s Real Estate">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6302" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6302 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/design-trends-sarjapur-road-millionaires-row/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/design-trends-sarjapur-road-millionaires-row-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/design-trends-sarjapur-road-millionaires-row-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/design-trends-sarjapur-road-millionaires-row-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/design-trends-sarjapur-road-millionaires-row.png" data-width="800" data-height="400" data-alt="Decoding Sarjapur Road Millionaires&#039; Row: Exclusive Home Design Trends">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/design-trends-sarjapur-road-millionaires-row-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/sobha/lifestyle/" rel="category tag">Lifestyle</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/neighbourhood/" rel="category tag">Neighbourhood</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/design-trends-sarjapur-road-millionaires-row/" rel="bookmark">Design Trends of Sarjapur Road Millionaires&#8217; Row: What Exclusive Homebuyers Prefer!</a></h3>
+<div class="excerpt">
+<p>Millionaires’ Row stands as a beacon of opulence and exclusivity in the realm of luxury real Nestled in the heart of Sarjapur Road, these esteemed residences cater to the discerning tastes of affluent families seeking the epitome of sophistication&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 31st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/design-trends-sarjapur-road-millionaires-row/" data-title="Design Trends of Sarjapur Road Millionaires&#8217; Row: What Exclusive Homebuyers Prefer!">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6307" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6307 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/closer-look-at-sarjapur-road-then-and-now/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/closer-look-at-sarjapur-road-then-and-now-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/closer-look-at-sarjapur-road-then-and-now-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/closer-look-at-sarjapur-road-then-and-now-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/closer-look-at-sarjapur-road-then-and-now.png" data-width="800" data-height="400" data-alt="A Closer Look at Sarjapur Road – Then and Now!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/closer-look-at-sarjapur-road-then-and-now-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/closer-look-at-sarjapur-road-then-and-now/" rel="bookmark">A Closer Look at Sarjapur Road – Then and Now!</a></h3>
+<div class="excerpt">
+<p>Sarjapur Road, a bustling thoroughfare in Bangalore, India, has witnessed a remarkable transformation – evolving from a quaint rural stretch to a vibrant urban This article delves into the historical trajectory and contemporary landscape of Sarjapur Road – exploring&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 31st, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/closer-look-at-sarjapur-road-then-and-now/" data-title="A Closer Look at Sarjapur Road – Then and Now!">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6346" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6346 post type-post status-publish format-standard has-post-thumbnail hentry category-chennai category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/top-locations-to-buy-lands-in-chennai/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/best-places-to-buy-lands-in-chennai-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/best-places-to-buy-lands-in-chennai-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/best-places-to-buy-lands-in-chennai-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/best-places-to-buy-lands-in-chennai.png" data-width="800" data-height="400" data-alt="Top Locations for Land Investment in Chennai">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/best-places-to-buy-lands-in-chennai-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/chennai/" rel="category tag">Chennai</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/top-locations-to-buy-lands-in-chennai/" rel="bookmark">Top Locations to Buy Lands in Chennai</a></h3>
+<div class="excerpt">
+<p>Discovering the perfect plot is like uncovering the essence of a city&#39;s In Chennai, the bustling neighbourhoods of Adyar, OMR, ECR, Velachery, Porur, Sholinganallur, and Perumbakkam are lands that beckon with Each area has a unique narrative waiting&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 30th, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/top-locations-to-buy-lands-in-chennai/" data-title="Top Locations to Buy Lands in Chennai">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6309" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6309 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-of-sarjapur-road-millionaires-row/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/allure-of-sarjapur-road-millionaires-row-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/allure-of-sarjapur-road-millionaires-row-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/allure-of-sarjapur-road-millionaires-row-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/allure-of-sarjapur-road-millionaires-row.png" data-width="800" data-height="400" data-alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/allure-of-sarjapur-road-millionaires-row-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/sobha/investment/" rel="category tag">Investment</a>, <a href="https://www.sobha.com/blog/category/millionaire-row/" rel="category tag">Millionaire Row</a>, <a href="https://www.sobha.com/blog/category/sobha/neighbourhood/" rel="category tag">Neighbourhood</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/allure-of-sarjapur-road-millionaires-row/" rel="bookmark">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h3>
+<div class="excerpt">
+<p>Situated in the bustling city of Bangalore, Sarjapur Road is a dynamic area that seamlessly combines urban convenience with tranquil green Serving as a prominent hub for IT companies, it attracts professionals from diverse walks of life who desire&hellip;</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 30th, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/allure-of-sarjapur-road-millionaires-row/" data-title="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="post-6320" class="rushmore-post rushmore-post-grid col-md-6">
+<div class="mdl-post-normal mdl-post-v3 clearfix post-6320 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/sarjapur-road-affluent-living-insights-investment/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/sarjapur-road-affluent-living-insights-investment-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/sarjapur-road-affluent-living-insights-investment-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/sarjapur-road-affluent-living-insights-investment-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/sarjapur-road-affluent-living-insights-investment.png" data-width="800" data-height="400" data-alt="Why Sarjapur Road is the New Hub for Affluent Living">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/sarjapur-road-affluent-living-insights-investment-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div>
+</a>
+<div class="avatar">
+<a href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">
+</a>
+</div>
+</div>
+<div class="information">
+<p class="name-category">
+<a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a> </p>
+<h3><a href="https://www.sobha.com/blog/sarjapur-road-affluent-living-insights-investment/" rel="bookmark">Why Sarjapur Road is the New Hub for Affluent Living: Insights &#038; Investment Potential</a></h3>
+<div class="excerpt">
+<p>The Sarjapur Road area is renowned for its upscale residential properties and proximity to top-tier schools, hospitals, shopping centres, and entertainmroent This makes it an ideal location for families seeking to establish roots in a vibrant and flourishing</p>
+</div>
+<div class="meta clearfix">
+<span class="date-time"><span>March</span> 30th, 2024</span>
+<span class="btn-share"><i class="fa fa-share-alt"></i></span>
+<div class="hidden-social clearfix">
+<div class="social-share-action">
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/sarjapur-road-affluent-living-insights-investment/" data-title="Why Sarjapur Road is the New Hub for Affluent Living: Insights &#038; Investment Potential">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+<div class="btn-close"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="mdl-pagging-standard clearfix">
+<div class="row">
+<div class="col-xs-6">
+<a class="prev" href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/">Prev posts</a> </div>
+<div class="col-xs-6">
+<a class="next" href="https://www.sobha.com/blog/author/srikanta-padhysobha-com/page/3/">Next Posts</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#0f786a6d696a6a6b6d6e6c644f7c606d676e216c6062"><span class="__cf_email__" data-cfemail="5a2d3f383c3f3f3e383b39311a293538323b74393537">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="1d5c1675d0a7f2fc2f5652aa-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="1d5c1675d0a7f2fc2f5652aa-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="1d5c1675d0a7f2fc2f5652aa-|49" defer></script></body>
+</html>

@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="93653cee6eb2799633fb8196-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="93653cee6eb2799633fb8196-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>Is Buying an Apartment a Good Investment in Trivandrum?</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="93653cee6eb2799633fb8196-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta name="description" content="Explore the potential of investing in Trivandrum apartments. Find out if it&#039;s a smart choice with insights on property trends and ROI." />
+<link rel="canonical" href="https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Is Buying an Apartment a Good Investment in Trivandrum?" />
+<meta property="og:description" content="Explore the potential of investing in Trivandrum apartments. Find out if it&#039;s a smart choice with insights on property trends and ROI." />
+<meta property="og:url" content="https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:published_time" content="2023-10-23T20:34:48+00:00" />
+<meta property="og:image" content="https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@Sobhaltd" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Srikanta Padhy" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="10 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#primaryimage","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png","width":1200,"height":600,"caption":"Buying an Apartment a Good Investment in Trivandrum ?"},{"@type":"WebPage","@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#webpage","url":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/","name":"Is Buying an Apartment a Good Investment in Trivandrum?","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#primaryimage"},"datePublished":"2023-10-23T20:34:48+00:00","dateModified":"2023-10-23T20:34:48+00:00","description":"Explore the potential of investing in Trivandrum apartments. Find out if it's a smart choice with insights on property trends and ROI.","breadcrumb":{"@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"Is Buying an Apartment a Good Investment in Trivandrum ?"}]},{"@type":"Article","@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#article","isPartOf":{"@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#webpage"},"author":{"@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420"},"headline":"Is Buying an Apartment a Good Investment in Trivandrum ?","datePublished":"2023-10-23T20:34:48+00:00","dateModified":"2023-10-23T20:34:48+00:00","mainEntityOfPage":{"@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#webpage"},"wordCount":2235,"publisher":{"@id":"https://www.sobha.com/blog/#organization"},"image":{"@id":"https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/#primaryimage"},"thumbnailUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png","articleSection":["Kerala","SOBHA"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/"}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Is Buying an Apartment a Good Investment in Trivandrum ? Comments Feed" href="https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/posts/5788" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://www.sobha.com/blog/?p=5788" />
+<link rel="alternate" type="application/json+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fis-buying-apartment-good-investment-trivandrum%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fis-buying-apartment-good-investment-trivandrum%2F&#038;format=xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar post-template-default single single-post postid-5788 single-format-standard">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header-single" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main id="main" class="page-main page-single page-single-box  ">
+<div class="container">
+<div class="row">
+<div class="col-md-8 main-content ">
+<div class="body-content clearfix">
+<div class="post-content mgt-special">
+<div id="post-5788" class="mdl-single-post mdl-single-post-v1 box clearfix post-5788 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="top center">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/kerala/" rel="category tag">Kerala</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div>
+<h1>Is Buying an Apartment a Good Investment in Trivandrum ?</h1>
+<p class="date-time"><span>October</span> 24th, 2023</p>
+</div>
+<div class="photos">
+<img width="800" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20400'%3E%3C/svg%3E" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Buying an Apartment a Good Investment in Trivandrum ?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png 1200w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-800x400.png" /><noscript><img width="800" height="400" src="https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-800x400.png" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Buying an Apartment a Good Investment in Trivandrum ?" srcset="https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/10/is-buying-apartment-good-investment-trivandrum.png 1200w" sizes="(max-width: 800px) 100vw, 800px" /></noscript> </div>
+<div class="content">
+<blockquote><p><em>Buying an apartment in Trivandrum is a good investment decision, but a lot depends on factors such as market conditions, financial planning, and buyer preferences. Investing in an apartment offers a promising avenue for financial growth and lifestyle enhancement.</em></p></blockquote>
+<p>Known for its amazing cultural heritage, stunning landscapes, and burgeoning economy, Trivandrum has become the first choice of investors looking for lucrative opportunities. In this southern Indian city, the importance of real estate investments has a unique significance. As the capital of Kerala, it is not only the hub of government institutions, but also host to rapidly growing IT and education sectors.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_63 ez-toc-wrap-left counter-hierarchy ez-toc-counter ez-toc-custom ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title ">Table of Contents</p>
+<span class="ez-toc-title-toggle"></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#SOBHA_in_Trivandrum" title="SOBHA in Trivandrum">SOBHA in Trivandrum</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#Trivandrum_Real_Estate_Market_Overview" title="Trivandrum Real Estate Market Overview">Trivandrum Real Estate Market Overview</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#Growth_Prospects_of_the_Trivandrum_Real_Estate_Market" title="Growth Prospects of the Trivandrum Real Estate Market">Growth Prospects of the Trivandrum Real Estate Market</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#Benefits_of_Buying_an_Apartment_in_Trivandrum" title="Benefits of Buying an Apartment in Trivandrum">Benefits of Buying an Apartment in Trivandrum</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="#9_Top_Advantages_of_Buying_a_Flat_in_Trivandrum" title="9 Top Advantages of Buying a Flat in Trivandrum">9 Top Advantages of Buying a Flat in Trivandrum</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-6" href="#SOBHA_A_Trusted_Real_Estate_Developer" title="SOBHA: A Trusted Real Estate Developer">SOBHA: A Trusted Real Estate Developer</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-7" href="#Factors_to_Consider_When_Buying_an_Apartment_in_Trivandrum" title="Factors to Consider When Buying an Apartment in Trivandrum">Factors to Consider When Buying an Apartment in Trivandrum</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-8" href="#Investment_Challenges_Risks_for_Investing_in_Trivandrum_Apartments" title="Investment Challenges &amp; Risks for Investing in Trivandrum Apartments">Investment Challenges &amp; Risks for Investing in Trivandrum Apartments</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-9" href="#Financing_Options_for_Buying_an_apartment_in_Trivandrum" title="Financing Options for Buying an apartment in Trivandrum">Financing Options for Buying an apartment in Trivandrum</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-10" href="#Conclusion" title="Conclusion">Conclusion</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-11" href="#FAQs" title="FAQs">FAQs</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-12" href="#1_Is_buying_a_flat_or_house_better_in_Trivandrum" title="1. Is buying a flat or house better in Trivandrum?">1. Is buying a flat or house better in Trivandrum?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-13" href="#2_Is_it_worth_buying_a_flat_in_Kerala" title="2. Is it worth buying a flat in Kerala?">2. Is it worth buying a flat in Kerala?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-14" href="#3_Where_is_the_best_place_to_settle_in_Trivandrum" title="3. Where is the best place to settle in Trivandrum?">3. Where is the best place to settle in Trivandrum?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-15" href="#4_Is_Trivandrum_an_excellent_place_to_settle" title=" 4. Is Trivandrum an excellent place to settle?"> 4. Is Trivandrum an excellent place to settle?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-16" href="#5_Which_floor_is_the_best_for_buying_a_flat_in_Trivandrum" title="5. Which floor is the best for buying a flat in Trivandrum?">5. Which floor is the best for buying a flat in Trivandrum?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-17" href="#6_Is_it_expensive_to_live_in_Trivandrum" title="6. Is it expensive to live in Trivandrum?">6. Is it expensive to live in Trivandrum?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-18" href="#7_Which_is_better_Trivandrum_or_Kozhikode" title="7. Which is better, Trivandrum or Kozhikode?">7. Which is better, Trivandrum or Kozhikode?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-19" href="#8_Is_Trivandrum_flood-prone" title="8. Is Trivandrum flood-prone?">8. Is Trivandrum flood-prone?</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="SOBHA_in_Trivandrum"></span><strong>SOBHA in Trivandrum</strong><span class="ez-toc-section-end"></span></h2>
+<p>SOBHA is a prominent and reliable real estate developer known for unwavering dedication to quality and excellence. The Trivandrum real estate market, particularly for those seeking apartments, has recently experienced a noteworthy evolution.</p>
+<p>Key trends that have emerged over the past year include focus on innovative landscape design, commitment to sustainability, enhancements in amenities, favourable loan rates, and growing demand for gated communities. Whether you&#8217;re in the market for a new residence or exploring an excellent investment opportunity, the <a href="https://www.sobha.com/blog/real-estate-market-in-trivandrum-for-flat-buyers/" target="_blank" rel="noopener" rel="nofollow">real estate landscape in Trivandrum</a> presents enticing choices worth exploring.</p>
+<h2><span class="ez-toc-section" id="Trivandrum_Real_Estate_Market_Overview"></span><strong>Trivandrum Real Estate Market Overview</strong><span class="ez-toc-section-end"></span></h2>
+<p>Kerala has experienced robust growth in recent years, driven by various factors, including remittances from NRIs &amp; tourists, and excellent domestic spending &amp; production. Trivandrum, in particular, has been at the forefront of this economic expansion. The city&#8217;s thriving job market and business opportunities have attracted a significant influx of highly skilled individuals.</p>
+<p>An international airport within the city limits is a key contributor to Trivandrum&#8217;s soaring demand for residential real estate. This airport offers exceptional connectivity to major cities across India and key international destinations, especially in the Middle East, Europe, and North America.</p>
+<p>Notably, Trivandrum airport also serves as a pivotal link for the neighbouring regions of South Kerala and, cities &amp; districts in South Tamil Nadu, such as Kanyakumari, Nagercoil, and Tirunelveli – making it a crucial transportation hub for a large region.</p>
+<h2><span class="ez-toc-section" id="Growth_Prospects_of_the_Trivandrum_Real_Estate_Market"></span><strong>Growth Prospects of the Trivandrum Real Estate Market</strong><span class="ez-toc-section-end"></span></h2>
+<p>Trivandrum market has seen steady growth in recent years, and the trend is expected to continue in the upcoming years. Various factors are driving this growth, including the impact of the pandemic, upcoming project infrastructure, and expected trends in the years to come.</p>
+<p>In the upcoming year, the city will witness development of significant projects – such as Vizhinjam Port, Technopark Phase III, e-charging stations, CRDP Phase II, Mukkola-Karode stretch bypass, Kazhakoottam elevated highway, and more.</p>
+<h2><span class="ez-toc-section" id="Benefits_of_Buying_an_Apartment_in_Trivandrum"></span><strong>Benefits of Buying an Apartment in Trivandrum</strong><span class="ez-toc-section-end"></span></h2>
+<p>Investing in apartments in Trivandrum offers a host of compelling benefits. First and foremost, Trivandrum&#8217;s strategic location in Kerala, with sea views and picturesque landscapes, makes it an attractive destination for residents &amp; investors. The city&#8217;s robust infrastructure development – including well-planned road networks, educational institutions, healthcare facilities, and entertainment options – enhances quality of life and adds to the appeal of apartment investments.</p>
+<p>Trivandrum&#8217;s economic growth – driven by IT, tourism, and education sectors – bodes well for long-term property appreciation. Moreover, the city&#8217;s popularity as a tourist &amp; business destination creates a promising potential for rental income, ensuring a steady stream of revenue for property owners.</p>
+<p>With a flourishing real estate market and an ever-increasing demand for quality housing, investing in Trivandrum apartments is a smart financial move combining lifestyle advantages with solid investment potential.</p>
+<h2><span class="ez-toc-section" id="9_Top_Advantages_of_Buying_a_Flat_in_Trivandrum"></span><strong>9 Top Advantages of Buying a Flat in Trivandrum</strong><span class="ez-toc-section-end"></span></h2>
+<ol>
+<li>
+<h3><strong>Investment Potential: </strong></h3>
+<p>Trivandrum has been gaining attention as an attractive real estate investment destination. The city&#8217;s excellent economic growth has contributed to the rising property values. The stable real estate market and increasing demand for quality housing ensure that property investments have strong potential for capital appreciation.</li>
+<li>
+<h3><strong>Rental Income: </strong></h3>
+<p>The city&#8217;s expanding job market, thriving tourism industry, and constant influx of students &amp; professionals ensure steady demand for rental properties. This presents an excellent opportunity for apartment owners to secure reliable rental income and boost their investment returns.</li>
+<li>
+<h3><strong>Lifestyle Benefits: </strong></h3>
+<p>The city is known for its cultural richness, picturesque landscapes, and serene environment. Residents and investors can enjoy a peaceful &amp; wholesome way of life while accessing modern amenities, healthcare, educational, and recreation facilities.</li>
+<li>
+<h3><strong>High Appreciation Value: </strong></h3>
+<p>Trivandrum&#8217;s real estate market has experienced significant increase in property values over the years. Factors like economic growth, infrastructure development, and growing population contribute to the high appreciation potential of apartments. Investors can watch their property values increase substantially over time, offering substantial returns on their investments.</li>
+<li>
+<h3><strong>Future Developments:</strong></h3>
+<p>Trivandrum&#8217;s landscape is poised for significant future developments, including planned residential &amp; commercial projects, infrastructure enhancements, and urban expansion. These developments are expected to enhance the city&#8217;s overall appeal and economic prospects, further boosting the value of apartment investments.</li>
+<li>
+<h3><strong>Technopark: </strong></h3>
+<p>Trivandrum&#8217;s Technopark has catalysed economic growth and job creation in the region. Its presence has led to a surge in professionals seeking quality housing. Investing in apartments near Technopark can prove highly advantageous, as it caters to the housing needs of the growing IT workforce.</li>
+<li>
+<h3><strong>Developed Infrastructure: </strong></h3>
+<p>The city has well-planned infrastructure, including road networks, transportation systems, educational institutions, and healthcare facilities. This enhances residents&#8217; quality of life and makes Trivandrum apartments an attractive investment opportunity.</li>
+<li>
+<h3><strong>Tax Benefits:</strong></h3>
+<p>Investors can avail various tax benefits when investing in Trivandrum apartments, which include deductions on home loan interest, property tax exemptions, and depreciation deductions for rental properties. Such tax advantages can significantly reduce the financial burden of property ownership.</li>
+<li>
+<h3><strong>Tourism: </strong></h3>
+<p>Trivandrum&#8217;s status as a popular tourist destination ensures that the city experiences a constant influx of visitors. Tourists often seek short-term rental accommodation, making it a good market for investors to capitalise on this ever-present demand.</li>
+</ol>
+<h2><span class="ez-toc-section" id="SOBHA_A_Trusted_Real_Estate_Developer"></span><strong>SOBHA: A Trusted Real Estate Developer</strong><span class="ez-toc-section-end"></span></h2>
+<p>SOBHA is a renowned name in the Indian real estate industry, recognised for its unwavering commitment to excellence and innovation. Established in 1995, the company has consistently upheld the highest standards of construction, design, and customer satisfaction – making it a trusted choice for homebuyers and investors.</p>
+<p>In Trivandrum, SOBHA has left an indelible mark with its impressive portfolio of residential &amp; commercial projects. Notable developments include SOBHA Meadows – Whispering Hill, an elegant residential community offering luxurious living spaces in the heart of the city.</p>
+<p>SOBHA’s dedication to quality is not limited to construction, but extends to the entire customer experience. Every project is a testament to their craftsmanship and attention to detail. This commitment to quality and a customer-centric approach have solidified the company’s position as a trusted and esteemed real estate developer in Trivandrum.</p>
+<h2><span class="ez-toc-section" id="Factors_to_Consider_When_Buying_an_Apartment_in_Trivandrum"></span><strong>Factors to Consider When Buying an Apartment in Trivandrum</strong><span class="ez-toc-section-end"></span></h2>
+<p>When considering an apartment investment in Trivandrum, it&#8217;s important to consider all the possible factors to make an informed decision that aligns with your financial goals and lifestyle.</p>
+<ol>
+<li>
+<h3><strong>Location: </strong></h3>
+<p>Choose an area that suits your needs, i.e. proximity to workplaces, schools, healthcare facilities, or transportation hubs. A well-located apartment often appreciates in value over time.</li>
+<li>
+<h3><strong>Amenities: </strong></h3>
+<p>Evaluate the indulgences such as gymnasiums, swimming pools, security features, and green spaces. A well-maintained apartment complex with desirable amenities can make your investment more appealing to tenants or future buyers.</li>
+<li>
+<h3><strong>Budget: </strong></h3>
+<p>Budget considerations are vital to prevent financial strain. Calculate the purchase price, ongoing maintenance fees, and property taxes. Consult a financial advisor to determine the long-term viability of the investment.</li>
+</ol>
+<p>Understanding market trends and consulting with real estate experts can help anticipate future investment returns. Thoroughly considering these factors will empower you to make a sound investment in Trivandrum.</p>
+<h2><span class="ez-toc-section" id="Investment_Challenges_Risks_for_Investing_in_Trivandrum_Apartments"></span><strong>Investment Challenges &amp; Risks for Investing in Trivandrum Apartments</strong><span class="ez-toc-section-end"></span></h2>
+<p>Investing in apartments in Trivandrum, like any real estate market, comes with its fair share of challenges that buyers &amp; investors should be aware of, including market fluctuations and legal considerations.</p>
+<ol>
+<li>
+<h3><strong>Market Fluctuations:</strong></h3>
+<p>Property values can rise and fall due to economic conditions, demand-supply dynamics, and external factors. Investing in a market with volatile property prices can pose a significant risk. To mitigate this, it&#8217;s crucial to conduct thorough market research. Look for areas with steady, long-term growth, and diversify investments across different kinds of properties.</li>
+<li>
+<h3><strong>Legal Considerations: </strong></h3>
+<p>Understanding and adhering to local real estate laws &amp; regulations is vital. Unforeseen legal issues, disputes over property titles, or zoning changes can disrupt the investment. To navigate the complexities of real estate transactions and to ensure all documentation is in order, seek help from legal counsel.</li>
+<li>
+<h3><strong>Mitigation Strategies: </strong></h3>
+<p>To minimise these risks, diversify your real estate portfolio across different geographical locations within Trivandrum. This spreads risk across multiple market conditions. Additionally, investing in the long term can help weather short-term market fluctuations. Engage with local real estate professionals and advisors who can provide insights into the local market, helping you make informed decisions.</li>
+</ol>
+<h2><span class="ez-toc-section" id="Financing_Options_for_Buying_an_apartment_in_Trivandrum"></span><strong>Financing Options for Buying an apartment in Trivandrum</strong><span class="ez-toc-section-end"></span></h2>
+<p>When considering buying an apartment in Trivandrum, understanding the various financing options available is crucial. Here&#8217;s a detailed look at some of the common avenues for financing apartment purchases:</p>
+<ol>
+<li>
+<h3><strong>Home Loans: </strong></h3>
+<p>Banks and financial institutions offer home loans with varying norms and interest rates. Applicants must meet specific eligibility criteria, such as income, <a href="https://www.sobha.com/blog/cibil-score-for-home-loan/" target="_blank" rel="noopener" rel="nofollow">credit score</a>, and <a href="https://www.sobha.com/blog/property-valuation/" target="_blank" rel="noopener" rel="nofollow">property valuation</a>. The loan typically covers a significant portion of the property&#8217;s cost, and the borrower repays it in equated monthly instalments (EMIs).</li>
+<li>
+<h3><strong>EMI Calculations: </strong></h3>
+<p>Equated Monthly Instalments (EMIs) are critical to <a href="https://www.sobha.com/blog/home-loan-process/" target="_blank" rel="noopener" rel="nofollow">home loan</a> repayment. EMI includes both the principal amount and interest. It is essential to calculate EMIs based on the loan amount, interest rate, and loan tenure.</li>
+<li>
+<h3><strong>Government Schemes: </strong></h3>
+<p>Government initiatives can substantially benefit apartment buyers. In India, the <a href="https://pmaymis.gov.in/" target="_blank" rel="noopener nofollow" class="external">Pradhan Mantri Awas Yojana</a> (PMAY) is a notable scheme that provides interest subsidies and affordable housing options to eligible beneficiaries. State-specific methods and grants may also be available in Kerala, to support apartment buyers.</li>
+<li>
+<h3><strong>Builder Financing: </strong></h3>
+<p>Some builders offer in-house financing options to buyers. While this can be convenient, comparing their terms with external lenders is essential to ensure you&#8217;re getting the best deal.</li>
+<li>
+<h3><strong>Personal Savings: </strong></h3>
+<p>Another option is using personal savings or investments like Fixed Deposits, Provident Funds, or PPFs. This can reduce the loan amount required and, consequently the interest paid over the loan tenure.</li>
+</ol>
+<h2><span class="ez-toc-section" id="Conclusion"></span><strong>Conclusion</strong><span class="ez-toc-section-end"></span></h2>
+<p>Investing in apartments in Trivandrum presents a compelling chance for those looking to diversify their portfolios and secure their financial future. Trivandrum&#8217;s real estate market has shown resilience over the years, offering steady appreciation and rental income potential. Whether you&#8217;re a first-time buyer, an experienced investor, or a family looking to upgrade to a second home, Trivandrum&#8217;s apartment market has something for everyone.</p>
+<p>SOBHA is a trustworthy and renowned developer, with a proven track record of excellence and commitment to quality. Here’s a company you can rely on, for your real estate investment needs.</p>
+<p><strong><em>Contact Details</em></strong></p>
+<p><em>SOBHA Limited</em><em><br/>
+Sarjapur &#8211; Marthahalli Outer Ring Road (ORR)<br/>
+Devarabisanahalli, Bellandur Post,<br/>
+Bangalore – 560103, Karnataka, India.<br/>
+Tel: </em><a href="tel:+918046464500"><em>080 46464500</em></a><em><br/>
+Email: </em><a href="/cdn-cgi/l/email-protection#83eee2f1e8e6f7eaede4c3f0ece1ebe2ade0ecee" rel="nofollow"><em><span class="__cf_email__" data-cfemail="b6dbd7c4ddd3c2dfd8d1f6c5d9d4ded798d5d9db">[email&#160;protected]</span></em></a><em><br/>
+Website: </em><a href="https://www.sobha.com/" target="_blank" rel="noopener" rel="nofollow"><em>www.sobha.com</em></a></p>
+<p><a href="https://www.sobha.com/city/thiruvananthapuram/" target="_blank" rel="noopener" rel="nofollow"><em>Click here</em></a><em> for more information on Trivandrum Projects</em></p>
+<h2><span class="ez-toc-section" id="FAQs"></span><strong>FAQs</strong><span class="ez-toc-section-end"></span></h2>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="1_Is_buying_a_flat_or_house_better_in_Trivandrum"></span>1. Is buying a flat or house better in Trivandrum?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Buying a flat is better in Trivandrum, as flats offer convenience, security, and amenities, making them suitable for those seeking a luxury lifestyle. Though houses provide more space &amp; independence, the final decision depends on lifestyle, family size, and budget. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="2_Is_it_worth_buying_a_flat_in_Kerala"></span>2. Is it worth buying a flat in Kerala?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+It is worth buying a flat in Kerala, as they come with a lot of amenities and security. Kerala's real estate market has shown stability and growth, making it a promising place for investment in apartments. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="3_Where_is_the_best_place_to_settle_in_Trivandrum"></span>3. Where is the best place to settle in Trivandrum?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Best places to settle in Trivandrum are Akkulam, Kowdiar, Sreekariyam and Vellayambalam. Each neighbourhood has its unique charm, so it is essential to consider factors like work, schools, and lifestyle when choosing the best place to settle. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="4_Is_Trivandrum_an_excellent_place_to_settle"></span> 4. Is Trivandrum an excellent place to settle?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Trivandrum is an excellent place to settle, as it is known for offering a high quality of life, excellent healthcare facilities, and cultural attractions. The city's greenery, pleasant climate, and well-planned infrastructure make it an appealing destination for residents. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="5_Which_floor_is_the_best_for_buying_a_flat_in_Trivandrum"></span>5. Which floor is the best for buying a flat in Trivandrum?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Higher floors are the best for buying a flat in Trivandrum, due to better views and enhanced privacy. Lower floors are more suitable for those who want to avoid using elevators daily. The choice of floor depends on individual preference. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="6_Is_it_expensive_to_live_in_Trivandrum"></span>6. Is it expensive to live in Trivandrum?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+No, it is not expensive to live in Trivandrum. Cost of living in Trivandrum depends on the lifestyle and choice of neighbourhood. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="7_Which_is_better_Trivandrum_or_Kozhikode"></span>7. Which is better, Trivandrum or Kozhikode?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Choosing between Trivandrum and Kozhikode depends on your priorities. Trivandrum is the capital city, known for its government institutions, educational facilities, and cosmopolitan lifestyle. On the other hand, Kozhikode offers a more relaxed pace of life and is renowned for its historical &amp; cultural heritage. The choice should align with your lifestyle and career objectives. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="8_Is_Trivandrum_flood-prone"></span>8. Is Trivandrum flood-prone?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Trivandrum is not flood-prone, but a few areas in the city are susceptible to flooding during heavy rains. The city has implemented measures to mitigate flooding. Residents must be aware of local conditions, choose safe locations, and stay informed about the city's flood management strategies to ensure their safety during monsoon. </p>
+</div>
+</div>
+</section>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/ld+json">
+    {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+				{
+				"@type": "Question",
+				"name": "1. Is buying a flat or house better in Trivandrum?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Buying a flat is better in Trivandrum, as flats offer convenience, security, and amenities, making them suitable for those seeking a luxury lifestyle. Though houses provide more space &amp; independence, the final decision depends on lifestyle, family size, and budget."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "2. Is it worth buying a flat in Kerala?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "It is worth buying a flat in Kerala, as they come with a lot of amenities and security. Kerala's real estate market has shown stability and growth, making it a promising place for investment in apartments."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "3. Where is the best place to settle in Trivandrum?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Best places to settle in Trivandrum are Akkulam, Kowdiar, Sreekariyam and Vellayambalam. Each neighbourhood has its unique charm, so it is essential to consider factors like work, schools, and lifestyle when choosing the best place to settle."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": " 4. Is Trivandrum an excellent place to settle?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Trivandrum is an excellent place to settle, as it is known for offering a high quality of life, excellent healthcare facilities, and cultural attractions. The city's greenery, pleasant climate, and well-planned infrastructure make it an appealing destination for residents."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "5. Which floor is the best for buying a flat in Trivandrum?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Higher floors are the best for buying a flat in Trivandrum, due to better views and enhanced privacy. Lower floors are more suitable for those who want to avoid using elevators daily. The choice of floor depends on individual preference."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "6. Is it expensive to live in Trivandrum?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "No, it is not expensive to live in Trivandrum. Cost of living in Trivandrum depends on the lifestyle and choice of neighbourhood."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "7. Which is better, Trivandrum or Kozhikode?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Choosing between Trivandrum and Kozhikode depends on your priorities. Trivandrum is the capital city, known for its government institutions, educational facilities, and cosmopolitan lifestyle. On the other hand, Kozhikode offers a more relaxed pace of life and is renowned for its historical &amp; cultural heritage. The choice should align with your lifestyle and career objectives."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "8. Is Trivandrum flood-prone?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Trivandrum is not flood-prone, but a few areas in the city are susceptible to flooding during heavy rains. The city has implemented measures to mitigate flooding. Residents must be aware of local conditions, choose safe locations, and stay informed about the city's flood management strategies to ensure their safety during monsoon."
+									}
+			}
+				    ]
+}
+</script>
+</div> 
+<div class="row">
+<div class="meta-post clearfix">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="mdl-tags">
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="love-action sl-wrapper"><a href="#" class="sl-button sl-button-5788" data-nonce="c736614e0b" data-post-id="5788" data-iscomment="0" title="Like">Love this? <i class="fa fa-heart-o"></i></a></div> </div>
+</div>
+</div>
+<div class="social-share-action">
+<h4>Sharing</h4>
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/is-buying-apartment-good-investment-trivandrum/" data-title="Is Buying an Apartment a Good Investment in Trivandrum ?">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+</div> 
+</div>
+<div class="blk-paging-post box">
+<div class="row">
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/idc-infrastructure-development-charges/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/10/idc-infrastructure-development-charges-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>Previous</span>
+<h3>IDC (Infrastructure Development Charges) in Real estate</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/property-valuation/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/10/property-valuation-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>NEXT</span>
+<h3>Property Valuation: The Ultimate Guide!</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-related-post box">
+<h4>You might also like</h4>
+<div class="inner clearfix">
+<div id="all-post-temp-display"></div>
+<div id="all-post-temp" style="display:none;" data-display="2">
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/why-are-compact-homes-trending/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2018/11/12Nov2018FI-795x533.jpg" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2018/11/12Nov2018FI-795x533.jpg" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2018/11/12Nov2018FI-795x533.jpg" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2018/11/12Nov2018FI.jpg" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2018/11/12Nov2018FI-795x533.jpg" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/why-are-compact-homes-trending/">Why are Compact Homes Trending?</a></h5>
+<p class="date-time"><span>November</span> 12th, 2018</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/life-on-millionaires-row-high-end-neighbourhood/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/life-on-millionaires-row-high-end-neighbourhood-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/life-on-millionaires-row-high-end-neighbourhood-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/life-on-millionaires-row-high-end-neighbourhood-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/life-on-millionaires-row-high-end-neighbourhood.png" data-width="800" data-height="400" data-alt="Life on Millionaires’ Row in a High-End Neighbourhood!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/life-on-millionaires-row-high-end-neighbourhood-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/life-on-millionaires-row-high-end-neighbourhood/">Life on Millionaires’ Row in a High-End Neighbourhood!</a></h5>
+<p class="date-time"><span>March</span> 4th, 2024</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/must-know-laws-governing-nri-real-estate-investment-india/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2017/11/13Nov17FI-795x533.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2017/11/13Nov17FI-795x533.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2017/11/13Nov17FI-795x533.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2017/11/13Nov17FI.png" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2017/11/13Nov17FI-795x533.png" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/must-know-laws-governing-nri-real-estate-investment-india/">Must Know: Laws Governing NRI Real Estate Investment in India</a></h5>
+<p class="date-time"><span>November</span> 10th, 2017</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/benefits-of-living-in-an-apartment-complex/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/07/Apartment-Complex-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/07/Apartment-Complex-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/07/Apartment-Complex-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/07/Apartment-Complex.png" data-width="800" data-height="400" data-alt="Benefits of Living in an Apartment Complex">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/07/Apartment-Complex-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/benefits-of-living-in-an-apartment-complex/">Benefits of Living in An Apartment Complex</a></h5>
+<p class="date-time"><span>July</span> 21st, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4  sidebar">
+<div class="widget-odd widget-first widget-1 mdl-widget widget rushmore_widget_menu-7 mdl-sidebar-menu"><div class="title-header dark"><h4>Residential Projects</h4></div><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_recent_posts-4 mdl-widget-list-post"><div class="title-header dark"><h4>Recent Posts</h4></div><div class="content"><ul> <li class="clearfix post-6401 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">Millionaires&#8217; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6399 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6403 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">Security Measures and Privacy Protocols on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6394 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/owning-property-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/owning-property-millionaires-row/">The Benefits of Owning Property on Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6391 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">A Peek Inside Millionaires’ Row: What Makes This Neighbourhood So Exclusive?</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6388 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">Inside Bangalore&#8217;s Affluent Community: A Peek into Millionaires&#8217; Row Lifestyle</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6385 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6382 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6378 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">Why Trivandrum is the Best Place to Live in?</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6372 post type-post status-publish format-standard has-post-thumbnail hentry category-gurgaon category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">Gurgaon Real Estate Market Forecast 2024-25</a></h4>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+</li>
+</ul></div></div> </div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#b7c0d2d5d1d2d2d3d5d6d4dcf7c4d8d5dfd699d4d8da"><span class="__cf_email__" data-cfemail="5c2b393e3a3939383e3d3f371c2f333e343d723f3331">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="93653cee6eb2799633fb8196-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="93653cee6eb2799633fb8196-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="93653cee6eb2799633fb8196-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="93653cee6eb2799633fb8196-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="93653cee6eb2799633fb8196-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="93653cee6eb2799633fb8196-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="93653cee6eb2799633fb8196-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="93653cee6eb2799633fb8196-|49" defer></script></body>
+</html>

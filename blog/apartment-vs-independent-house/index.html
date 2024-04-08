@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="7602a5a22e525ab48ef3b306-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="7602a5a22e525ab48ef3b306-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>Apartment Vs Independent House: Which One is a Better Choice?</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="7602a5a22e525ab48ef3b306-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta name="description" content="Apartments are nothing but a residential space inside a building &amp; an independent house is constructed over a piece of land. Know what suits you best!" />
+<link rel="canonical" href="https://www.sobha.com/blog/apartment-vs-independent-house/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Apartment Vs Independent House: Which One is a Better Choice?" />
+<meta property="og:description" content="Apartments are nothing but a residential space inside a building &amp; an independent house is constructed over a piece of land. Know what suits you best!" />
+<meta property="og:url" content="https://www.sobha.com/blog/apartment-vs-independent-house/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:published_time" content="2021-11-17T06:53:26+00:00" />
+<meta property="article:modified_time" content="2023-04-03T10:45:22+00:00" />
+<meta property="og:image" content="https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg" />
+<meta property="og:image:width" content="1440" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@Sobhaltd" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Srikanta Padhy" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="9 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#primaryimage","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg","width":1440,"height":900,"caption":"Apartment Vs Independent House: Which one is better choice in Bangalore?"},{"@type":"WebPage","@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#webpage","url":"https://www.sobha.com/blog/apartment-vs-independent-house/","name":"Apartment Vs Independent House: Which One is a Better Choice?","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#primaryimage"},"datePublished":"2021-11-17T06:53:26+00:00","dateModified":"2023-04-03T10:45:22+00:00","description":"Apartments are nothing but a residential space inside a building & an independent house is constructed over a piece of land. Know what suits you best!","breadcrumb":{"@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/apartment-vs-independent-house/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"Apartment Vs Independent House: Which One is a Better Choice?"}]},{"@type":"Article","@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#article","isPartOf":{"@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#webpage"},"author":{"@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420"},"headline":"Apartment Vs Independent House: Which One is a Better Choice?","datePublished":"2021-11-17T06:53:26+00:00","dateModified":"2023-04-03T10:45:22+00:00","mainEntityOfPage":{"@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#webpage"},"wordCount":1870,"publisher":{"@id":"https://www.sobha.com/blog/#organization"},"image":{"@id":"https://www.sobha.com/blog/apartment-vs-independent-house/#primaryimage"},"thumbnailUrl":"https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg","articleSection":["SOBHA"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/"}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Apartment Vs Independent House: Which One is a Better Choice? Comments Feed" href="https://www.sobha.com/blog/apartment-vs-independent-house/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/posts/4483" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://www.sobha.com/blog/?p=4483" />
+<link rel="alternate" type="application/json+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fapartment-vs-independent-house%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fapartment-vs-independent-house%2F&#038;format=xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar post-template-default single single-post postid-4483 single-format-standard">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header-single" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main id="main" class="page-main page-single page-single-box  ">
+<div class="container">
+<div class="row">
+<div class="col-md-8 main-content ">
+<div class="body-content clearfix">
+<div class="post-content mgt-special">
+<div id="post-4483" class="mdl-single-post mdl-single-post-v1 box clearfix post-4483 post type-post status-publish format-standard has-post-thumbnail hentry category-sobha mdl-post-standard">
+<div class="top center">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div>
+<h1>Apartment Vs Independent House: Which One is a Better Choice?</h1>
+<p class="date-time"><span>November</span> 17th, 2021</p>
+</div>
+<div class="photos">
+<img width="800" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20500'%3E%3C/svg%3E" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Apartment Vs Independent House: Which one is better choice in Bangalore?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-800x500.jpg 800w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-300x188.jpg 300w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-1024x640.jpg 1024w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-768x480.jpg 768w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg 1440w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-800x500.jpg" /><noscript><img width="800" height="500" src="https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-800x500.jpg" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="Apartment Vs Independent House: Which one is better choice in Bangalore?" srcset="https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-800x500.jpg 800w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-300x188.jpg 300w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-1024x640.jpg 1024w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1-768x480.jpg 768w, https://www.sobha.com/blog/wp-content/uploads/2021/11/Apartment-Image-1.jpg 1440w" sizes="(max-width: 800px) 100vw, 800px" /></noscript> </div>
+<div class="content">
+<p>A city like Bengaluru attracts professionals and entrepreneurs alike, thanks to the year-round pleasant weather and booming tech industry. In this article, you can get a thorough understanding of both these property types so that you can make an informed decision about your investment.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_63 ez-toc-wrap-left counter-hierarchy ez-toc-counter ez-toc-custom ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title ">Table of Contents</p>
+<span class="ez-toc-title-toggle"></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#What_is_an_Apartment" title="What is an Apartment?">What is an Apartment?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#What_is_an_Independent_House" title="What is an Independent House?">What is an Independent House?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#Apartment_Vs_Independent_House" title="Apartment Vs Independent House">Apartment Vs Independent House</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#Apartment_or_Independent_House" title="Apartment or Independent House?">Apartment or Independent House?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="#Why_Do_Some_Prefer_Independent_Houses" title="Why Do Some Prefer Independent Houses ?">Why Do Some Prefer Independent Houses ?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-6" href="#Conclusion" title="Conclusion">Conclusion</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-7" href="#FAQs" title="FAQ&#8217;s">FAQ&#8217;s</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-8" href="#Is_apartment_better_than_independent_house" title="Is apartment better than independent house?">Is apartment better than independent house?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-9" href="#What_is_the_difference_between_independent_house_and_apartment" title="What is the difference between independent house and apartment?">What is the difference between independent house and apartment?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-10" href="#Is_apartment_better_than_house" title="Is apartment better than house?">Is apartment better than house?</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="What_is_an_Apartment"></span><strong>What is an Apartment?</strong><span class="ez-toc-section-end"></span></h2>
+<p>What Americans call an apartment, is what the British call a flat, and is a popular type of <a href="https://www.sobha.com/city/bengaluru/" target="_blank" rel="noopener" rel="nofollow">property in Bengaluru</a>. Apartments are nothing but a residential space inside a building. They are designed to house a large community and offer modern-day amenities. They also come with a well-rounded security system that monitors the property 24&#215;7. An owner/management is often the one to take charge of the building’s maintenance and upkeep.</p>
+<h2><span class="ez-toc-section" id="What_is_an_Independent_House"></span><strong>What is an Independent House?</strong><span class="ez-toc-section-end"></span></h2>
+<p>An independent house is constructed over a piece of land. The owner of the land has the authority to construct a house based on his/her choice and preference. This could be self-occupied or be leased/rented out. It could also be partially occupied and partially rented out. The owner oversees the maintenance and upkeep of the property.</p>
+<h2><span class="ez-toc-section" id="Apartment_Vs_Independent_House"></span><strong>Apartment Vs Independent House</strong><span class="ez-toc-section-end"></span></h2>
+<p>Bengaluru is now seeing a surge in demand for apartments, but that doesn’t imply there are no takers for independent homes. Land prices are soaring at a faster rate than an apartment built in the same period. Hence, they also offer a better return on investment.</p>
+<p>However, <a href="https://www.sobha.com/bengaluru/sobha-woodpecker-plots/" target="_blank" rel="noopener" rel="nofollow">plots</a> and independent homes do not offer the benefits that apartments do. Here we list out the differences in the lifestyle that each of the property offers:</p>
+<h3><strong>1. Maintenance:</strong></h3>
+<p>Apartments come with minimum hassles of maintenance. Most apartments are equipped with an in-house maintenance team to fix leaky faucets or faulty doors. With designated staff taking care of filling up the overhead tanks, mowing the garden lawns, and for a host of other chores, it is a carefree way of life.</p>
+<p>However, in an independent home, the owner must go through the hassles of finding plumbers or carpenters, and even take it upon him/herself to manicure the lawns.</p>
+<h3><strong>2. Amenities:</strong></h3>
+<p>Apartments come with an array of amenities such as a swimming pool, gym, clubhouse, and a designated play area for children. These aspects make living in an apartment very convenient as opposed to an independent home.</p>
+<p>Although some of these amenities can be built into an individual house, the financial implications are quite huge.</p>
+<h3><strong>3. Safety:</strong></h3>
+<p>All entrances and exits are monitored 24&#215;7 through CCTV and security guards. Hence, apartments are ideal for couples whose children return from school earlier than their parents do from work, for senior citizens or for anyone who is living alone. In fact, the close proximity of neighbours in an apartment is a comforting benefit.</p>
+<p>Apart from that, apartments are installed with fire extinguishers as well, providing safety. Independent homes do not offer these safety measures.</p>
+<p>In an <a href="https://www.sobha.com/bengaluru/sobha-lifestyle-legacy/" target="_blank" rel="noopener" rel="nofollow">independent house</a>, owners may install CCTV cameras or burglar alarms for monitoring the property, which is an additional expense.</p>
+<h3><strong>4. Finance:</strong></h3>
+<p>Banks sanction loans to verified apartments. Often, builders tie-up with banks to ease the process.</p>
+<p>However, for independent properties, banks conduct a thorough check before lending money, which is a time-consuming process. Often, the buyer loses out on the property due to delays caused by lengthy approval processes.</p>
+<h3><strong>5. Investment:</strong></h3>
+<p>A first-time <a href="https://www.sobha.com/blog/homebuyers-must-choose-a-credible-developer/" target="_blank" rel="noopener" rel="nofollow">home buyer</a> can confidently invest in an apartment after conducting basic research on the builder and their projects. With everything available at the click of a button, a first-time buyer can even read reviews of existing properties to get an understanding of the quality of the apartment.</p>
+<p>However, independent houses come with the risk of title disputes, and sometimes these can only be resolved by a court of law.</p>
+<h3><strong>6. Social Life:</strong></h3>
+<p>Although independent housing neighbourhoods also bring in a sense of close community, the chances of developing better social skills are much higher in apartment complexes. Community gatherings, celebrations of festivals, and parties at the clubhouse or garden area in an apartment bring people together and inspire living in harmony.</p>
+<p>One might argue that in an apartment, the design and décor of the house are decided by the builder, and the owner doesn’t have much role to play. Yet, the numerous other <a href="https://www.sobha.com/blog/top-5-advantages-of-buying-a-house-than-leasing/" target="_blank" rel="noopener" rel="nofollow">advantages of owning an apartment</a> outweigh this area of concern.</p>
+<p><strong>Must Read:</strong> <strong><a href="https://www.sobha.com/blog/8-points-to-remember-before-buying-an-apartment-in-bangalore/" rel="nofollow">8 Points To Remember Before Buying An Apartment in Bangalore</a></strong></p>
+<h2><span class="ez-toc-section" id="Apartment_or_Independent_House"></span><strong>Apartment or Independent House?</strong><span class="ez-toc-section-end"></span></h2>
+<p>Today’s generation of homeowners is more focused on optimising time and living a hassle-free life. Hence, several people prefer apartments with spectacular views of the tech city while being able to access numerous amenities. <a href="https://www.sobha.com/bengaluru/sobha-dream-gardens/" target="_blank" rel="noopener" rel="nofollow">Apartments</a> are best suited for people looking for more free time, away from the worries of maintenance. This type of property is also ideal for senior citizens who can spend their retirement in tranquillity. Two of the most crucial reasons behind choosing an apartment are amenities and the security it provides.</p>
+<p>If you’re looking at it from an investment perspective, apartments are far more beneficial than an independent home. As a homeowner, you can rent/lease out your property to tenants. Working professionals and growing families would choose this type of property because of the hassle-free lifestyle it offers.</p>
+<h2><span class="ez-toc-section" id="Why_Do_Some_Prefer_Independent_Houses"></span><strong>Why Do Some Prefer Independent Houses ?</strong><span class="ez-toc-section-end"></span></h2>
+<p>Independent houses are preferred by those who want to buy their own plot of land and build a home according to their liking. These houses can be customised and reconstructed as per the owner’s preference, with the necessary permissions. The plot of land can be optimally used to create a front yard/backyard or even be used as a parking area.</p>
+<p><strong>Must Read:</strong> <strong><a href="https://www.sobha.com/blog/tax-deductions-on-housing-loans/" rel="nofollow">Save up to Rs7* Lakh on Tax Deductions on Housing Loans</a></strong></p>
+<h3><strong>Investment Opportunities in the Tech City</strong></h3>
+<p>Bengaluru’s realty scape has shown tremendous growth in the last decade, especially in the north and east regions. With a great network of roads, metro connectivity, upcoming malls, and premium educational institutes sprinkled around, the real estate sector is thriving in these two zones.</p>
+<h4><strong>North Bengaluru</strong></h4>
+<p>This region has garnered much attention after the inauguration of the Kempegowda International Airport in 2008. From affordable to luxury apartments, North Bengaluru caters to everyone’s needs. With elevated expressways, wide roads, and fewer signals, travelling from one place to another is a breeze in this locality.</p>
+<p>An added bonus is that top IT Firms such as Manyata Tech Park, prominent schools, and reputed hospitals like Aster CMI Hospital, Columbia Asia, etc., are just a stone’s throw away. Malls, cafes, and restaurants are aplenty and perfect for when you want to unwind. The upcoming metro phase 2 will only be a boon to this locality that already comes with a host of other advantages. Hence, <a href="https://www.sobha.com/bengaluru/sobha-dream-gardens/" target="_blank" rel="noopener" rel="nofollow">buying an apartment</a> in North Bengaluru will prove beneficial.</p>
+<h4><strong>East Bengaluru</strong></h4>
+<p>Bengaluru East is ideal because of its ease of access to numerous tech parks, multinational companies, and railways stations. For those who wish to have beautiful scenic views and a regal residential property that is well-connected to the rest of the city, <a href="https://www.sobha.com/bengaluru/sobha-dream-acres/" target="_blank" rel="noopener" rel="nofollow">buying an apartment</a> in East Bengaluru is ideal. With the metro line running through this part of the city, it is a boon for all those who want to cut short their travel time by a significant amount.</p>
+<h2><span class="ez-toc-section" id="Conclusion"></span><strong>Conclusion</strong><span class="ez-toc-section-end"></span></h2>
+<p>While there aren’t major setbacks in owning any kind of property, apartments do win the top spot in making life comfortable and stress-free. After the developer’s handover, the inhabitants take over to form a Residents’ Welfare Association to handle the maintenance of lifts, vendor contracts, and others.</p>
+<p>Most <a href="https://www.sobha.com/showcase/" target="_blank" rel="noopener" rel="nofollow">reputed builders</a> pay attention to design, décor and Vaastu, to make it a holistic living space for the <a href="https://www.sobha.com/blog/good-times-for-homebuyers/" target="_blank" rel="noopener" rel="nofollow">homebuyers</a>. From individuals and budding families to senior citizens, apartments seem to be the perfect choice to enjoy a serene, convenient lifestyle. Whether the buyer is looking for personal use or investment opportunities, the benefits are multi-fold. All in all, it is a safer option for you to <a href="https://www.sobha.com/bengaluru/sobha-windsor-apartments-in-whitefield/" target="_blank" rel="noopener" rel="nofollow">invest in an apartment</a> and set yourself free from the hassles of building your home from the scratch.</p>
+<p><strong>Must Read:</strong> <strong><a href="https://www.sobha.com/blog/stamp-duty-and-property-registration-charges-in-bangalore/" rel="nofollow">Stamp Duty &amp; Registration Charges – A Quick Reckoner for House Buyers in Bangalore</a></strong></p>
+<h3><strong>Why Invest in a SOBHA Home?</strong></h3>
+<p>SOBHA is known for its impeccable quality and finer attention to detail &#8211; a major differentiator in the industry. With over two decades of glorious experience in creating interiors of palaces and other architectural marvels in the Middle East, Mr. PNC Menon founded SOBHA in 1995 with a vivid vision to transform the way people perceive quality. Today, <a href="https://www.sobha.com/" target="_blank" rel="noopener" rel="nofollow">SOBHA</a> is the most-trusted brand having a full-fledged backward integration model.</p>
+<p>SOBHA has always set new benchmarks in quality, customer-centricity, robust engineering, uncompromising business ethics, and transparency in all spheres of business. These differentiating factors have contributed to making SOBHA the preferred real estate brand in India. The company went public through its initial public offering, an event that created history when the issue got oversubscribed by a record 126 times.</p>
+<p>SOBHA has crafted iconic statements spanning 143 projects, covering 55.84 million sq. ft. area in the residential space – a portfolio that includes <a href="https://www.sobha.com/residential/" target="_blank" rel="noopener" rel="nofollow">residential apartments</a>, villas, row houses, <a href="https://www.sobha.com/bengaluru/sobha-athena/" target="_blank" rel="noopener" rel="nofollow">luxury apartments</a>, and plotted developments. The company has also forayed into the commercial space with <a href="https://www.sobha.com/commercial/sobha-city-mall/" target="_blank" rel="noopener" rel="nofollow">SOBHA City Mall</a> in Thrissur and also has 19 projects covering a 4.3 million sq. ft. area under this sector.</p>
+<p>The latest venture is 1 SOBHA, an entertainment and shopping centre on St. Mark’s Road, Bengaluru. The contracts business at SOBHA boasts of an expansive portfolio of 324 projects covering 53.74 million sq. ft. area across India. Our turnkey projects include some of the global corporate giants – Infosys, Taj, ITC, Bosch, Biocon, Timken, and Dell.</p>
+<p>Continuing the legacy, SOBHA has an array of apartments to choose from in Bengaluru. If you are looking for a new home, head to SOBHA Experience Centre to understand why a SOBHA home would be your best choice.</p>
+<p>Owning a home is a milestone that many want to achieve – often spending a large part of time accumulating resources to make this dream a reality. But the real dilemma begins when deciding whether to invest in an apartment that comes with a host of amenities or an independent house that can be crafted according to your choice.</p>
+<h2><span class="ez-toc-section" id="FAQs"></span>FAQ&#8217;s<span class="ez-toc-section-end"></span></h2>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="Is_apartment_better_than_independent_house"></span>Is apartment better than independent house?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Apartments are an excellent investment for self-use, renting, and investing in real estate. As far as customization is concerned, apartments can be highly customized without altering the basic setup in any way. Apartments are on par with independent houses in every respect. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="What_is_the_difference_between_independent_house_and_apartment"></span>What is the difference between independent house and apartment?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Apartment properties come with added benefits, such as security, enough parking, backup power, water systems, and fire safety mechanisms in place, whereas independent properties need to take extra steps to establish these things. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="Is_apartment_better_than_house"></span>Is apartment better than house?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Due to the smaller size of an apartment compared to a house, less gas and electricity will be used to heat it. Also, apartment building tends to be compact, which means you can spend less on heating during the winter, and newer buildings are more energy efficient. </p>
+</div>
+</div>
+</section>
+<script type="application/ld+json">
+    {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+				{
+				"@type": "Question",
+				"name": "Is apartment better than independent house?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Apartments are an excellent investment for self-use, renting, and investing in real estate. As far as customization is concerned, apartments can be highly customized without altering the basic setup in any way. Apartments are on par with independent houses in every respect."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "What is the difference between independent house and apartment?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Apartment properties come with added benefits, such as security, enough parking, backup power, water systems, and fire safety mechanisms in place, whereas independent properties need to take extra steps to establish these things."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "Is apartment better than house?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Due to the smaller size of an apartment compared to a house, less gas and electricity will be used to heat it. Also, apartment building tends to be compact, which means you can spend less on heating during the winter, and newer buildings are more energy efficient."
+									}
+			}
+				    ]
+}
+</script>
+</div> 
+<div class="row">
+<div class="meta-post clearfix">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="mdl-tags">
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="love-action sl-wrapper"><a href="#" class="sl-button sl-button-4483" data-nonce="c736614e0b" data-post-id="4483" data-iscomment="0" title="Like">Love this? <i class="fa fa-heart-o"></i></a></div> </div>
+</div>
+</div>
+<div class="social-share-action">
+<h4>Sharing</h4>
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/apartment-vs-independent-house/" data-title="Apartment Vs Independent House: Which One is a Better Choice?">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+</div> 
+</div>
+<div class="blk-paging-post box">
+<div class="row">
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/residential-projects-in-delhi-with-urban-park-spaces/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2021/11/Greenery-1-800x500.jpg) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>Previous</span>
+<h3>Why You Should Look For Residential Projects in Delhi NCR with Urban Park Spaces?</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/joint-co-ownership-of-house-property-leads-to-super-savings/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2020/07/completion-projects.webp) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>NEXT</span>
+<h3>JOINT CO-OWNERSHIP OF HOUSE PROPERTY LEADS TO SUPER SAVINGS</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-related-post box">
+<h4>You might also like</h4>
+<div class="inner clearfix">
+<div id="all-post-temp-display"></div>
+<div id="all-post-temp" style="display:none;" data-display="2">
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/03/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/03/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/03/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi.png" data-width="800" data-height="400" data-alt="Luxury Living: Discover SOBHA&#039;s 3 BHK and 4 BHK Flats for Sale in Kochi">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/03/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/sobha-3-bhk-and-4-bhk-flats-for-sale-in-kochi/">Investing in Opulence – Explore SOBHA&#8217;s 3 BHK and 4 BHK Flats for Sale in Kochi</a></h5>
+<p class="date-time"><span>March</span> 2nd, 2024</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/reasons-to-buy-property-in-east-bangalore/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/12/reasons-to-buy-property-in-east-bangalore-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/12/reasons-to-buy-property-in-east-bangalore-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/reasons-to-buy-property-in-east-bangalore-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/12/reasons-to-buy-property-in-east-bangalore.png" data-width="800" data-height="400" data-alt="10 Reasons to Buy Property in East Bangalore">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/12/reasons-to-buy-property-in-east-bangalore-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/reasons-to-buy-property-in-east-bangalore/">Top 10 Reasons to Buy Property in East Bangalore</a></h5>
+<p class="date-time"><span>December</span> 2nd, 2023</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/best-sobha-projects-bangalore-2024/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/01/best-sobha-projects-bangalore-2024-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/01/best-sobha-projects-bangalore-2024-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/01/best-sobha-projects-bangalore-2024-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/01/best-sobha-projects-bangalore-2024.png" data-width="800" data-height="400" data-alt="5 Best SOBHA Projects to Invest in Bangalore 2024">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/01/best-sobha-projects-bangalore-2024-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/best-sobha-projects-bangalore-2024/">5 Best SOBHA Projects to Invest in Bangalore 2024</a></h5>
+<p class="date-time"><span>January</span> 6th, 2024</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/title-deed-of-property/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/04/What-is-Title-Deeds-of-a-Proerty-and-its-types-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/04/What-is-Title-Deeds-of-a-Proerty-and-its-types-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/04/What-is-Title-Deeds-of-a-Proerty-and-its-types-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/04/What-is-Title-Deeds-of-a-Proerty-and-its-types.png" data-width="800" data-height="400" data-alt="What is Title Deeds of a Proerty and its types">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/04/What-is-Title-Deeds-of-a-Proerty-and-its-types-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/title-deed-of-property/">What is Title Deed of Property? All You Need to Know!</a></h5>
+<p class="date-time"><span>April</span> 28th, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-comments-list box clearfix">
+<div id="comments" class="comments-area">
+<p class="no-comments">Comments are closed.</p>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="col-md-4  sidebar">
+<div class="widget-odd widget-first widget-1 mdl-widget widget rushmore_widget_menu-7 mdl-sidebar-menu"><div class="title-header dark"><h4>Residential Projects</h4></div><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_recent_posts-4 mdl-widget-list-post"><div class="title-header dark"><h4>Recent Posts</h4></div><div class="content"><ul> <li class="clearfix post-6401 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">Millionaires&#8217; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6399 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6403 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">Security Measures and Privacy Protocols on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6394 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/owning-property-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/owning-property-millionaires-row/">The Benefits of Owning Property on Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6391 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">A Peek Inside Millionaires’ Row: What Makes This Neighbourhood So Exclusive?</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6388 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">Inside Bangalore&#8217;s Affluent Community: A Peek into Millionaires&#8217; Row Lifestyle</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6385 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6382 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6378 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">Why Trivandrum is the Best Place to Live in?</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6372 post type-post status-publish format-standard has-post-thumbnail hentry category-gurgaon category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">Gurgaon Real Estate Market Forecast 2024-25</a></h4>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+</li>
+</ul></div></div> </div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#f1869493979494959390929ab1829e939990df929e9c"><span class="__cf_email__" data-cfemail="5a2d3f383c3f3f3e383b39311a293538323b74393537">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="7602a5a22e525ab48ef3b306-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="7602a5a22e525ab48ef3b306-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="7602a5a22e525ab48ef3b306-|49" defer></script></body>
+</html>

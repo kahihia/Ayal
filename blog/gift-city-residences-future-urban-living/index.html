@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="61e698d0d0d49cd2d4288d87-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="61e698d0d0d49cd2d4288d87-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>GIFT City Residences – A Window into the Future of Urban Living!</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="61e698d0d0d49cd2d4288d87-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta name="description" content="Explore the futuristic lifestyle at GIFT City Residences, redefining urban living with innovation and sustainability." />
+<link rel="canonical" href="https://www.sobha.com/blog/gift-city-residences-future-urban-living/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="GIFT City Residences – A Window into the Future of Urban Living!" />
+<meta property="og:description" content="Explore the futuristic lifestyle at GIFT City Residences, redefining urban living with innovation and sustainability." />
+<meta property="og:url" content="https://www.sobha.com/blog/gift-city-residences-future-urban-living/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:published_time" content="2024-02-26T11:08:21+00:00" />
+<meta property="article:modified_time" content="2024-02-29T11:31:41+00:00" />
+<meta property="og:image" content="https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@Sobhaltd" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Srikanta Padhy" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="10 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#primaryimage","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png","width":1200,"height":600,"caption":"GIFT City Residences – A Window into the Future of Urban Living!"},{"@type":"WebPage","@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#webpage","url":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/","name":"GIFT City Residences – A Window into the Future of Urban Living!","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#primaryimage"},"datePublished":"2024-02-26T11:08:21+00:00","dateModified":"2024-02-29T11:31:41+00:00","description":"Explore the futuristic lifestyle at GIFT City Residences, redefining urban living with innovation and sustainability.","breadcrumb":{"@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/gift-city-residences-future-urban-living/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"GIFT City Residences – A Window into the Future of Urban Living"}]},{"@type":"Article","@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#article","isPartOf":{"@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#webpage"},"author":{"@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420"},"headline":"GIFT City Residences – A Window into the Future of Urban Living","datePublished":"2024-02-26T11:08:21+00:00","dateModified":"2024-02-29T11:31:41+00:00","mainEntityOfPage":{"@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#webpage"},"wordCount":2170,"publisher":{"@id":"https://www.sobha.com/blog/#organization"},"image":{"@id":"https://www.sobha.com/blog/gift-city-residences-future-urban-living/#primaryimage"},"thumbnailUrl":"https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png","articleSection":["Gujarat","SOBHA"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/"}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; GIFT City Residences – A Window into the Future of Urban Living Comments Feed" href="https://www.sobha.com/blog/gift-city-residences-future-urban-living/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/posts/6216" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://www.sobha.com/blog/?p=6216" />
+<link rel="alternate" type="application/json+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fgift-city-residences-future-urban-living%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fgift-city-residences-future-urban-living%2F&#038;format=xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar post-template-default single single-post postid-6216 single-format-standard">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header-single" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main id="main" class="page-main page-single page-single-box  ">
+<div class="container">
+<div class="row">
+<div class="col-md-8 main-content ">
+<div class="body-content clearfix">
+<div class="post-content mgt-special">
+<div id="post-6216" class="mdl-single-post mdl-single-post-v1 box clearfix post-6216 post type-post status-publish format-standard has-post-thumbnail hentry category-gujarat category-sobha mdl-post-standard">
+<div class="top center">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/gujarat/" rel="category tag">Gujarat</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div>
+<h1>GIFT City Residences – A Window into the Future of Urban Living</h1>
+<p class="date-time"><span>February</span> 26th, 2024</p>
+</div>
+<div class="photos">
+<img width="800" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20400'%3E%3C/svg%3E" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="GIFT City Residences – A Window into the Future of Urban Living!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png 1200w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-800x400.png" /><noscript><img width="800" height="400" src="https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-800x400.png" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="GIFT City Residences – A Window into the Future of Urban Living!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2024/02/gift-city-residences-future-urban-living.png 1200w" sizes="(max-width: 800px) 100vw, 800px" /></noscript> </div>
+<div class="content">
+<blockquote><p>Nestled within the vibrant landscape of Gandhinagar, Gujarat International Finance Tec-City or GIFT City residences stand as a testament to the future of urban living. From cutting-edge architectural designs to eco-friendly amenities, these homes offer a glimpse into a world where comfort, convenience, and environmental consciousness intertwine.</p></blockquote>
+<p>Located in Gujarat, GIFT City is a beacon of modern urban development. Conceived as a global financial and technology hub, it is designed to rival the world&#8217;s leading financial centres. Strategic location, state-of-the-art infrastructure, and business-friendly policies have positioned it as a key player in the global economic landscape.</p>
+<p>GIFT City holds immense significance in the context of urban development. It represents a paradigm shift in city planning, by integrating cutting-edge technology, sustainable practices, and efficient infrastructure to create a model city for the 21<sup>st</sup> century. By focussing on smart governance, connectivity, and sustainability, GIFT City embodies the principles of urban development for the future.</p>
+<p>At the heart of the city&#8217;s vision are its residential offerings from leading real estate developers – GIFT City Residences. These homes represent a unique aspect of the city – blending luxury, sustainability, and connectivity in a way that redefines urban living. Designed to cater to the needs of modern residents, these abodes exemplify the seamless integration of technology and lifestyle, offering a glimpse into the future of urban living.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_63 ez-toc-wrap-left counter-hierarchy ez-toc-counter ez-toc-custom ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title ">Table of Contents</p>
+<span class="ez-toc-title-toggle"></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#GIFT_City_A_Hub_of_Innovation" title="GIFT City: A Hub of Innovation">GIFT City: A Hub of Innovation</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#The_Concept_of_GIFT_City_Residences" title="The Concept of GIFT City Residences">The Concept of GIFT City Residences</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#Technology_and_Sustainability_in_GIFT_City_Residences" title="Technology and Sustainability in GIFT City Residences">Technology and Sustainability in GIFT City Residences</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#Community_and_Social_Dynamics" title="Community and Social Dynamics">Community and Social Dynamics</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="#Economic_Impact_and_Investment_Opportunities" title="Economic Impact and Investment Opportunities">Economic Impact and Investment Opportunities</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-6" href="#Future_Prospects_of_GIFT_City" title="Future Prospects of GIFT City">Future Prospects of GIFT City</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-7" href="#Conclusion" title="Conclusion">Conclusion</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-8" href="#FAQs" title="FAQs">FAQs</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-9" href="#1_Which_city_of_Gujarat_is_known_as_GIFT_City" title="1. Which city of Gujarat is known as GIFT City?">1. Which city of Gujarat is known as GIFT City?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-10" href="#2_What_are_the_benefits_of_GIFT_City_in_Gujarat" title="2. What are the benefits of GIFT City in Gujarat?">2. What are the benefits of GIFT City in Gujarat?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-11" href="#3_What_are_the_future_plans_of_GIFT_City" title="3. What are the future plans of GIFT City?">3. What are the future plans of GIFT City?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-12" href="#4_Why_is_GIFT_City_called_a_smart_city" title="4. Why is GIFT City called a smart city?">4. Why is GIFT City called a smart city?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-13" href="#5_What_is_GIFT_City_and_why_is_it_significant" title="5. What is GIFT City, and why is it significant?">5. What is GIFT City, and why is it significant?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-14" href="#6_What_makes_GIFT_City_residences_unique" title="6. What makes GIFT City residences unique?">6. What makes GIFT City residences unique?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-15" href="#7_How_is_technology_integrated_into_GIFT_City_residences" title="7. How is technology integrated into GIFT City residences?">7. How is technology integrated into GIFT City residences?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-16" href="#8_What_amenities_and_facilities_are_available_in_GIFT_City_for_residents" title="8. What amenities and facilities are available in GIFT City for residents?">8. What amenities and facilities are available in GIFT City for residents?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-17" href="#9_How_does_GIFT_City_redefine_urban_living" title="9. How does GIFT City redefine urban living?">9. How does GIFT City redefine urban living?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-18" href="#10_What_economic_impacts_does_GIFT_City_have_on_the_region" title="10. What economic impacts does GIFT City have on the region?">10. What economic impacts does GIFT City have on the region?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-19" href="#11_Are_there_any_challenges_associated_with_GIFT_Citys_development" title="11. Are there any challenges associated with GIFT City&#039;s development?">11. Are there any challenges associated with GIFT City&#039;s development?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-20" href="#12_How_can_individuals_invest_in_or_become_residents_of_GIFT_City" title="12. How can individuals invest in or become residents of GIFT City?">12. How can individuals invest in or become residents of GIFT City?</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="GIFT_City_A_Hub_of_Innovation"></span><strong>GIFT City: A Hub of Innovation</strong><span class="ez-toc-section-end"></span></h2>
+<p>Located near Gandhinagar, the city stands tall as a hub of innovation, spearheading the nation&#8217;s ambition to establish itself as a global financial and technological powerhouse. At its core lies the concept of an <a href="https://www.ifsca.gov.in/" target="_blank" rel="noopener nofollow" class="external">International Financial Services Centre</a> (IFSC), a visionary initiative to transform India into a premier destination for international financial transactions.</p>
+<p>The IFSC status is not merely symbolic; it represents a concrete commitment to fostering an ecosystem conducive to global financial activities. However, the city&#8217;s allure goes beyond the IFSC status. Since its inception, GIFT City has been envisioned as a smart city leveraging cutting-edge technologies to enhance efficiency, connectivity, and sustainability. Smart infrastructure lies at the heart of its innovation.</p>
+<p>The city is equipped with an integrated network of digital systems – including smart grids, intelligent transportation systems, and advanced communication networks – that enables seamless connectivity and efficient resource management.</p>
+<p>Sustainability is ingrained in the DNA of GIFT City, and it is committed to minimising its environmental footprint through renewable energy sources, green building practices, &amp; efficient waste management systems. Prioritising sustainability ensures residents get a healthier environment, and a precedent is set for responsible urban development on a global scale.</p>
+<h2><span class="ez-toc-section" id="The_Concept_of_GIFT_City_Residences"></span><strong>The Concept of GIFT City Residences</strong><span class="ez-toc-section-end"></span></h2>
+<p>What sets these homes apart is their emphasis on architectural innovation and design excellence. Drawing inspiration from traditional &amp; contemporary influences, these residences are designed with sustainable materials, energy-efficient technologies, and seamless integration of indoor &amp; outdoor spaces. Every aspect of these abodes is designed to enhance the living experience and promote well-being of individuals &amp; families alike.</p>
+<p>The allure of GIFT City Residences extends beyond mere aesthetics. Residents are treated to multiple lifestyle amenities &amp; facilities catering to their needs. From state-of-the-art fitness centres and recreational spaces to lush, landscaped gardens and community gathering areas, every detail is thoughtfully curated to foster the feeling of community and enhance the quality of life.</p>
+<p>Moreover, these futuristic homes offer a seamless blend of convenience &amp; connectivity, with access to a wide range of retail outlets, dining options, educational institutions, &amp; healthcare facilities.</p>
+<h2><span class="ez-toc-section" id="Technology_and_Sustainability_in_GIFT_City_Residences"></span><strong>Technology and Sustainability in GIFT City Residences</strong><span class="ez-toc-section-end"></span></h2>
+<p>State-of-the-art automation systems ensure that residents have seamless control over their living spaces. Smart home features enhance convenience and energy efficiency by optimising resource usage.</p>
+<p><a href="https://www.sobha.com/city/gift-city-gujarat/" target="_blank" rel="noopener" rel="nofollow">GIFT City flats</a> are built with a strong emphasis on sustainable and eco-friendly construction practices. From the selection of materials to construction, every step is carefully designed to minimise environmental impact.</p>
+<p>Additionally, green building techniques such as passive solar design, natural ventilation, and rainwater harvesting further enhance the sustainability credentials of these homes. Waste management initiatives play a crucial role in ensuring the sustainability of GIFT City Residences.</p>
+<p>Residents can access recycling facilities and composting programs to minimise waste generation and promote responsible disposal practices. Smart waste management systems are also implemented to optimise collection schedules and reduce environmental pollution.</p>
+<h2><span class="ez-toc-section" id="Community_and_Social_Dynamics"></span><strong>Community and Social Dynamics</strong><span class="ez-toc-section-end"></span></h2>
+<p>Within the innovative landscape of GIFT City Residences, community and social dynamics are at the forefront – fostering a sense of belonging and connection among residents. These residences are designed as living spaces and vibrant communities where residents can unite, forge meaningful relationships, and create lasting memories.</p>
+<p>Social &amp; recreational spaces abound within GIFT City apartments, catering to residents&#8217; diverse interests &amp; preferences. From swimming pools &amp; fitness centres to parks &amp; playgrounds, there are ample opportunities for residents of all ages to stay active, unwind, &amp; connect with their neighbours. Events such as movie nights and cultural festivals further enrich the community&#8217;s social fabric and foster camaraderie.</p>
+<p>Inclusivity and diversity are core principles within the residential community of GIFT City Residences. Individuals and families from varied backgrounds, cultures, &amp; professions create a rich tapestry of experiences.</p>
+<h2><span class="ez-toc-section" id="Economic_Impact_and_Investment_Opportunities"></span><strong>Economic Impact and Investment Opportunities</strong><span class="ez-toc-section-end"></span></h2>
+<p>The development of GIFT City residences has significantly impacted the local and regional economy, driving economic growth and creating many investment opportunities for employees and businesses. As a focal point of the city, these residences contribute to the overall financial ecosystem by attracting investment, generating employment, and stimulating economic activity.</p>
+<p>The construction and operation of these homes have created numerous jobs in various sectors, including real estate development, construction, property management, hospitality, and retail services.</p>
+<p>This influx of employment opportunities benefits residents by providing stable income and boosting consumer spending, thereby supporting local businesses and contributing to regional growth.</p>
+<p>These homes have catalysed investment in the surrounding areas, driving up property values and stimulating development. As a result, the local real estate market has experienced increased demand for residential &amp; commercial properties, leading to a surge in property prices and rental yields. This presents lucrative investment opportunities for individuals looking to capitalise on the burgeoning real estate market in GIFT City.</p>
+<p>Businesses seeking to establish a presence can leverage attractive investment opportunities offered by GIFT City residences. Companies can expand their operations, tap into new markets, and drive business growth by utilising these advantages.</p>
+<p>The demand for residential real estate in this area &amp; adjacent neighbourhoods continues to outpace supply, leading to a competitive market environment with rising property prices and robust rental yields. This trend is expected to persist in the near future – driven by urbanisation, population growth, and increasing demand for premium housing options.</p>
+<h2><span class="ez-toc-section" id="Future_Prospects_of_GIFT_City"></span><strong>Future Prospects of GIFT City</strong><span class="ez-toc-section-end"></span></h2>
+<p>Ambitious expansion plans and a pivotal role in shaping the future of urban living in India &amp; around the world have ensured that the <strong><a href="https://www.sobha.com/blog/future-of-real-estate-in-gift-city-gujarat/" target="_blank" rel="noopener" rel="nofollow">future prospects of GIFT City</a></strong> Ahmedabad are bright. As one of India&#8217;s most ambitious urban development projects, the city is poised for significant growth and transformation in the coming years.</p>
+<p>Expansion plans for GIFT City include increasing the land allocation from 886 acres to 3430 acres and developing additional infrastructure &amp; amenities to accommodate the growing needs of residents, businesses, and visitors. Construction of new residential towers, commercial complexes, recreational facilities, and transportation networks will enhance connectivity within the city and beyond.</p>
+<p>GIFT City aims to diversify its offerings by attracting a broader range of industries and sectors – positioning itself as a holistic global destination for business, leisure, and world-class living.</p>
+<p>The crucial role of GIFT City in shaping the future of urban living cannot be overstated. As a pioneer in smart city development, it is a model for sustainable, technology-driven urbanisation in India.</p>
+<p>Its innovative approach to city planning, smart infrastructure, and eco-friendly practices has set new standards for urban development. From inception to reality, GIFT City offers valuable lessons &amp; insights to urban centres across the world grappling with similar challenges of rapid urbanisation and environmental sustainability.</p>
+<h2><span class="ez-toc-section" id="Conclusion"></span><strong>Conclusion</strong><span class="ez-toc-section-end"></span></h2>
+<p>Our exploration of GIFT City Residences has shed light on the innovative and sustainable approach to urban living within Gujarat International Finance Tec-City.</p>
+<ol>
+<li><strong>Innovation and Technology:</strong> Through smart home features, advanced infrastructure, and a commitment to sustainability woven into the fabric of its residences, the city embodies the convergence of innovation and technology.</li>
+<li><strong>Sustainability:</strong> GIFT City Residences prioritise eco-friendly construction practices, energy-efficient systems, and waste management initiatives – setting a new standard for sustainable urban development.</li>
+<li><strong>Community and Social Dynamics:</strong> Thoughtfully designed communal spaces, and social &amp; recreational amenities have fostered a culture of inclusivity &amp; diversity among its residents.</li>
+<li><strong>Economic Impact and Investment Opportunities:</strong> The development of these homes has had a significant economic impact – driving investment, creating jobs, and stimulating growth in the local &amp; regional economy. Moreover, lucrative investment opportunities for individuals and businesses are on the rise.</li>
+<li><strong>Future Prospects:</strong> With ambitious expansion plans, a pivotal role in shaping the future of urban living, and the potential for replicating its model in other urban areas, GIFT City is poised to continue leading the way in sustainable urban development and innovation.</li>
+</ol>
+<p>The implications for the future of urban living and city planning are profound. GIFT City demonstrates the feasibility and benefits of integrating technology, sustainability, and community-focused design principles into urban development projects. As the world grapples with challenges such as rapid urbanisation, environmental degradation, and social inequality, GIFT City serves as a beacon of hope and inspiration – offering a blueprint for creating liveable, resilient, and inclusive cities of the future.</p>
+<h2><span class="ez-toc-section" id="FAQs"></span><strong>FAQs</strong><span class="ez-toc-section-end"></span></h2>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="1_Which_city_of_Gujarat_is_known_as_GIFT_City"></span>1. Which city of Gujarat is known as GIFT City?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+The city of Gujarat known as GIFT City is Gujarat International Finance Tec-City, which is located in Gandhinagar district. This futuristic city is situated between Ahmedabad and Gandhinagar. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="2_What_are_the_benefits_of_GIFT_City_in_Gujarat"></span>2. What are the benefits of GIFT City in Gujarat?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+The benefits of GIFT City in Gujarat are: 1. India’s leading global financial &amp; technological hub 2. Attracting international businesses and investments 3. Fostering economic growth and job creation 4. Providing a modern and sustainable living environment </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="3_What_are_the_future_plans_of_GIFT_City"></span>3. What are the future plans of GIFT City?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+The future plans of GIFT City are to develop its infrastructure further, attract more businesses, and enhance its role as a global fintech hub. These plans include expanding the land allocated from 886 acres to 3430 acres, and construction of additional commercial &amp; residential spaces. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="4_Why_is_GIFT_City_called_a_smart_city"></span>4. Why is GIFT City called a smart city?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+GIFT City is called a smart city because it integrates advanced technologies in urban planning and infrastructure. It incorporates smart features such as automated systems for security, energy management, and other services. Extensive use of technology aims to enhance the city's overall sustainability and quality of life. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="5_What_is_GIFT_City_and_why_is_it_significant"></span>5. What is GIFT City, and why is it significant?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+GIFT City stands for Gujarat International Finance Tec-City, and is a planned business district in Gujarat, India. It is significant because it focuses on creating a global financial &amp; technological hub, attracting international businesses, and fostering economic growth. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="6_What_makes_GIFT_City_residences_unique"></span>6. What makes GIFT City residences unique?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+GIFT City residences are unique due to integration of smart home technologies, availability of world-class infrastructure, innovative architectural designs, and a diverse range of housing options catering to different lifestyle preferences. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="7_How_is_technology_integrated_into_GIFT_City_residences"></span>7. How is technology integrated into GIFT City residences?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Technology is integrated into GIFT City residences with cutting-edge smart home tech – including automated systems for security, energy management, and convenience. Residents can control various aspects of their homes through digital platforms. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="8_What_amenities_and_facilities_are_available_in_GIFT_City_for_residents"></span>8. What amenities and facilities are available in GIFT City for residents?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Amenities and facilities available in GIFT City for residents are state-of-the-art recreational facilities, healthcare services, educational institutions, and easy accessibility to commercial &amp; retail spaces – providing a comprehensive living experience. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="9_How_does_GIFT_City_redefine_urban_living"></span>9. How does GIFT City redefine urban living?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+GIFT City redefines urban living by focusing on community-centric living, with emphasis on the social and cultural aspects. Modern urban planning strategies enhance the quality of life for residents, creating a sustainable, world-class living environment. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="10_What_economic_impacts_does_GIFT_City_have_on_the_region"></span>10. What economic impacts does GIFT City have on the region?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Economic impacts that GIFT City has on the region are job creation, economic opportunities, attracting global investors. Its development positively impacts the local real estate market and allied industries, making the city an economic driver for the region. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="11_Are_there_any_challenges_associated_with_GIFT_Citys_development"></span>11. Are there any challenges associated with GIFT City&#039;s development?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Yes, there are a few challenges associated with GIFT City’s development, such as environmental considerations, social impact, and potential hurdles in sustainable urban development. Mitigation strategies are being employed to address these challenges. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h2><span class="ez-toc-section" id="12_How_can_individuals_invest_in_or_become_residents_of_GIFT_City"></span>12. How can individuals invest in or become residents of GIFT City?<span class="ez-toc-section-end"></span></h2> <div>
+<p>
+Individuals can invest in or become residents of GIFT City through investment opportunities and residency options – which can be explored through official channels, involving collaboration with real estate developers, or contacting relevant authorities overseeing the development. </p>
+</div>
+</div>
+</section>
+<script type="application/ld+json">
+    {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+				{
+				"@type": "Question",
+				"name": "1. Which city of Gujarat is known as GIFT City?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "The city of Gujarat known as GIFT City is Gujarat International Finance Tec-City, which is located in Gandhinagar district. This futuristic city is situated between Ahmedabad and Gandhinagar."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "2. What are the benefits of GIFT City in Gujarat?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "The benefits of GIFT City in Gujarat are: 1. India’s leading global financial &amp; technological hub 2. Attracting international businesses and investments 3. Fostering economic growth and job creation 4. Providing a modern and sustainable living environment"
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "3. What are the future plans of GIFT City?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "The future plans of GIFT City are to develop its infrastructure further, attract more businesses, and enhance its role as a global fintech hub. These plans include expanding the land allocated from 886 acres to 3430 acres, and construction of additional commercial &amp; residential spaces."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "4. Why is GIFT City called a smart city?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "GIFT City is called a smart city because it integrates advanced technologies in urban planning and infrastructure. It incorporates smart features such as automated systems for security, energy management, and other services. Extensive use of technology aims to enhance the city's overall sustainability and quality of life."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "5. What is GIFT City, and why is it significant?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "GIFT City stands for Gujarat International Finance Tec-City, and is a planned business district in Gujarat, India. It is significant because it focuses on creating a global financial &amp; technological hub, attracting international businesses, and fostering economic growth."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "6. What makes GIFT City residences unique?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "GIFT City residences are unique due to integration of smart home technologies, availability of world-class infrastructure, innovative architectural designs, and a diverse range of housing options catering to different lifestyle preferences."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "7. How is technology integrated into GIFT City residences?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Technology is integrated into GIFT City residences with cutting-edge smart home tech – including automated systems for security, energy management, and convenience. Residents can control various aspects of their homes through digital platforms."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "8. What amenities and facilities are available in GIFT City for residents?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Amenities and facilities available in GIFT City for residents are state-of-the-art recreational facilities, healthcare services, educational institutions, and easy accessibility to commercial &amp; retail spaces – providing a comprehensive living experience."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "9. How does GIFT City redefine urban living?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "GIFT City redefines urban living by focusing on community-centric living, with emphasis on the social and cultural aspects. Modern urban planning strategies enhance the quality of life for residents, creating a sustainable, world-class living environment."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "10. What economic impacts does GIFT City have on the region?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Economic impacts that GIFT City has on the region are job creation, economic opportunities, attracting global investors. Its development positively impacts the local real estate market and allied industries, making the city an economic driver for the region."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "11. Are there any challenges associated with GIFT City's development?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Yes, there are a few challenges associated with GIFT City’s development, such as environmental considerations, social impact, and potential hurdles in sustainable urban development. Mitigation strategies are being employed to address these challenges."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "12. How can individuals invest in or become residents of GIFT City?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Individuals can invest in or become residents of GIFT City through investment opportunities and residency options – which can be explored through official channels, involving collaboration with real estate developers, or contacting relevant authorities overseeing the development."
+									}
+			}
+				    ]
+}
+</script>
+</div> 
+<div class="row">
+<div class="meta-post clearfix">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="mdl-tags">
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="love-action sl-wrapper"><a href="#" class="sl-button sl-button-6216" data-nonce="40e16a88d5" data-post-id="6216" data-iscomment="0" title="Like">Love this? <i class="fa fa-heart-o"></i></a></div> </div>
+</div>
+</div>
+<div class="social-share-action">
+<h4>Sharing</h4>
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/gift-city-residences-future-urban-living/" data-title="GIFT City Residences – A Window into the Future of Urban Living">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+</div> 
+</div>
+<div class="blk-paging-post box">
+<div class="row">
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/benefits-of-community-living-india/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2024/02/benefits-of-community-living-india-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>Previous</span>
+<h3>Benefits of Community Living in India</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/rise-of-sector-106-gurgaon-homebuyers-guide/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2024/02/rise-of-sector-106-gurgaon-homebuyers-guide-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>NEXT</span>
+<h3>The Rise of Sector 106, Gurgaon – A Comprehensive Guide for Homebuyers</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-related-post box">
+<h4>You might also like</h4>
+<div class="inner clearfix">
+<div id="all-post-temp-display"></div>
+<div id="all-post-temp" style="display:none;" data-display="2">
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/micro-markets-hotspots-housing-bengaluru/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2018/09/2-fimg-sb-13082018-795x533.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2018/09/2-fimg-sb-13082018-795x533.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2018/09/2-fimg-sb-13082018-795x533.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2018/09/2-fimg-sb-13082018.png" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2018/09/2-fimg-sb-13082018-795x533.png" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/micro-markets-hotspots-housing-bengaluru/">Micro Markets: Hotspots of Housing in Bengaluru</a></h5>
+<p class="date-time"><span>August</span> 13th, 2018</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/working-from-your-own-home/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2020/06/fi_20052020.webp" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2020/06/fi_20052020.webp" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2020/06/fi_20052020.webp" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2020/06/fi_20052020.webp" data-width="1" data-height="1" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2020/06/fi_20052020.webp" alt="" width="1" height="1">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/working-from-your-own-home/">Working From Your OWN home</a></h5>
+<p class="date-time"><span>June</span> 20th, 2020</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/power-of-attorney-poa/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/09/what-is-power-of-attorney-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/09/what-is-power-of-attorney-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/09/what-is-power-of-attorney-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/09/what-is-power-of-attorney.png" data-width="800" data-height="400" data-alt="What is Power of Attorney (POA) for Property – Meaning, Format, and How to Make it ?">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/09/what-is-power-of-attorney-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/power-of-attorney-poa/">What is Power of Attorney (POA) for Property – Meaning, Format, and How to Make it ?</a></h5>
+<p class="date-time"><span>September</span> 2nd, 2023</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/big-data-insights-changing-the-future-of-real-estate-in-india/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2017/08/8Aug2017FImg-1-795x533.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2017/08/8Aug2017FImg-1-795x533.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2017/08/8Aug2017FImg-1-795x533.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2017/08/8Aug2017FImg-1.png" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2017/08/8Aug2017FImg-1-795x533.png" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/big-data-insights-changing-the-future-of-real-estate-in-india/">Big Data Insights: Changing the future of real estate in India</a></h5>
+<p class="date-time"><span>August</span> 8th, 2017</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4  sidebar">
+<div class="widget-odd widget-first widget-1 mdl-widget widget rushmore_widget_menu-7 mdl-sidebar-menu"><div class="title-header dark"><h4>Residential Projects</h4></div><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_recent_posts-4 mdl-widget-list-post"><div class="title-header dark"><h4>Recent Posts</h4></div><div class="content"><ul> <li class="clearfix post-6401 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">Millionaires&#8217; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6399 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6403 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">Security Measures and Privacy Protocols on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6394 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/owning-property-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/owning-property-millionaires-row/">The Benefits of Owning Property on Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6391 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">A Peek Inside Millionaires’ Row: What Makes This Neighbourhood So Exclusive?</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6388 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">Inside Bangalore&#8217;s Affluent Community: A Peek into Millionaires&#8217; Row Lifestyle</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6385 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6382 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6378 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">Why Trivandrum is the Best Place to Live in?</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6372 post type-post status-publish format-standard has-post-thumbnail hentry category-gurgaon category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">Gurgaon Real Estate Market Forecast 2024-25</a></h4>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+</li>
+</ul></div></div> </div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#16617374707373727477757d566579747e773875797b"><span class="__cf_email__" data-cfemail="fe899b9c989b9b9a9c9f9d95be8d919c969fd09d9193">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="61e698d0d0d49cd2d4288d87-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="61e698d0d0d49cd2d4288d87-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="61e698d0d0d49cd2d4288d87-|49" defer></script></body>
+</html>

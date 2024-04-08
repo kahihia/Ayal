@@ -1,0 +1,986 @@
+
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head><meta charset="UTF-8"><script type="e6af676fa84da5b69dbecdd3-text/javascript">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script type="e6af676fa84da5b69dbecdd3-text/javascript">class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-SMEJZ2CXQ2"></script>
+<script type="rocketlazyloadscript">
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-49867836-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js" type="6f9a8d9ce21447e0f66c110f-text/javascript"></script>
+
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-W5G26V93YL"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W5G26V93YL');
+</script>
+<meta name="viewport" content="width=device-width">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://www.sobha.com/blog/xmlrpc.php">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<title>Top 20 Residential Areas to Live in Bangalore - SOBHA Ltd.</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /><script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e6af676fa84da5b69dbecdd3-|49"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%2C900%2C900italic%2C700italic%2C400italic%2C300italic%2C300%7CPlayfair%20Display%3A400%2C400italic%2C700%2C700italic%2C900%2C900italic%7CMontserrat%3A400%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://www.sobha.com/blog/wp-content/cache/min/1/59d9a6a243648397239a3d95732d2521.css" media="all" data-minify="1" />
+<meta name="description" content="Discover the top 20 residential areas in Bangalore, offering great living environments. Explore the best neighborhoods to call home in the city." />
+<link rel="canonical" href="https://www.sobha.com/blog/residential-areas-in-bangalore/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Top 20 Residential Areas to Live in Bangalore - SOBHA Ltd." />
+<meta property="og:description" content="Discover the top 20 residential areas in Bangalore, offering great living environments. Explore the best neighborhoods to call home in the city." />
+<meta property="og:url" content="https://www.sobha.com/blog/residential-areas-in-bangalore/" />
+<meta property="og:site_name" content="SOBHA | Blog" />
+<meta property="article:publisher" content="https://www.facebook.com/sobhaltd" />
+<meta property="article:published_time" content="2023-06-29T13:02:43+00:00" />
+<meta property="og:image" content="https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@Sobhaltd" />
+<meta name="twitter:site" content="@Sobhaltd" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Srikanta Padhy" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="16 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.sobha.com/blog/#organization","name":"Sobha Limited","url":"https://www.sobha.com/blog/","sameAs":["https://www.facebook.com/sobhaltd","https://www.instagram.com/sobhaltd/","https://www.linkedin.com/company/sobhaltd/","https://www.youtube.com/c/Sobha","https://twitter.com/Sobhaltd"],"logo":{"@type":"ImageObject","@id":"https://www.sobha.com/blog/#logo","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg","width":71,"height":141,"caption":"Sobha Limited"},"image":{"@id":"https://www.sobha.com/blog/#logo"}},{"@type":"WebSite","@id":"https://www.sobha.com/blog/#website","url":"https://www.sobha.com/blog/","name":"SOBHA | Blog","description":"Passion At Work","publisher":{"@id":"https://www.sobha.com/blog/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sobha.com/blog/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#primaryimage","inLanguage":"en-US","url":"https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png","contentUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png","width":1200,"height":600,"caption":"residential areas to live in bangalore"},{"@type":"WebPage","@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#webpage","url":"https://www.sobha.com/blog/residential-areas-in-bangalore/","name":"Top 20 Residential Areas to Live in Bangalore - SOBHA Ltd.","isPartOf":{"@id":"https://www.sobha.com/blog/#website"},"primaryImageOfPage":{"@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#primaryimage"},"datePublished":"2023-06-29T13:02:43+00:00","dateModified":"2023-06-29T13:02:43+00:00","description":"Discover the top 20 residential areas in Bangalore, offering great living environments. Explore the best neighborhoods to call home in the city.","breadcrumb":{"@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.sobha.com/blog/residential-areas-in-bangalore/"]}]},{"@type":"BreadcrumbList","@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sobha.com/blog/"},{"@type":"ListItem","position":2,"name":"Top 20 Residential Areas to Live in Bangalore"}]},{"@type":"Article","@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#article","isPartOf":{"@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#webpage"},"author":{"@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420"},"headline":"Top 20 Residential Areas to Live in Bangalore","datePublished":"2023-06-29T13:02:43+00:00","dateModified":"2023-06-29T13:02:43+00:00","mainEntityOfPage":{"@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#webpage"},"wordCount":3693,"publisher":{"@id":"https://www.sobha.com/blog/#organization"},"image":{"@id":"https://www.sobha.com/blog/residential-areas-in-bangalore/#primaryimage"},"thumbnailUrl":"https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png","articleSection":["Bangalore","SOBHA"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://www.sobha.com/blog/#/schema/person/f4ab347245a2be40d5b56f444dd43420","name":"Srikanta Padhy","sameAs":["http://www.sobha.com"],"url":"https://www.sobha.com/blog/author/srikanta-padhysobha-com/"}]}</script>
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link href="https://fonts.gstatic.com" crossorigin rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Feed" href="https://www.sobha.com/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Comments Feed" href="https://www.sobha.com/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SOBHA | Blog &raquo; Top 20 Residential Areas to Live in Bangalore Comments Feed" href="https://www.sobha.com/blog/residential-areas-in-bangalore/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style id="rushmore-style-inline-css" type="text/css">
+
+				a:hover, a:focus, .name-category a, .continue-reading,
+				.blk-nav-top .meta-information .call a, .mdl-widget-archive .content ul li:hover a,
+				.mdl-widget-archive .content ul li:hover:before, .mdl-gototop a, ul.social-accounts li a i,
+				.body-content .mdl-post-normal h3 a:hover, .single-slides.information-slider .information .text-information .text-center .continue-reading a,
+				.mdl-widget-links .content ul li a:hover, .mdl-widget-links .content ul li:hover:before, .mdl-widget-list-post .content ul li .information h4 a:hover,
+				.mdl-contact-info .information p i, .mdl-comments-list ul li .group .top .meta .reply, .mdl-related-post h5 a:hover,
+				.mdl-widget-list-comment.dark .content ul li .information h4 a:hover, .mdl-tags a:hover, .love-action a.loved i, .love-action a.loved:hover i, .love-action a:hover,
+				.love-action a:hover i, .love-action a:hover.loved i, .mld-contact-us .information a:hover, .mld-contact-us .information p i, .mdl-post-normal .btn-share i, .social-share-action .btn-close span, 
+				.mdl-coming-soon .information .form input[type="submit"], .mdl-coming-soon ul.social-accounts.white li a:hover i, .mdl-widget-links .content ul li a:hover:before
+				{color: #d3a538;}
+				.name-category.dash a:before, .name-category.dash a:after, .title-header:after,
+				.button.yellow, .mdl-sidebar-menu ul li a:hover:after, .mdl-sidebar-menu ul li a.active:after,
+				.mdl-gototop a:hover, ul.social-accounts li a:hover, .mdl-post-normal .btn-share i:hover, .social-share-action .btn-close span:hover, .page-maintenance,
+				.mdl-slider-full .item .information .category,
+				.social-share-action .btn-close span::before, .social-share-action .btn-close span::after, #comment-submit{background: #d3a538;}
+				#sync2 .synced .item a{border: 3px solid #d3a538;}
+				ul.social-accounts li a, .mdl-post-normal .btn-share i, .social-share-action .btn-close span {border: 1px solid #d3a538;}
+				.social-share-action .btn-close span:hover::before, .social-share-action .btn-close span:hover::after{background: #FFF;}
+				body{font-family: "Lato",serif;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-family: "Montserrat",serif;}h1, h2, h3, h4, h5, h6{font-family: "Lato",serif;}body input[type="submit"]{font-family: "Montserrat",serif;}#body.blog header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body.blog header h2.rushmore-header-title{font-family: "Lato",serif;}#body header h1.rushmore-header-title{font-family: "Playfair Display",serif;}#body header h2.rushmore-header-title{font-family: "Lato",serif;}body {font-size: 16px;}body .nav-desktop-nomal, body .mdl-nav-mobile, body .nav-bottom ul li a{font-size: 12px;}
+				@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+				   .primary-logo, .sub-logo{background:url(https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg) no-repeat center; display:inline-block; background-size:contain;}
+				   .primary-logo img, .sub-logo img{ opacity:0; visibility:hidden}
+				   .primary-logo *, .sub-logo *{display:inline-block}
+				   .nav-bar-top.fixed .primary-logo{display:none}
+				}
+				#body.page-id-2990 h1, #body.page-id-2990 h2, #body.page-id-2990 h3, #body.page-id-2990 h4, #body.page-id-2990 h5, #body.page-id-2990 h6{font-weight: bold !important;font-style: italic !important;} 
+#body.sport.single-post h1, #body.sport.single-post h2, #body.sport.single-post h3, #body.sport.single-post h4, #body.sport.single-post h5, #body.sport.single-post h6{font-weight: bold !important;font-style: italic !important;} 
+#body.page-id-3007 h1, #body.page-id-3007 h2, #body.page-id-3007 h3, #body.page-id-3007 h4, #body.page-id-3007 h5, #body.page-id-3007 h6{font-weight: bold !important;}
+#body.tech.single-post h1, #body.tech.single-post h2, #body.tech.single-post h3, #body.tech.single-post h4, #body.tech.single-post h5, #body.tech.single-post h6{font-weight: bold !important;}
+
+.body-content h2 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: #d3a538;
+}
+
+.body-content h3 {
+    font-size: 125%;
+    margin-bottom: 12px;
+}
+
+body {
+    color: #000;
+	}
+.avatar {
+    display:none;
+}
+
+
+.body-content .with-border, .with-border tr, .with-border td {
+ border:1px solid;
+}
+
+ul.sub-menu li {
+    background: rgba(0,0,0,0) !important;
+}
+.nav-bar-top .nav-desktop-nomal ul li ul.sub-menu li a {
+    color: #d3a538 !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/modernizr-2.6.2-respond-1.1.0.min.js" id="modernizr-respond-js" defer></script>
+<link rel="https://api.w.org/" href="https://www.sobha.com/blog/wp-json/" /><link rel="alternate" type="application/json" href="https://www.sobha.com/blog/wp-json/wp/v2/posts/5452" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.sobha.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.sobha.com/blog/wp-includes/wlwmanifest.xml" />
+<link rel="shortlink" href="https://www.sobha.com/blog/?p=5452" />
+<link rel="alternate" type="application/json+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fresidential-areas-in-bangalore%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.sobha.com/blog/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.sobha.com%2Fblog%2Fresidential-areas-in-bangalore%2F&#038;format=xml" />
+<style type="text/css" id="wp-custom-css">
+			.blk-top-footer .mdl-sidebar-menu ul li a {
+    background: transparent;
+    padding: 0px !important;
+}
+
+.blk-top-footer .mdl-sidebar-menu ul li a:hover:after, .blk-top-footer .mdl-sidebar-menu ul li a.active:after {
+	height: 0px;
+}
+.social-wrapper {
+    text-align: right;
+}
+.social-wrapper a {
+    padding: 8px;
+}
+.footer-blog-logo img {
+    width: 60%;
+}
+.row.top-footer {
+    padding-bottom: 25px;
+}
+.contact-sobha a {
+    text-transform: inherit !important;
+}
+.blk-bottom-footer {
+    padding: 0px 0px 15px 0px;
+    background: #282828 !important;
+}
+.blk-bottom-footer .copy-rights span{
+	font-size: 14px !important;
+}
+.blk-bottom-footer .nav-bottom a {
+    font-size: 13px !important;
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 990px) {
+.footer-blog-logo img {
+    width: 26%;
+}
+.social-wrapper {
+    text-align: center;
+}
+.blk-top-footer {
+    padding: 33px 0 24px !important;
+}
+}
+
+		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+<body id="body" class="rushmore-withsidebar post-template-default single single-post postid-5452 single-format-standard">
+<div class="mdl-gototop">
+<a href="#body"><i class="fa fa-caret-up"></i></a>
+</div>
+<div class="page-wrapper">
+<header class="page-header-single" style="background:#ffffff;">
+<div class="nav-bar-top nav-bar-v1 absolute">
+<div class="container">
+<div class="inner clearfix">
+<a class="toggle-navigation hidden-md hidden-lg" href="#"><span><i></i></span></a>
+<div class="logo">
+
+<a href="https://www.sobha.com"><img width="71" height="141" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2071%20141'%3E%3C/svg%3E" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"><noscript><img width="71" height="141" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/logo.jpg"></noscript></a>
+</div>
+<div class="row1">
+<div class="pull-right col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs hidden-sm hidden-md">
+<div class="topicon pull-right">
+<ul>
+<li><a href="https://www.facebook.com/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/facebook.jpg" target="_blank"></noscript></a></li>
+
+<li><a href="https://www.linkedin.com/company/sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/linkedin.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://twitter.com/Sobhaltd" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/twitter.jpg" target="_blank"></noscript></a></li>
+<li><a href="https://www.youtube.com/c/sobha" class="external" rel="nofollow"><img width="28" height="28" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2028%2028'%3E%3C/svg%3E" target="_blank" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg"><noscript><img width="28" height="28" src="https://www.sobha.com/blog/wp-content/uploads/2016/10/youtube.jpg" target="_blank"></noscript></a></li>
+</ul>
+</div></div>
+</div>
+<div class="meta-nav-desktop">
+<div class="nav-desktop-nomal hidden-xs hidden-sm">
+<ul id="rushmore-header-desktop-nav" class="rushmore-header-desktop-nav"><li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li id="menu-item-6351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li id="menu-item-6352" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li id="menu-item-6353" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-6354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li id="menu-item-3191" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li id="menu-item-3192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li id="menu-item-3193" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li id="menu-item-3194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<div class="blk-search-top ">
+<span class="btn-search"><i class="fa fa-search"></i></span>
+<div class="form-search">
+<form method="get" class="searchform form" action="https://www.sobha.com/blog/">
+<input type="text" class="form-control" placeholder="SEARCH" value name="s" />
+<i class="fa fa-search"></i>
+<input type="submit" value>
+</form> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</header>
+<div class="mdl-nav-mobile hidden-md hidden-lg">
+<span class="close-navigation">
+<i class="fa fa-times"></i>
+Close </span>
+<ul id="rushmore-header-mobile-nav" class="rushmore-header-mobile-nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3190"><a href="https://www.sobha.com/blog/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6351"><a href="https://www.sobha.com/millionaire-row/">Millionaire Row</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6352"><a href="https://www.sobha.com/blog/category/sobha/investment/">Investment</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6353"><a href="https://www.sobha.com/blog/category/sobha/lifestyle/">Lifestyle</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6354"><a href="https://www.sobha.com/blog/category/sobha/neighbourhood/">Neighbourhood</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3191"><a rel="nofollow" href="/residential/">Residential</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3192"><a rel="nofollow" href="/contracting/">Contractual</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3193"><a rel="nofollow" href="/manufacturing/">Manufacturing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3194"><a rel="nofollow" href="/commercial/">Commercial</a></li>
+</ul> </div>
+<main id="main" class="page-main page-single page-single-box  ">
+<div class="container">
+<div class="row">
+<div class="col-md-8 main-content ">
+<div class="body-content clearfix">
+<div class="post-content mgt-special">
+<div id="post-5452" class="mdl-single-post mdl-single-post-v1 box clearfix post-5452 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-sobha mdl-post-standard">
+<div class="top center">
+<div class="name-category dash clearfix"><a href="https://www.sobha.com/blog/category/bangalore/" rel="category tag">Bangalore</a>, <a href="https://www.sobha.com/blog/category/sobha/" rel="category tag">SOBHA</a></div>
+<h1>Top 20 Residential Areas to Live in Bangalore</h1>
+<p class="date-time"><span>June</span> 29th, 2023</p>
+</div>
+<div class="photos">
+<img width="800" height="400" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20400'%3E%3C/svg%3E" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="residential areas to live in bangalore" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png 1200w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-800x400.png" /><noscript><img width="800" height="400" src="https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-800x400.png" class="attachment-rushmore_blog_full size-rushmore_blog_full wp-post-image" alt="residential areas to live in bangalore" srcset="https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-800x400.png 800w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-300x150.png 300w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-1024x512.png 1024w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore-768x384.png 768w, https://www.sobha.com/blog/wp-content/uploads/2023/06/residential-areas-to-live-in-bangalore.png 1200w" sizes="(max-width: 800px) 100vw, 800px" /></noscript> </div>
+<div class="content">
+<blockquote><p><em>Bangalore sees a constant influx of people from all over the country. Quite naturally, the city has higher demand for residential units. There are quite a few residential areas in Bangalore – both old and new. From these, we have handpicked 20 residential areas across Bangalore. This will help the prospective home hunter to decide where to live in Bangalore.</em></p></blockquote>
+<p>Once a charming, quaint town, Bangalore has shrugged off its reputation as a laidback city. Today, Bangalore, or Bengaluru, is one of the fastest growing cities in the country that is also reputed to be India’s information technology hub. Ever since the IT boom started in the 90s, Bangalore acquired a pace that has been matchless.</p>
+<p>Today, the city provides employment opportunities to millions of people from all over the country. The city’s infrastructure is also undergoing massive changes to accommodate its ever-expanding population and facilitate the smooth movement of people and goods. Indeed, with all the transformation Bangalore is undergoing, the demand for housing in the city is steadily on the rise. In this article, we aim to provide information on the top 20 residential areas in Bangalore. If you are planning to settle down in Bangalore, this article will be of tremendous help to you.</p>
+<p>As a city that is bursting at the seams, Bangalore needs clearly earmarked residential and commercial areas. This will greatly help in decongesting the city to a great extent, making living in Bangalore pleasant and easier. While residential areas such as Jayanagar, known as old Bangalore, are well-planned, rapid development has resulted in a lot of unplanned localities in Bangalore that reel under myriad civic issues.</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_63 ez-toc-wrap-left counter-hierarchy ez-toc-counter ez-toc-custom ez-toc-container-direction">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title ">Table of Contents</p>
+<span class="ez-toc-title-toggle"></span></div>
+<nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#20_Best_Residential_Areas_in_Bangalore" title="20 Best Residential Areas in Bangalore">20 Best Residential Areas in Bangalore</a><ul class="ez-toc-list-level-3"><li class="ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-2" href="#Electronic_City" title="Electronic City">Electronic City</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-3" href="#Banashankari" title="Banashankari">Banashankari</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-4" href="#Sarjapur_Road" title="Sarjapur Road">Sarjapur Road</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-5" href="#Whitefield" title="Whitefield">Whitefield</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-6" href="#Devanahalli" title="Devanahalli">Devanahalli</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-7" href="#Thanisandra_Main_Road" title="Thanisandra Main Road">Thanisandra Main Road</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-8" href="#Indiranagar" title="Indiranagar">Indiranagar</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-9" href="#Jayanagar" title="Jayanagar">Jayanagar</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-10" href="#Koramangala" title="Koramangala">Koramangala</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-11" href="#HSR_Layout" title="HSR Layout">HSR Layout</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-12" href="#Sadashivanagar" title="Sadashivanagar">Sadashivanagar</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-13" href="#Bannerghatta_Road" title="Bannerghatta Road">Bannerghatta Road</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-14" href="#Central_Business_District_CBD" title="Central Business District (CBD)">Central Business District (CBD)</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-15" href="#Rajaji_Nagar" title="Rajaji Nagar">Rajaji Nagar</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-16" href="#Malleswaram" title="Malleswaram">Malleswaram</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-17" href="#Frazer_Town" title="Frazer Town">Frazer Town</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-18" href="#Cooke_Town" title="Cooke Town">Cooke Town</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-19" href="#Basavanagudi" title="Basavanagudi">Basavanagudi</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-20" href="#BTM_Layout" title="BTM Layout">BTM Layout</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-21" href="#Ulsoor" title="Ulsoor">Ulsoor</a></li></ul></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-22" href="#Where_to_Live_in_Bangalore" title="Where to Live in Bangalore?">Where to Live in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-23" href="#FAQs" title="FAQ&#8217;s">FAQ&#8217;s</a><ul class="ez-toc-list-level-3"><li class="ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-24" href="#1_Which_is_the_best_residential_area_in_Bangalore" title="1. Which is the best residential area in Bangalore?">1. Which is the best residential area in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-25" href="#2_Which_part_of_Bangalore_is_good_for_living" title="2. Which part of Bangalore is good for living?">2. Which part of Bangalore is good for living?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-26" href="#3_Which_is_the_most_posh_area_in_Bangalore" title="3. Which is the most posh area in Bangalore?">3. Which is the most posh area in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-27" href="#4_Which_are_the_no-go_areas_in_Bangalore" title="4. Which are the no-go areas in Bangalore?">4. Which are the no-go areas in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-28" href="#5_Which_area_is_safest_in_Bangalore" title="5. Which area is safest in Bangalore?">5. Which area is safest in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-29" href="#6_Which_is_the_cleanest_area_in_Bangalore" title="6. Which is the cleanest area in Bangalore?">6. Which is the cleanest area in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-30" href="#7_What_is_special_in_Bangalore_rural" title="7. What is special in Bangalore rural?">7. What is special in Bangalore rural?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-31" href="#8_What_are_the_advantages_of_living_in_Bangalore" title="8. What are the advantages of living in Bangalore?">8. What are the advantages of living in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-32" href="#9_Which_is_best_Bangalore_%E2%80%93_north_or_south" title="9. Which is best Bangalore &#8211; north or south?">9. Which is best Bangalore &#8211; north or south?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-33" href="#10_Where_do_the_super-rich_live_in_Bangalore" title="10. Where do the super-rich live in Bangalore?">10. Where do the super-rich live in Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-34" href="#11_Which_area_is_the_heart_of_Bangalore" title="11. Which area is the heart of Bangalore?">11. Which area is the heart of Bangalore?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-35" href="#12_Which_part_of_Bangalore_is_cooler" title="12. Which part of Bangalore is cooler?">12. Which part of Bangalore is cooler?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-36" href="#13_Why_is_South_Bangalore_famous" title="13. Why is South Bangalore famous?">13. Why is South Bangalore famous?</a></li><li class="ez-toc-page-1 ez-toc-heading-level-3"><a class="ez-toc-link ez-toc-heading-37" href="#14_Is_North_Bangalore_good_place_to_live_in" title="14. Is North Bangalore good place to live in?">14. Is North Bangalore good place to live in?</a></li></ul></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="20_Best_Residential_Areas_in_Bangalore"></span><strong>20 Best Residential Areas in Bangalore</strong><span class="ez-toc-section-end"></span></h2>
+<p>In this article, we focus on 20 top residential areas in Bangalore, which are handpicked for their proximity to key locations, transportation and connectivity, safety and security, infrastructure and civic amenities, and quality of life and environment.</p>
+<ol>
+<li>
+<h3><span class="ez-toc-section" id="Electronic_City"></span><strong>Electronic City</strong><span class="ez-toc-section-end"></span></h3>
+<p>A prominent hub of IT companies in Bangalore, Electronic City is well-planned to accommodate the burgeoning workforce and the increasing demand for housing. As a well-developed residential area, Electronic City has been divided into three zones – phase 1, phase 2 and phase 3 and has clearly earmarked areas for tech companies, industrial units, and residential complexes.</p>
+<p>Electronic City is a self-sufficient community with a flourishing infrastructure and has all the conveniences nearby. Besides India’s most prominent healthcare destinations such as Narayana Health and Mazumdar Shaw Medical Center, Electronic City also has other hospitals, namely Springleaf and Vimalalaya. In terms of educational institutions, Electronic City has Delhi Public School, Sorsfort International School, ISBR Business School, St. Francis De Sales High School and College, and PES Institute of Technology. What’s more, a mere 30 minutes’ drive will take you to Gopalan Innovation Mall in JP Nagar or Forum Mall in Koramangala.</p>
+<p>Lying adjacent to Hosur Road, Electronic City offers unparalleled connectivity to Bangalore as well as Hosur. With metro work progressing at a rapid speed, connectivity to the locality will dramatically improve.</p>
+<p>With constant patrolling and CCTV surveillance, safety and security are a given in Electronic City. Leafy lanes, wide roads and parks ensure that you have multiple avenues to unwind.</p>
+<p>Ushering in the New York lifestyle near Electronic City is <a href="https://www.sobha.com/bengaluru/sobha-townpark/" target="_blank" rel="noopener" rel="nofollow">SOBHA Townpark</a> – a self-sufficient township featuring iconic residential towers, top-notch amenities, and a lot more. An ideal choice for those who prefer to invest in a SOBHA home, SOBHA Townpark has 2, 3 &amp; 4 BHK luxury homes.</li>
+<li>
+<h3><span class="ez-toc-section" id="Banashankari"></span><strong>Banashankari</strong><span class="ez-toc-section-end"></span></h3>
+<p>Bengaluru’s largest locality, Banashankari is both a commercial hub and an increasingly popular residential area.</p>
+<p>Banashankari has world class healthcare facilities such as Kempegowda Institute of Medical Sciences, Sagar Hospitals, and Motherhood Hospital, and educational institutions including National Public School, Sree Saraswathy Vidya Mandira, JSS Public School, Narayana PU College, and PES Degree College. For shopping and entertainment, Banashankari has BDA complex, Gopalan Promenade Mall and more.</p>
+<p>The area is located in such a way that it is easily accessible from Outer Ring Road, Mysore Road and Kanakapura Road. What’s more, it offers immense connectivity via bus and metro. Crime rate in Banashankari is one of the lowest in Bangalore, making it a safe and secure residential area.</p>
+<p>For those who aspire to live the palatial life, Banashankari has an ideal offering – <a href="https://www.sobha.com/bengaluru/sobha-royal-crest/" target="_blank" rel="noopener" rel="nofollow">SOBHA Royal Crest</a>. A grand edifice crafted in the architectural footsteps of Bangalore Palace, these <a href="https://www.sobha.com/3-bhk-flats-in-bangalore-for-sale/" target="_blank" rel="noopener" rel="nofollow">3 BHK</a> &amp; <a href="https://www.sobha.com/4-bhk-flats-in-bangalore-for-sale/" target="_blank" rel="noopener" rel="nofollow">4 BHK luxury apartments</a> come with fortified towers, turreted parapets, and a host of ultra-modern amenities.</li>
+<li>
+<h3><span class="ez-toc-section" id="Sarjapur_Road"></span><strong>Sarjapur Road</strong><span class="ez-toc-section-end"></span></h3>
+<p>An important location that lies adjacent to the tech corridor of Bangalore, Sarjapur Road is a bustling hub. Besides its proximity to the tech corridor, Sarjapur Road also offers easy connectivity to Electronic City, Koramangala, HSR Layout and Marathahalli – destinations for a majority of the city’s workforce, particularly the IT employees.</p>
+<p>Sarjapur Road has world-class healthcare destinations in the vicinity such as Manipal Hospital, Motherhood Hospital, etc. Educational institutions in the vicinity include Oakridge International School, Inventure Academy, and New Horizon College to name a few.</p>
+<p><a href="https://www.sobha.com/bengaluru/sobha-insignia/" target="_blank" rel="noopener" rel="nofollow">SOBHA Insignia</a>, near Sarjapur Road is a one-of-a-kind project that ideally blends luxury and technology. Crafted for the discerning few, these limited-edition bespoke luxury residences have 3, 3.5 &amp; 4 BHK units.</li>
+<li>
+<h3><span class="ez-toc-section" id="Whitefield"></span><strong>Whitefield</strong><span class="ez-toc-section-end"></span></h3>
+<p>Known for massive tech parks, Whitefield is a well-planned locality. It is well-connected via road, and with the launch of the KR Puram Whitefield metro line, the area is getting a fillip in terms of connectivity.</p>
+<p>Whitefield has reputed hospitals, educational institutions, shopping malls, and centres of recreation. The locality has been a destination for quality healthcare for decades, thanks to Sri Sathya Sai Institute of Higher Medical Sciences. Other prominent hospitals in the vicinity include Aster Hospital, Manipal Hospital, and Cloudnine Hospital. Thanks to close monitoring and constant vigil by the authorities Whitefield records a low crime rate and is one of the safest residential areas to live in.</p>
+<p><a href="https://www.sobha.com/bengaluru/sobha-galera-near-kannamangala/" target="_blank" rel="noopener" rel="nofollow">SOBHA Galera</a>, located in Kannamangala near Whitefield, is inspired by the Spanish architecture and the beautiful town of Galera. These <a href="https://www.sobha.com/row-houses-in-bangalore-for-sale/" target="_blank" rel="noopener" rel="nofollow">4 BHK row houses</a> offer a distinct and opulent lifestyle and are set amidst an idyllic yet well-connected residential area.</li>
+<li>
+<h3><span class="ez-toc-section" id="Devanahalli"></span><strong>Devanahalli</strong><span class="ez-toc-section-end"></span></h3>
+<p>Ever since the inception of the Kempegowda International Airport, Devanahalli and the entire <a href="https://www.sobha.com/apartments-in-north-bangalore-for-sale/" target="_blank" rel="noopener" rel="nofollow">Noth Bangalore</a> have been witnessing unprecedented growth. With multinational companies vying for the locality, commercial and residential projects are booming in Devanahalli. With the international airport just 5 kilometres away, and the metro line to the airport slated to be completed by the end of the year, the locality is rapidly turning into a preferred destination for homebuyers.</p>
+<p>Being a well-planned locality, Devanahalli has a clean and green environment, wide roads, easy connectivity to other parts of the city, KIADB IT Park, KIADB Aerospace Park – SEZ and more. The neighbourhood is safe and secure as well. The locality has reputed centres of healthcare such as Ramaiah Leena Multispeciality Hospital, New Manasa Hospital, and educational institutions, namely Vihaan Public School, Chinmayee Public School, Nagarjuna College of Engineering &amp; Technology and Nalanda College of Education.</p>
+<p>Offering the quintessential English lifestyle, <a href="https://www.sobha.com/bengaluru/sobha-oakshire-devanahalli-bengaluru/" target="_blank" rel="noopener" rel="nofollow">SOBHA Oaskhire</a> off Bellary Road in Devanahalli has 4 BHK row houses. Nestled amidst serenity, these unique residences feature gabled steep roofs, timber &amp; brickwork, and ornate windows.</li>
+<li>
+<h3><span class="ez-toc-section" id="Thanisandra_Main_Road"></span><strong>Thanisandra Main Road</strong><span class="ez-toc-section-end"></span></h3>
+<p>A prominent locality in North Bengaluru, Thanisandra Main Road is well-connected to just about everything you need on a day-to-day basis. Manyata Tech Park, Bhartiya Centre for Information Technology, and Embassy Manyata Business Park are close by, so are educational institutions, places of worship, hospitals, malls, supermarkets and more.</p>
+<p>Nagawara Metro Station is located at a distance of 3.9 kilometres from Thanisandra Main Road and a fleet of buses, connecting different parts of the city, plies the locality. What’s more, Bengaluru International Airport is a mere half-an-hour drive away.</p>
+<p>Located off Thanisandra Main Road is <a href="https://www.sobha.com/bengaluru/sobha-dream-gardens/" target="_blank" rel="noopener" rel="nofollow">SOBHA Dream Gardens</a> – a unique offering from SOBHA that is designed around the principles of Zen living and balanced life. These <a href="https://www.sobha.com/2-bhk-flats-in-bangalore-for-sale/" target="_blank" rel="noopener" rel="nofollow">2 BHK homes</a> are for those who prefer serenity over everything else and feature a host of top-notch amenities.</li>
+<li>
+<h3><span class="ez-toc-section" id="Indiranagar"></span><strong>Indiranagar</strong><span class="ez-toc-section-end"></span></h3>
+<p>A well-established and reputed residential area, Indiranagar is known as a posh locality as well as a commercial hub. It is well connected to other parts of the city, particularly CV Raman Nagar, HAL, Koramangala, Domlur, and Ulsoor.</p>
+<p>Indiranagar has iconic restaurants, cafes, watering holes and retail chains of big apparel and footwear brands. The locality has a metro station and offers seamless bus and metro connectivity.</p>
+<p>Reputed hospitals in Indiranagar include Chinmaya Mission Hospital, Columbia Asia Hospital and Sir CV Raman General Hospital. Prominent educational institutions in the locality are National Public School, The Frank Anthony Public School, St. Annes Degree College for Women, and College of Commerce. Being a posh locality, Indiranagar is one of the safest areas to live in Bangalore.</li>
+<li>
+<h3><span class="ez-toc-section" id="Jayanagar"></span>Jayanagar<span class="ez-toc-section-end"></span></h3>
+<p>As one of the oldest localities in Bangalore, Jayanagar is constantly referred to as Old Bangalore. The locality has wide roads, abundant greenery, and reputed establishments.</p>
+<p>Jayanagar is well connected to the rest of Bangalore via Outer Ring Road, Bannerghatta Road, and Kanakapura Road. What’s more, the bus station and metro station make commuting a breeze for the residents of Jayanagar.</p>
+<p>Jayanagar is home to well-known hospitals such as Apollo Hospitals and Ramakrishna Superspeciality Hospital. It also has reputed educational institutions, shopping centres and malls. Jayanagar is a calm, serene and safe residential area to live in with all the conveniences around.</li>
+<li>
+<h3><span class="ez-toc-section" id="Koramangala"></span><strong>Koramangala</strong><span class="ez-toc-section-end"></span></h3>
+<p>Koramangala’s prominence as an upscale neighbourhood with reputed organisations, commercial establishments and exclusive residential enclaves is matchless. It lies adjacent to Hosur Road and is well connected and is in proximity to HSR Layout, BTM Layout, and Jayanagar as well as the Central Business District (CBD).</p>
+<p>Koramangala is easily accessible via bus and once the metro work is completed, the locality will gain immense connectivity advantage.</p>
+<p>Koramangala is home to St. John’s Medical College Hospital and Apollo Spectra Hospitals among many other important healthcare destinations. Educational institutions in Koramangala include Bethany High School, St. Francis High School, Jyothi Nivas College, and St. John’s National Academy of Health Sciences.</li>
+<li>
+<h3><span class="ez-toc-section" id="HSR_Layout"></span><strong>HSR Layout</strong><span class="ez-toc-section-end"></span></h3>
+<p>A well-developed and reputed residential area that is also known as the startup hub of Bangalore, HSR Layout has Hosur Road on one side and Sarjapur Road on the other, and hence the name. (While ‘H’ in HSR stands for Hosur, ‘S’ stands for Sarjapur.)</p>
+<p>HSR Layout is easily accessible via Hosur Road and Sarjapur Road and has great connectivity. Once the metro gets operational, it will further enhance the locality’s connectivity.</p>
+<p>HSR Layout has world-class healthcare facilities such as Narayana Health and Apollo Clinic. Reputed educational institutions in and around HSR Layout include AMC Cambridge Public School, JSS Public School, Lawrence High School, and the Oxford College of Engineering.</li>
+<li>
+<h3><span class="ez-toc-section" id="Sadashivanagar"></span><strong>Sadashivanagar</strong><span class="ez-toc-section-end"></span></h3>
+<p>Arguably the most affluent neighbourhood in Bangalore, Sadashivanagar is home to prominent personalities in politics, film, industry and more. Known for its quaint charm and leafy bylanes, Sadashivanagar is reminiscent of good old Bangalore. Property prices in the area are quite high.</p>
+<p>Sadashivanagar offers fantastic connectivity to <a href="https://www.embassyofficeparks.com/ourportfolio/bangalore/embassy-manyata/" target="_blank" rel="noopener nofollow" class="external">Embassy Manyata Business Park</a> – an IT hub as well as to <a href="https://www.bengaluruairport.com/" target="_blank" rel="noopener nofollow" class="external">Kempegowda International Airport</a>.</p>
+<p>Some of the educational institutions in Sadashivanagar are Stella Maris School and Kumara Park High School. When it comes to quality healthcare, the residential area has prominent healthcare providers nearby such as Sparsh Hospital, Apollo Hospital, etc.</li>
+<li>
+<h3><span class="ez-toc-section" id="Bannerghatta_Road"></span><strong>Bannerghatta Road</strong><span class="ez-toc-section-end"></span></h3>
+<p>Yet another prominent hub that houses many big names in various industry verticals, Bannerghatta Road is easily accessible from all parts of Bangalore via Hosur Road, Outer Ring Road and Kanakapura Road.</p>
+<p>While bus connectivity is immense, once the metro gets operational, traffic will be eased upon Bannerghatta Road that houses corporate giants such as HSBC, Accenture, Honeywell, etc.</p>
+<p>Bannerghatta Road has quality healthcare destinations aplenty. They include Apollo Hospital and Fortis Hospital – prominent names in the healthcare sector. One of the most prestigious institutions in Bangalore, the IIM, is located on Bannerghatta Road in addition to myriad schools and colleges.</li>
+<li>
+<h3><span class="ez-toc-section" id="Central_Business_District_CBD"></span><strong>Central Business District (CBD)</strong><span class="ez-toc-section-end"></span></h3>
+<p>The area that lies within a 6-km radius of Vidhana Soudha – the seat of the state legislature in Karnataka – is known as the Central Business District. M. G. Road, Brigade Road, Church Street, Richmond Road, etc., come under CBD. M. G. Road and the surrounding areas are the most expensive locations in Bangalore.</p>
+<p>In terms of connectivity, CBD zone is well connected via bus and metro. It has many commercial establishments, outlets of global brands, iconic restaurants and more.</p>
+<p>CBD has some of the most well-known hospitals including Fortis Hospital, Vydehi Superspeciality Hospital, Bowring and Lady Curzon Hospital, etc. Iconic educational institutions such as Bishop Cotton School, St. Jospeh’s College, and Mount Carmel College are located in CBD.</li>
+<li>
+<h3><span class="ez-toc-section" id="Rajaji_Nagar"></span><strong>Rajaji Nagar</strong><span class="ez-toc-section-end"></span></h3>
+<p>Named after C. Rajagopalachari, Rajaji Nagar is an important locality in Bangalore. It is in close vicinity to Malleswaram and Basaveshwaranagar. The area is well planned and has residential properties, parks, playgrounds, and commercial establishments.</p>
+<p>When it comes to connectivity, Rajaji Nagar has it all. It is well connected by Namma Metro and BMTC buses. In addition to this, the Yeshwanthpur Railway station is just a stone’s throw away.</p>
+<p>Rajaji Nagar’s reputed schools include East West Public School and St. Thomas School. The locality has reputed healthcare destinations including Fortis Hospital and Vasan Eye Care Hospital.</li>
+<li>
+<h3><span class="ez-toc-section" id="Malleswaram"></span><strong>Malleswaram</strong><span class="ez-toc-section-end"></span></h3>
+<p>Like Jayanagar, Malleswaram is one of the oldest localities in Bangalore. Once dotted with large bungalows, Malleswaram now has multistorey residential apartments, and commercial complexes. The place is also known for its legendary eateries.</p>
+<p>Malleswaram is well connected to other parts of the city via bus and metro. It also has a railway station, which makes commuting easier. World Trade Center &#8211; a thriving hub of commercial activities – is located in Malleswaram.</p>
+<p>Malleswaram has good healthcare facilities, thanks to hospitals such as Manipal Hospital, and Narayana Super Speciality Hospital. Cluny Convent, BP Indian Public School, etc., provide quality education to the young ones.</li>
+<li>
+<h3><span class="ez-toc-section" id="Frazer_Town"></span><strong>Frazer Town</strong><span class="ez-toc-section-end"></span></h3>
+<p>A bustling hub, Frazer Town is both a residential as well as commercial hub in the cantonment area of Bangalore. It has wide roads, commercial establishments, cafés, restaurants, and more.</p>
+<p>The area is well connected and is in close proximity to M.G. Road and Brigade Road. BMTC buses ply to different parts of Bangalore via Frazer Town, making it easily accessible.</p>
+<p>Frazer Town has Holy Angels School, Dr. B.R. Ambedkar Medical College, and St. Jospeh’s Convent Girls High School among others. When it comes to healthcare, it has Fortis Hospital, Manipal Hospital, and Sparsh Hospital in the vicinity.</li>
+<li>
+<h3><span class="ez-toc-section" id="Cooke_Town"></span><strong>Cooke Town</strong><span class="ez-toc-section-end"></span></h3>
+<p>One of the oldest areas in Bangalore, Cooke Town has great infrastructure and offers multiple avenues to unwind. It has wide roads, parks, and both residential and commercial complexes.</p>
+<p>In terms of connectivity, Cooke Town offers plenty of options to its residents. Besides buses, the locality has both metro and rail connectivity – while the Halasuru Metro Station is just 5 kilometres away, Bengaluru East Railway Station is easily reachable.</p>
+<p>The residential area has reputed internationals schools like Oasis International School, Sam’s International School, and Wisdom International School. Top-notch healthcare facilities in the locality include Sundar Hospital, Divine Speciality Hospital and KC Raju Multispeciality Hospital.</li>
+<li>
+<h3><span class="ez-toc-section" id="Basavanagudi"></span><strong>Basavanagudi</strong><span class="ez-toc-section-end"></span></h3>
+<p>Yet another locality that is quintessentially Old Bangalore, Basavanagudi has wide roads, leafy lanes, lush green parks, and beautiful landscape. In addition to these, it has all the modern conveniences as well.</p>
+<p>Basavanagudi is well connected to different parts of Bangalore via bus and metro. Lalbagh Metro Station and South End Metro Station are close to Basavanagudi. The locality is close to the KSR Railway Station as well.</p>
+<p>World-class educational institutions such as National College, Kenmore English School, and B.M.S. College of Engineering are located in Basavanagudi. Renowned hospitals in the locality include Basavanagudi Medical Centre, Trinity Hospital, and The Bangalore Hospital.</li>
+<li>
+<h3><span class="ez-toc-section" id="BTM_Layout"></span><strong>BTM Layout</strong><span class="ez-toc-section-end"></span></h3>
+<p>One of the most prominent localities that fall under South Bangalore, BTM Layout is known for its unparalleled connectivity to all parts of Bangalore as well as its wide roads, parks, and greenery. Each letter in BTM stands for Byrasandra, Thavarakere and Madivala – areas that are around BTM.</p>
+<p>The locality is well connected by bus and once the metro work is over, it will get a metro station as well. The residential area is easily accessible from Outer Ring Road, Hosur Road and Bannerghatta Road, Koramangala, Jayanagar, etc.</p>
+<p>BTM Layout has reputed educational institutions such as Orchid International School, VIBGYOR High School, and Chrysalis High. In terms of healthcare facilities, it has quite a few in and around the locality.</li>
+<li>
+<h3><span class="ez-toc-section" id="Ulsoor"></span><strong>Ulsoor</strong><span class="ez-toc-section-end"></span></h3>
+<p>To live in Ulsoor is to be close to just about everything you need. While the hip and happening MG Road is just a stone’s throw away, posh Indiranagar is just a few metro stations away. Well connected via all modes of transportation, Ulsoor has a popular lake too.</p>
+<p>The trinity Metro Station as well as the MG Road metro stations are close by. BMTC buses frequent the locality, offering connectivity to all parts of Bangalore.</p>
+<p>It has iconic shopping malls such as 1 MG, reputed schools, and colleges and world-class healthcare facilities in the vicinity.</li>
+</ol>
+<h2><span class="ez-toc-section" id="Where_to_Live_in_Bangalore"></span><strong>Where to Live in Bangalore?</strong><span class="ez-toc-section-end"></span></h2>
+<p>By now you might have got a good grasp of the 20 popular residential areas in Bangalore. They were selected on the basis of their connectivity, proximity to various establishments, etc.</p>
+<p>Before you zero down on a particular locality, the most important question to ask yourself is this: Will I be living close to my office, my children’s schools, and all the facilities I need? If the answer is affirmative, be assured that you have selected the right locality.</p>
+<h2><span class="ez-toc-section" id="FAQs"></span><strong>FAQ&#8217;s</strong><span class="ez-toc-section-end"></span></h2>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="1_Which_is_the_best_residential_area_in_Bangalore"></span>1. Which is the best residential area in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+Choosing the best residential area in Bangalore is an almost impossible task. However, there are many good residential areas – both old and new - that are located in various parts of Bangalore. A few of them are Koramangala, Central Business District (CBD), Indiranagar, Sadashivanagar, Basavanagudi, Banashankari, Devanahalli, Jakkur and Jayanagar. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="2_Which_part_of_Bangalore_is_good_for_living"></span>2. Which part of Bangalore is good for living?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+There are many residential areas in Bangalore that are good for living. A few of them are Jayanagar, HSR Layout, Malleswaram, Indiranagar, and Koramangala. The criteria to choose which part of Bangalore is good for living are connectivity, amenities, and social infrastructure. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="3_Which_is_the_most_posh_area_in_Bangalore"></span>3. Which is the most posh area in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+There are many posh areas in Bangalore. Choosing one over the other is quite a task. Nevertheless, Sadashivanagar stands a good chance to be called the most posh area. Closely trailing behind are the Central Business District (CBD), Indiranagar, Koramangala, Rajaji Nagar, JP Nagar, Jayanagar, etc. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="4_Which_are_the_no-go_areas_in_Bangalore"></span>4. Which are the no-go areas in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+No-go areas in Bangalore are those neighbourhoods with very heavy traffic. A few of the most known no-go areas in Bangalore are Central Silk Board, Marathahalli Bridge, Dairy Circle, Koramangala BDA Complex, Madiwala Market, etc. Since traffic congestion is quite high in Bangalore, it is better to avoid the above-mentioned areas. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="5_Which_area_is_safest_in_Bangalore"></span>5. Which area is safest in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+Bangalore is a safe city. Thanks to constant patrolling and surveillance, many areas in Bangalore are quite safe to live in. A few of them are Electronic City, Banashankari, Devanahalli, Rajaji Nagar, Whitefield, HSR Layout, etc. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="6_Which_is_the_cleanest_area_in_Bangalore"></span>6. Which is the cleanest area in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+There are many clean areas in Bangalore. Handpicking one area as the cleanest is difficult. A few of the clean areas in Bangalore include the Central Business District (CBD), Rajaji Nagar, and Devanahalli. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="7_What_is_special_in_Bangalore_rural"></span>7. What is special in Bangalore rural?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+Bangalore rural district has many tourist spots, such as trekking trails, dams, temples, monuments, and forts. These draw tourists in large numbers throughout the year. Agriculture is one of the most popular occupations here, with crops such as rice, sugarcane, grapes, peanuts, flowers, and more being grown in the area. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="8_What_are_the_advantages_of_living_in_Bangalore"></span>8. What are the advantages of living in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+One of the greatest advantages of living in Bangalore is the opportunity to enjoy the city’s moderate climate round the year. Lower cost of living, lesser commute distances, large population of working professionals, multitude of job opportunities, etc., are a few other advantages. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3>9. Which is best Bangalore - north or south?</h3> <div>
+<p>
+Both North and South Bangalore have seen explosive growth in the recent past. With huge developmental activities underway, the future is going to be bright for both the regions. Leading companies, schools, colleges, hospitals, malls, etc. are located in North Bangalore as well as South Bangalore. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="10_Where_do_the_super-rich_live_in_Bangalore"></span>10. Where do the super-rich live in Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+Bangalore is home to many billionaires and multimillionaires. Areas where the super-rich live in Bangalore are Sadashivnagar, JP Nagar, Jayanagar, CBD, Koramangala, Banashankari, and Yemalur. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="11_Which_area_is_the_heart_of_Bangalore"></span>11. Which area is the heart of Bangalore?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+The Central Business District (CBD) is considered as the heart of Bangalore. CBD includes areas like MG Road, Richmond Road, Church Street, Cubbon Road, Cunningham Road, Raj Bhavan Road, Residency Road, Lalbagh, UB City, Cubbon Park, and Ulsoor Lake. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="12_Which_part_of_Bangalore_is_cooler"></span>12. Which part of Bangalore is cooler?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+Bangalore has always been blessed with a salubrious climate and is called the garden city. The chief reason for this is its greenery as well as the lakes. The areas that are cooler in Bangalore are the ones with a lot of trees and shrubbery, they include Koramangala, Jayanagar, Sadashivanagar, HSR Layout, etc. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="13_Why_is_South_Bangalore_famous"></span>13. Why is South Bangalore famous?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+South Bangalore is famous for temples, traditional restaurants (called darshinis), reputed educational institutions, malls and shopping complexes. A lot of areas in South Bangalore are regarded as Old Bangalore. These are well-planned residential areas with a lot of greenery and old bungalows. </p>
+</div>
+</div>
+</section>
+<section class="sc_fs_faq sc_card ">
+<div>
+<h3><span class="ez-toc-section" id="14_Is_North_Bangalore_good_place_to_live_in"></span>14. Is North Bangalore good place to live in?<span class="ez-toc-section-end"></span></h3> <div>
+<p>
+North Bangalore is a very good place to live in, with excellent social infrastructure, good connectivity, upcoming developments, and more. Areas in North Bangalore include Devanahalli, Hebbal, Thanisandra Road, and Kalyan Nagar. </p>
+</div>
+</div>
+</section>
+<script type="application/ld+json">
+    {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+				{
+				"@type": "Question",
+				"name": "1. Which is the best residential area in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Choosing the best residential area in Bangalore is an almost impossible task. However, there are many good residential areas – both old and new - that are located in various parts of Bangalore. A few of them are Koramangala, Central Business District (CBD), Indiranagar, Sadashivanagar, Basavanagudi, Banashankari, Devanahalli, Jakkur and Jayanagar."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "2. Which part of Bangalore is good for living?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "There are many residential areas in Bangalore that are good for living. A few of them are Jayanagar, HSR Layout, Malleswaram, Indiranagar, and Koramangala. The criteria to choose which part of Bangalore is good for living are connectivity, amenities, and social infrastructure."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "3. Which is the most posh area in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "There are many posh areas in Bangalore. Choosing one over the other is quite a task. Nevertheless, Sadashivanagar stands a good chance to be called the most posh area. Closely trailing behind are the Central Business District (CBD), Indiranagar, Koramangala, Rajaji Nagar, JP Nagar, Jayanagar, etc."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "4. Which are the no-go areas in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "No-go areas in Bangalore are those neighbourhoods with very heavy traffic. A few of the most known no-go areas in Bangalore are Central Silk Board, Marathahalli Bridge, Dairy Circle, Koramangala BDA Complex, Madiwala Market, etc. Since traffic congestion is quite high in Bangalore, it is better to avoid the above-mentioned areas."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "5. Which area is safest in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Bangalore is a safe city. Thanks to constant patrolling and surveillance, many areas in Bangalore are quite safe to live in. A few of them are Electronic City, Banashankari, Devanahalli, Rajaji Nagar, Whitefield, HSR Layout, etc."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "6. Which is the cleanest area in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "There are many clean areas in Bangalore. Handpicking one area as the cleanest is difficult. A few of the clean areas in Bangalore include the Central Business District (CBD), Rajaji Nagar, and Devanahalli."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "7. What is special in Bangalore rural?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Bangalore rural district has many tourist spots, such as trekking trails, dams, temples, monuments, and forts. These draw tourists in large numbers throughout the year. Agriculture is one of the most popular occupations here, with crops such as rice, sugarcane, grapes, peanuts, flowers, and more being grown in the area."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "8. What are the advantages of living in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "One of the greatest advantages of living in Bangalore is the opportunity to enjoy the city’s moderate climate round the year. Lower cost of living, lesser commute distances, large population of working professionals, multitude of job opportunities, etc., are a few other advantages."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "9. Which is best Bangalore - north or south?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Both North and South Bangalore have seen explosive growth in the recent past. With huge developmental activities underway, the future is going to be bright for both the regions. Leading companies, schools, colleges, hospitals, malls, etc. are located in North Bangalore as well as South Bangalore."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "10. Where do the super-rich live in Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Bangalore is home to many billionaires and multimillionaires. Areas where the super-rich live in Bangalore are Sadashivnagar, JP Nagar, Jayanagar, CBD, Koramangala, Banashankari, and Yemalur."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "11. Which area is the heart of Bangalore?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "The Central Business District (CBD) is considered as the heart of Bangalore. CBD includes areas like MG Road, Richmond Road, Church Street, Cubbon Road, Cunningham Road, Raj Bhavan Road, Residency Road, Lalbagh, UB City, Cubbon Park, and Ulsoor Lake."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "12. Which part of Bangalore is cooler?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "Bangalore has always been blessed with a salubrious climate and is called the garden city. The chief reason for this is its greenery as well as the lakes. The areas that are cooler in Bangalore are the ones with a lot of trees and shrubbery, they include Koramangala, Jayanagar, Sadashivanagar, HSR Layout, etc."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "13. Why is South Bangalore famous?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "South Bangalore is famous for temples, traditional restaurants (called darshinis), reputed educational institutions, malls and shopping complexes. A lot of areas in South Bangalore are regarded as Old Bangalore. These are well-planned residential areas with a lot of greenery and old bungalows."
+									}
+			}
+			,				{
+				"@type": "Question",
+				"name": "14. Is North Bangalore good place to live in?",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "North Bangalore is a very good place to live in, with excellent social infrastructure, good connectivity, upcoming developments, and more. Areas in North Bangalore include Devanahalli, Hebbal, Thanisandra Road, and Kalyan Nagar."
+									}
+			}
+				    ]
+}
+</script>
+</div> 
+<div class="row">
+<div class="meta-post clearfix">
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="mdl-tags">
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6">
+<div class="love-action sl-wrapper"><a href="#" class="sl-button sl-button-5452" data-nonce="40e16a88d5" data-post-id="5452" data-iscomment="0" title="Like">Love this? <i class="fa fa-heart-o"></i></a></div> </div>
+</div>
+</div>
+<div class="social-share-action">
+<h4>Sharing</h4>
+<ul class="social-accounts social-post-sharing" data-url="https://www.sobha.com/blog/residential-areas-in-bangalore/" data-title="Top 20 Residential Areas to Live in Bangalore">
+<li><a data-type="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+<li><a data-type="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+
+<li><a data-type="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+
+<li><a data-type="email" href="#"><i class="fa fa-envelope-o"></i></a></li>
+</ul>
+</div> 
+</div>
+<div class="blk-paging-post box">
+<div class="row">
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/documents-required-for-buying-a-property/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/06/documents-required-for-buying-a-property-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>Previous</span>
+<h3>Documents Required for Buying a Property</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-6">
+<div class="mdl-post-middle">
+<div class="image">
+<a href="https://www.sobha.com/blog/undivided-share-uds-of-land/" style="background: url(https://www.sobha.com/blog/wp-content/uploads/2023/06/undivided-share-of-land-UDS-meaning-calculation-800x400.png) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
+<div class="information">
+<div class="inner">
+<div class="text-information">
+<span>NEXT</span>
+<h3>What is Undivided Share(UDS) of Land? Meaning &amp; Calculation!</h3>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blk-related-post box">
+<h4>You might also like</h4>
+<div class="inner clearfix">
+<div id="all-post-temp-display"></div>
+<div id="all-post-temp" style="display:none;" data-display="2">
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/cibil-score-for-home-loan/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2023/05/CIBIL-score-for-home-loan-1-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2023/05/CIBIL-score-for-home-loan-1-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2023/05/CIBIL-score-for-home-loan-1-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2023/05/CIBIL-score-for-home-loan-1.png" data-width="800" data-height="400" data-alt="CIBIL Score for Home Loan">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2023/05/CIBIL-score-for-home-loan-1-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/cibil-score-for-home-loan/">CIBIL Score for Home Loan &#8211; How it Affects Your Application?</a></h5>
+<p class="date-time"><span>May</span> 29th, 2023</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/sobha-top-choice-indian-homebuyers/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2018/01/fimg-sb-240118-795x533.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2018/01/fimg-sb-240118-795x533.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2018/01/fimg-sb-240118-795x533.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2018/01/fimg-sb-240118.png" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2018/01/fimg-sb-240118-795x533.png" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/sobha-top-choice-indian-homebuyers/">SOBHA is top choice of Indian Homebuyers once again !</a></h5>
+<p class="date-time"><span>January</span> 24th, 2018</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/sobha-connect-2-0-kicks-off-promising-note/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2018/04/10042018fimg-sb-795x533.jpg" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2018/04/10042018fimg-sb-795x533.jpg" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2018/04/10042018fimg-sb-795x533.jpg" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2018/04/10042018fimg-sb.jpg" data-width="795" data-height="533" data-alt>
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2018/04/10042018fimg-sb-795x533.jpg" alt="" width="795" height="533">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/sobha-connect-2-0-kicks-off-promising-note/">SOBHA Connect 2.0 Kicks off on a promising note </a></h5>
+<p class="date-time"><span>April</span> 10th, 2018</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-6 rushmore-post-grid">
+<div class="mdl-related-post">
+<a class="thumb" href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<div class="adaptive">
+<noscript data-src-small="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-800x400.png" data-src-medium="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-800x400.png" data-src-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-800x400.png" data-src-x-high="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1.png" data-width="800" data-height="400" data-alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!">
+                    <img src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-800x400.png" alt="" width="800" height="400">
+            </noscript>
+</div> </a>
+<h5><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h5>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4  sidebar">
+<div class="widget-odd widget-first widget-1 mdl-widget widget rushmore_widget_menu-7 mdl-sidebar-menu"><div class="title-header dark"><h4>Residential Projects</h4></div><div class="content"><div class="menu-city1-container"><ul id="menu-city1" class="menu"><li id="menu-item-4694" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li id="menu-item-4698" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li id="menu-item-4695" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li id="menu-item-4364" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li id="menu-item-4363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li id="menu-item-4365" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li id="menu-item-4366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li id="menu-item-4367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li id="menu-item-4697" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li id="menu-item-4696" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_recent_posts-4 mdl-widget-list-post"><div class="title-header dark"><h4>Recent Posts</h4></div><div class="content"><ul> <li class="clearfix post-6401 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires&#039; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-real-estate-sarjapur-road-2-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-real-estate-sarjapur-road/">Millionaires&#8217; Row Real Estate in Sarjapur Road: Trends, Opportunities, and Challenges!</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6399 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="A Day in the Life on Millionaires&#039; Row: Unveiling Super Wealthy Lifestyles!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/millionaires-row-super-wealthy-lifestyles-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/millionaires-row-super-wealthy-lifestyles/">A Day in the Life on Millionaires&#8217; Row Unveiling the Extravagant Habits of the Super Wealthy</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6403 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Security Measures and Privacy Protocols on Millionaires&#039; Row" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/security-measures-privacy-protocols-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/security-measures-privacy-protocols-millionaires-row/">Security Measures and Privacy Protocols on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6394 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/owning-property-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Benefits of Owning Property on Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/owning-property-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/owning-property-millionaires-row/">The Benefits of Owning Property on Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6391 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Millionaires’ Row: Unveiling the Secrets of an Exclusive Neighborhood!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/peek-inside-millionaires-row-exclusive-neighbourhood-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/peek-inside-millionaires-row-exclusive-neighbourhood/">A Peek Inside Millionaires’ Row: What Makes This Neighbourhood So Exclusive?</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6388 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Inside Bangalore&#039;s Affluent Community: A Peek into Millionaires&#039; Row Lifestyle" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/bangalore-affluent-community-millionaires-row-lifestyle-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/bangalore-affluent-community-millionaires-row-lifestyle/">Inside Bangalore&#8217;s Affluent Community: A Peek into Millionaires&#8217; Row Lifestyle</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6385 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-investment category-neighbourhood category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="The Allure of Sarjapur Road and Its Connection to Millionaires’ Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/allure-sarjapur-road-connection-millionaires-row-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/allure-sarjapur-road-connection-millionaires-row/">The Allure of Sarjapur Road and Its Connection to Millionaires’ Row</a></h4>
+<p class="date-time"><span>April</span> 3rd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6382 post type-post status-publish format-standard has-post-thumbnail hentry category-bangalore category-lifestyle category-millionaire-row category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#039; Row!" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/living-the-high-life-exploring-luxury-millionaires-row-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/living-the-high-life-exploring-luxury-millionaires-row/">Living the High Life Exploring the Luxurious Lifestyle on Millionaires&#8217; Row</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6378 post type-post status-publish format-standard has-post-thumbnail hentry category-kerala category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Why Trivandrum is the Best Place to Live in?" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/trivandrum-best-place-to-live-1-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/trivandrum-best-place-to-live/">Why Trivandrum is the Best Place to Live in?</a></h4>
+<p class="date-time"><span>April</span> 2nd, 2024</p>
+</div>
+</li>
+<li class="clearfix post-6372 post type-post status-publish format-standard has-post-thumbnail hentry category-gurgaon category-sobha mdl-post-standard">
+<div class="thumb">
+<a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">
+<img width="390" height="390" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20390%20390'%3E%3C/svg%3E" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" data-lazy-srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" data-lazy-sizes="(max-width: 390px) 100vw, 390px" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" /><noscript><img width="390" height="390" src="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png" class="attachment-rushmore_blog_thumb size-rushmore_blog_thumb wp-post-image" alt="Gurgaon Real Estate Market Forecast 2024-25" srcset="https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-390x390.png 390w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-150x150.png 150w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-80x80.png 80w, https://www.sobha.com/blog/wp-content/uploads/2024/04/gurgaon-real-estate-market-forecast-120x120.png 120w" sizes="(max-width: 390px) 100vw, 390px" /></noscript> </a>
+</div>
+<div class="information">
+<h4><a href="https://www.sobha.com/blog/gurgaon-real-estate-market-forecast/">Gurgaon Real Estate Market Forecast 2024-25</a></h4>
+<p class="date-time"><span>April</span> 1st, 2024</p>
+</div>
+</li>
+</ul></div></div> </div>
+</div>
+</div>
+</main>
+<footer class="page-footer">
+<div class="blk-top-footer">
+<div class="container">
+<div class="row top-footer">
+<div class="col-md-2">
+<div class="widget-odd widget-first widget-1 footer-blog-logo mdl-widget widget media_image-2 widget_media_image dark"><a href="https://www.sobha.com/"><img width="141" height="166" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20141%20166'%3E%3C/svg%3E" class="image wp-image-4362  attachment-full size-full" alt style="max-width: 100%; height: auto;" data-lazy-src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" /><noscript><img width="141" height="166" src="https://www.sobha.com/blog/wp-content/uploads/2021/05/SobhaLogowhite1.png" class="image wp-image-4362  attachment-full size-full" alt="" style="max-width: 100%; height: auto;" /></noscript></a></div><div class="widget-even widget-last widget-2 mdl-widget widget rushmore_widget_about-6 mdl-widget-about dark"><div class="title-header"><h4>About SOBHA</h4></div> <div class="content">
+<div class="text">
+<p>Mr P.N.C. Menon founded SOBHA Limited in 1995 with a clear vision to transform the way people perceive quality. Today, SOBHA is the most trusted brand and only backward integrated real estate player in the country.</p>
+</div>
+</div>
+</div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-2 mdl-sidebar-menu dark"><div class="content"><div class="menu-city1-container"><ul id="menu-city1-1" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4694"><a href="https://www.sobha.com/city/apartments-in-kochi/">Flats for Sale in Kochi</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4698"><a href="https://www.sobha.com/city/flats-in-thrissur/">Flats in Thrissur</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4695"><a href="https://www.sobha.com/city/apartments-in-kozhikode/">Flats in Kozhikode(Calicut)</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4364"><a href="https://www.sobha.com/city/apartments-in-chennai/">Flats in Chennai</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4363"><a href="https://www.sobha.com/city/bengaluru/">Flats in Bengaluru</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4365"><a href="https://www.sobha.com/city/coimbatore/">Flats for Sale in Coimbatore</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4366"><a href="https://www.sobha.com/city/delhi-ncr/">Flats in Delhi-NCR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4367"><a href="https://www.sobha.com/city/gift-city-gujarat/">Flats in GIFT City Gujarat</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4697"><a href="https://www.sobha.com/city/flats-in-pune/">Flats in Pune</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4696"><a href="https://www.sobha.com/city/mysuru/">Flats in Mysuru</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 mdl-widget widget rushmore_widget_menu-4 mdl-sidebar-menu dark"><div class="content"><div class="menu-general-container"><ul id="menu-general" class="menu"><li id="menu-item-4373" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4373"><a href="https://www.sobha.com/careers/">CAREERS</a></li>
+<li id="menu-item-4374" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4374"><a href="https://www.sobha.com/media-centre/">MEDIA CENTRE</a></li>
+<li id="menu-item-4375" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4375"><a href="https://www.sobha.com/sustainability/">SUSTAINABILITY</a></li>
+<li id="menu-item-4376" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4376"><a href="https://www.sobha.com/investor-relations/">INVESTOR RELATIONS</a></li>
+<li id="menu-item-4452" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4452"><a href="https://www.sobha.com/sobha-share-price/">SOBHA SHARE PRICE</a></li>
+</ul></div></div></div> </div>
+<div class="col-md-2">
+<div class="widget-odd widget-last widget-first widget-1 contact-sobha mdl-widget widget rushmore_widget_menu-5 mdl-sidebar-menu dark"><div class="content"><div class="menu-contact-container"><ul id="menu-contact" class="menu"><li id="menu-item-4382" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4382"><a href="#">GET IN TOUCH</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4383"><a href="tel:+91%2080%2046464500">+91 80 46464500</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4384"><a href="/cdn-cgi/l/email-protection#e6918384808383828487858da69589848e87c885898b"><span class="__cf_email__" data-cfemail="57203235313232333536343c172438353f367934383a">[email&#160;protected]</span></a></li>
+</ul></div></div></div> </div>
+</div>
+<div class="social-wrapper text-md-right text-center mb-md-3 mb-4 pb-md-0 pb-2">
+<a href="https://www.facebook.com/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/facebook.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.youtube.com/c/Sobha" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/youtube.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://twitter.com/Sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/twitter.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.instagram.com/sobhaltd/" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/instagram.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+<a href="https://www.linkedin.com/company/sobhaltd" target="_blank" class="external" rel="nofollow"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2023%2023'%3E%3C/svg%3E" width="23" height="23" class="img-fluid" alt data-lazy-src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg"><noscript><img src="https://www.sobha.com/wp-content/themes/sobha/images/linkedin.svg" width="23" height="23" class="img-fluid" alt=""></noscript></a>
+</div>
+</div>
+</div>
+<div class="blk-bottom-footer">
+<div class="container">
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="copy-rights">
+<p><span style="font-size: 11px">© Copyright 2023 All rights reserved.</span></p>
+</div>
+</div>
+<div class="col-sm-6 col-md-8">
+<div class="nav-bottom">
+<ul id="rushmore-footer-nav" class="rushmore-footer-nav"><li id="menu-item-4401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4401"><a href="https://www.sobha.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-4402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4402"><a href="https://www.sobha.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4403"><a href="https://www.sobha.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-4404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4404"><a href="https://www.sobha.com/rera-disclaimer/">RERA Disclaimer</a></li>
+<li id="menu-item-4408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-4408"><a href="https://www.sobha.com/blog/">Blog</a></li>
+<li id="menu-item-4405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4405"><a href="https://www.sobha.com/sitemap/">Sitemap</a></li>
+</ul> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript">window.wpsc_print_css_uri = 'https://www.sobha.com/blog/wp-content/plugins/structured-content/dist/print.css';</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/plugins/structured-content/dist/app.build.js?ver=1712219978" id="structured-content-frontend-js" defer></script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript" id="ez-toc-scroll-scriptjs-js-extra">
+/* <![CDATA[ */
+var eztoc_smooth_local = {"scroll_offset":"30","add_request_uri":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/smooth_scroll.min.js" id="ez-toc-scroll-scriptjs-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/js-cookie/js.cookie.min.js" id="ez-toc-js-cookie-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/vendor/sticky-kit/jquery.sticky-kit.min.js" id="ez-toc-jquery-sticky-kit-js" defer></script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript" id="ez-toc-js-js-extra">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","scroll_offset":"30","fallbackIcon":"<span class=\"\"><span class=\"eztoc-hide\" style=\"display:none;\">Toggle<\/span><span class=\"ez-toc-icon-toggle-span\"><svg style=\"fill: #000000;color:#000000\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" class=\"list-377408\" width=\"20px\" height=\"20px\" viewBox=\"0 0 24 24\" fill=\"none\"><path d=\"M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z\" fill=\"currentColor\"><\/path><\/svg><svg style=\"fill: #000000;color:#000000\" class=\"arrow-unsorted-368013\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10px\" height=\"10px\" viewBox=\"0 0 24 24\" version=\"1.2\" baseProfile=\"tiny\"><path d=\"M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z\"\/><\/svg><\/span><\/span>"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/plugins/easy-table-of-contents/assets/js/front.min.js" id="ez-toc-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/blog(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$))|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.sobha.com\/blog","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.easing.1.3.min.js" id="easing-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.mousewheel.min.js" id="mousewheel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.touchSwipe.min.js" id="touchSwipe-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/helpers/jquery.ba-throttle-debounce.min.js" id="ba-throttle-debounce-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/bootstrap.min.js" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/owl.carousel.min.js" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/vendor/isotope.pkgd.min.js" id="isotope-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/imagesloaded.min.js" id="imagesloaded-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/core.min.js" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-includes/js/jquery/ui/datepicker.min.js" id="jquery-ui-datepicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/smoothscroll.min.js" id="smoothscroll-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/themes/rushmore/assets/scripts/jquery.mCustomScrollbar.concat.min.js" id="mCustomScrollbar-js" defer></script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript" id="rushmore-js-main-js-extra">
+/* <![CDATA[ */
+var rushmore_params = {"ajax_url":"https:\/\/www.sobha.com\/blog\/wp-admin\/admin-ajax.php","menu_fixed_desktop":"yes","menu_fixed_mobile":"yes","blog_version":"v6","loadmore_text":"Load more articles ...","no_more_text":"No more posts!","send_success":"Send success","sending_text":"Sending...","send_error":"Send fail","map_address":"24 George Street, Melboure, Australia","map_type":"TERRAIN","map_icon_text":"Our Location","map_icon":"","map_zoom":"yes","like_text":"Like","unlike_text":"Unlike","submit_email":"Submit email","search_text":"Search","no_more_comments_text":"No more comments!","load_more_comments_text":"Load more comments..."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://www.sobha.com/blog/wp-content/cache/min/1/blog/wp-content/themes/rushmore/assets/scripts/main.js?ver=1712219978" id="rushmore-js-main-js" defer></script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript" src="https://www.sobha.com/blog/wp-includes/js/wp-embed.min.js" id="wp-embed-js" defer></script>
+<script type="e6af676fa84da5b69dbecdd3-text/javascript">window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.sobha.com/blog/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js" type="e6af676fa84da5b69dbecdd3-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e6af676fa84da5b69dbecdd3-|49" defer></script></body>
+</html>

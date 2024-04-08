@@ -1,0 +1,156 @@
+/*
+Theme Name:         rushmore
+Theme URI:          http://themevip.co
+Description:        Beautiful WordPress theme. Created by <a href="http://themevip.co">ThemeVIP</a>
+Version:            1.0.1
+Author:             ThemeVIP
+Author URI:         https://themeforest.net
+License:            ThemeForest
+License URI:        https://themeforest.net/licenses
+Tags:               two-columns, three-columns, left-sidebar, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, translation-ready, post-formats, rtl-language-support, sticky-post
+Text Domain: 		rushmore
+*/
+
+/**
+* Do not edit
+*/
+.wp-caption{}
+.wp-caption-text{}
+.sticky{}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{}
+.alignleft{}
+.aligncenter{}
+
+.page-template-home-page-v3 .nav-bar-top .nav-desktop-nomal ul li.purchase,.page-template-home-page-v6 .nav-bar-top .nav-desktop-nomal ul li.purchase {
+    padding: 12px 9px 0px 20px !important;
+}
+form .error{
+    border: 1px solid #FF0000 !important;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset !important;
+}
+footer .mdl-widget-calendar.dark .ui-datepicker tbody .ui-datepicker-current-day a, footer .mdl-widget-calendar.dark .ui-datepicker tbody a:hover {
+    color: #FFF;
+    background: #222 none repeat scroll 0% 0%;
+}
+.mdl-widget-list-post img.rushmore-no-thumbnail{max-width: 80px;}
+.page-template-coming-soon .social-share-action .social-accounts {
+    float: none;
+}
+.body-content h4.author-name a {
+    text-decoration: none;
+}
+
+.col-md-12.main-content{width: 100%;}
+.mdl-widget-list-post .rushmore-post-nothumb img{height: 80px;}
+.mdl-post-v4.rushmore-post-nothumb .thumb img {
+    height: 240px;
+}
+.mdl-single-post-v1 .content .item-iframe-video.video-hidden{display: none;}
+.nav-bar-v2 .logo {
+    padding: 0px 0px 10px !important;
+}
+#menu-footer-company-menu li a, #menu-footer-explore-mneu li a, #menu-footer-follow-menu li a{color: #c3c3c3;
+    font-size: 15px;
+    line-height: 30px;}
+.nav-bar-top.fixed .logo .sub-logo img {
+    max-height: 100% !important;
+}
+.topicon ul{margin: 0;
+    padding: 0;position: relative;
+    top: 65px;}
+.topicon li{list-style: none;    padding: 0px 4px;     display: inline;}
+.row1{ padding:0px !important;margin-top: 0px;}
+.nav-bar-v2 .nav-desktop-nomal ul li a {
+  padding: 0px 15px 0px !important;
+    position: relative;
+    top: 82px;
+}
+.nav-bar-v2 .meta-nav-desktop .blk-search-top {
+	margin: 0px 0px 22px 22px !important;
+    position: relative;
+    top: 80px;
+    left: -27px;
+}
+.toggle-navigation {
+    position: absolute;
+    top: 65px !important;
+    right: -1px !important;
+    width: 22px;
+    height: 22px;
+    display: block;
+    z-index: 600; left:0px !important;
+}
+.blk-bottom-footer{
+background: #dbd0ce !important;
+}
+.nav-bar-top .meta-nav-desktop{
+margin-top: 8px !important;
+}
+.mdl-gototop{
+bottom: 50px !important;
+}
+.dark li {margin-bottom: 12px;}
+.dark li a {
+color: #999 !important;
+}
+
+.dark li a:hover{color:#d3a538 !important;}
+.page-footer .topicon ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top:0px;
+}
+.nav-bar-top.white-nav-bar.fixed, .nav-bar-top.gradiant-nav-bar.fixed {
+    position: fixed;
+    background: -webkit-linear-gradient(#ffffff, #ffffff);
+    background: -o-linear-gradient(#ffffff, #ffffff);
+    background: -moz-linear-gradient(#ffffff, #ffffff);
+    background: linear-gradient(#ffffff, #ffffff);
+    border-bottom: 1px solid #DDD;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+.page-id-3184 .page-main {
+    position: relative;
+    z-index: 100;
+    top: 152px !important;
+}
+.nav-bar-top.absolute.fixed {
+    background: #fff;
+}
+.nav-bar-top .logo {
+    padding: 0px 0px 10px;
+    position: relative;
+    left: 0px;
+    margin-left: 0px;
+}
+.page-header .text-header h1 {
+    color: #0000;
+    font-size: 225%;
+}
+.page-header .text-header h2 {
+    color: #000;
+    font-size: 100%;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+    padding-top: 16px;
+    margin-top: 11px;
+}
+.nav-bar-top.fixed .logo {
+    padding: 0px 0px 13px;
+}
+.nav-bar-top.fixed .nav-desktop-nomal ul li a {
+    padding: 0px 15px 23px;
+}
+.nav-bar-top .meta-nav-desktop .blk-search-top{left: -27px;}
+@media (max-width: 800px) and (min-width: 320px)
+.nav-bar-v2 .meta-nav-desktop .blk-search-top {
+    margin: 0px 0px 22px 22px !important;
+    position: relative;
+    top: 20px !important;
+}
