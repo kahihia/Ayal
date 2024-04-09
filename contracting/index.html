@@ -1372,18 +1372,6 @@ $(document).ready(function () {
 </html>
 <script type="38e9167e48c4e397dc9775b8-text/javascript">
 
-    $(function() {
-        if(window.location.hash){
-            $('html, body').animate({
-                scrollTop: $("#tab-wrapper").offset().top - 20 
-            }, 500);
-            setTimeout(() => {
-                $('a[href="' + window.location.hash + '"]').click();
-                $('select#tab-select option[value="'+ window.location.hash  +'"]').attr("selected",true);
-            }, 100);
-        }
-    });
-    
     jQuery(document).ready(function($) {
         if ($(window).width() > 767){
             var maxLength = 300;
@@ -1391,208 +1379,23 @@ $(document).ready(function () {
         else{
             var maxLength = 100;
         }
-        $(".testimonial-content p").each(function(){
-            var myStr = $(this).text();
-            if($.trim(myStr).length > maxLength){
-                var newStr = myStr.substring(0, maxLength);
-                var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
-                $(this).empty().html(newStr);
-                $(this).append('<p class="more-text">' + removedStr + '</p>');
-                $(this).append('<div class="button-wrapper mt-3 text-center"><a href="javascript:" class="read-more">Read More</a></div>');
-            }
-        });
-
-        $(".read-more").click(function(){
-            var txt = $(this).parent().siblings(".more-text").hasClass('active') ? 'Read More' : 'Read Less';
-            $(this).parent().siblings(".more-text").toggleClass("active");
-            $(this).text(txt);
-        });
-
-        $("#contracting-list a").click(function(e){
-           var hash = $(this).attr('href').substring($(this).attr('href').indexOf('#'));
-	       e.preventDefault();
-           $('html, body').animate({
-                scrollTop: $("#tab-wrapper").offset().top - 20 
-            }, 500);
-            $("body").css('overflow','auto');
-    	   $('a[href="' + hash + '"]').click();
-	   });
-
-        jQuery("#portfolio #contents-1 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-2 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-3 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-4 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-5 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-6 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-7 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-8 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
-
-        jQuery("#portfolio #contents-9 a.img-wrapper").magnificPopup({
-            type: 'image',
-            gallery:{
-                enabled: true
-            },
-            image: {
-                titleSrc: 'title' 
-                // this tells the script which attribute has your caption
-            },
-        });
 
 
-       jQuery("#business a.modal-click").click(function(e){
+       jQuery("a.modal-click").click(function(e){
            e.preventDefault();
            jQuery('body').css('overflow','hidden');
            jQuery(this).next().fadeIn('400');
        });
-       jQuery("#business .modal-click").click(function(e){
+       jQuery(".modal-click").click(function(e){
            e.preventDefault();
            jQuery('body').css('overflow','hidden');
            jQuery(this).next().fadeIn('400');
        });
 
-        $("#business a.close-popup").click(function(e){
+        $("a.close-popup").click(function(e){
            e.preventDefault();
            jQuery('body').css('overflow','auto');
            $("#business .modal-wrapper").fadeOut('200');
-       });
-
-        $("#tab-wrapper .tab-header .first-tablink").click(function(e){
-           e.preventDefault();
-           var attr = $(this).attr("href");
-           $("#tab-wrapper .tab-header .first-tablink").removeClass('active');
-           $(this).addClass('active');
-           $("#tab-wrapper .tab-content .first-tabcontent").removeClass('active');
-            $(attr).addClass('active');
-            // $('html, body').animate({
-            //  scrollTop: $(attr).offset().top 
-            // }, 500);
-       });
-       
-      $("#portfolio .tab-header a.second-tablink").click(function(event) {
-           event.preventDefault();
-            var attribute = $(this).attr("href");
-            $("#portfolio .tab-header a.second-tablink").removeClass("active");
-            $(this).addClass("active");
-            $("#portfolio .tab-content .second-tabcontent").removeClass('active');
-            $(attribute).addClass('active');
-      });
-
-      $('#testimonial-carousel').owlCarousel({
-           items : 1,
-           lazyLoad: true,
-           loop : true,
-           center: true,
-           smartSpeed:900,
-           autoplay: false,
-           dots : true,
-           nav: true,
-           navText: ['<svg><use xlink:href="https://www.sobha.com/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>','<svg><use xlink:href="https://www.sobha.com/wp-content/themes/sobha/images/icons.svg#chevron"></use></svg>'],
-           margin: 0
-      });
-
-    //    $("#tab-wrapper .tab-header a").click(function(e){
-    //        e.preventDefault();
-    //        var attr = $(this).attr("href");
-    //        $("#tab-wrapper .tab-header a").removeClass('active');
-    //        $(this).addClass('active');
-    //        $("#tab-wrapper .tab-content .first-tabcontent").removeClass('active');
-    //        $(attr).addClass('active');
-    //    });
-
-       $("#tab-wrapper .tab-header  select#tab-select").on("change",function(e){
-           e.preventDefault();
-           var value = $(this).val();
-           console.log(value);
-           $("#tab-wrapper .tab-content .first-tabcontent").removeClass('active');
-           $(value).addClass('active');
-       });
-
-       $("#portfolio .tab-header select#tab-select1").on("change",function(e){
-           e.preventDefault();
-           var value = $(this).val();
-           console.log(value);
-           $("#portfolio .tab-content .second-tabcontent").removeClass('active');
-           $(value).addClass('active');
-           $("#portfolio .first-tabcontent").addClass('active');
        });
 
     });
